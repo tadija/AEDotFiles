@@ -3,14 +3,11 @@
 
 > I'm done with manually configuring everything after clean installation of OSX. If this can help you too, then great, feel free to customize it and use for your own needs.
 
-All you need to do is to clone this repository on your machine and execute these bash scripts, one by one.  
-But first, you need to know what each script does, so you can decide which ones to actually edit or execute.
+All you need to do is to clone this repository on your machine and execute these bash scripts, one by one. But first, you need to know what each script does, so you can decide which ones to actually edit or execute.
 
 ## 00.Config.sh
 
-This is where you setup what are all the things that you want to install automatically.  
-You'll notice that things are divided into sections: **binaries**, **apps**, **quicklook plugins**, **fonts** and **atom packages**.  
-You just need to delete ones you don't need, and type in the ones you do.
+This is where you setup what are all the things that you want to install automatically. You'll notice that things are divided into sections: **binaries**, **apps**, **quicklook plugins**, **fonts** and **atom packages**. You just need to delete ones you don't need, and type in the ones you do.
 
 ## 01.Terminal.sh
 
