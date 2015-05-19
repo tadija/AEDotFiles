@@ -66,7 +66,6 @@ apps=(
   flash
   dropbox
   skype
-  slack
   transmission
   transmit
   tunnelbear
