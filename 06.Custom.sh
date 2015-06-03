@@ -105,3 +105,10 @@ echo "${red}Don't forget manual settings..."
 echo ""
 echo "${green}Done!"
 echo ""
+
+###############################################################################
+# Other Manual Installations
+###############################################################################
+
+# Currency Converter Widget [https://www.apple.com/downloads/dashboard/calculate_convert/currencyconverter_palplesoftware.html]
+# iStat Widget [http://mac.softpedia.com/get/Dashboard-Widgets/Status-Info/iStat-pro.shtml]
