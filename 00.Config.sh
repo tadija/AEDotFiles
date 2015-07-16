@@ -82,6 +82,11 @@ apps=(
   vlc
   spotify
   calibre
+  flashlight
+  torbrowser
+  couleurs
+  vox
+  recordit
 )
 
 ###############################################################################

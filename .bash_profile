@@ -15,7 +15,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # paths
 alias pro="cd ~/Dropbox/Projects/"
 alias ios="cd ~/Dropbox/Projects/iOS"
-alias github="cd ~/Dropbox/Projects/GitHub"
+alias gh="cd ~/Dropbox/Projects/GitHub"
 alias yc="cd ~/Dropbox/Projects/Youngculture/"
 alias sy="cd ~/Dropbox/Sync/"
 
@@ -36,6 +36,10 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall F
 # random
 alias checkperm="stat -f '%OLp'"
 alias logicl="brctl log --wait --shorten"
+
+alias bcs="brew cask search"
+alias bci="brew cask install"
+alias bcu="brew cask update"
 
 ###############################################################################
 # Piperita Theme
