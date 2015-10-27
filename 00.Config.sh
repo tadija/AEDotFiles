@@ -63,6 +63,7 @@ apps=(
   safari-tab-switching
   google-chrome
   firefox
+  safari-tab-switching
   flash
   dropbox
   skype
@@ -72,7 +73,6 @@ apps=(
   sketch
   xscope
   sublime-text3
-  atom
   macdown
   sourcetree
   fabric
@@ -80,11 +80,8 @@ apps=(
   arduino
   sketchup
   vlc
-  spotify
   calibre
-  flashlight
   torbrowser
-  couleurs
   vox
   recordit
 )
@@ -107,20 +104,4 @@ quicklook=(
 fonts=(
   font-hack
   font-play
-)
-
-###############################################################################
-# Atom packages to install
-###############################################################################
-
-atom=(
-  atom-beautify
-  cmd-9
-  color-picker
-  emmet
-  file-icons
-  git-history
-  string-looper
-  linter
-  merge-conflicts
 )

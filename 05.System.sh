@@ -199,11 +199,6 @@ echo "${red}Don't forget manual settings..."
 # safari opens with all windows from last session
 # turn off open safe files after downloading
 
-## extensions
-# HoverSee (http://www.macupdate.com/app/mac/34951/hoversee-safari-extension)
-# Close Left/Right Tabs (http://safariextensions.com/en-US/safari/addon/124)
-# SafariTabSwitching (https://github.com/rs/SafariTabSwitching)
-
 ## advanced
 # show full website address
 

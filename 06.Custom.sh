@@ -97,7 +97,6 @@ echo "${red}Don't forget manual settings..."
 # MCLog
 # Open With Application
 # SCXcodeMinimap
-# WCGitTagsPlugin
 # Tomorrow & Tomorrow Night themes
 
 ###############################################################################
@@ -107,8 +106,20 @@ echo "${green}Done!"
 echo ""
 
 ###############################################################################
-# Other Manual Installations
+# Other Manual Configuration and Installations
 ###############################################################################
 
+## Set Hack 14 Font in:
+# Terminal
+# Sublime
+# Xcode
+
+## Widgets
 # Currency Converter Widget [https://www.apple.com/downloads/dashboard/calculate_convert/currencyconverter_palplesoftware.html]
 # iStat Widget [http://mac.softpedia.com/get/Dashboard-Widgets/Status-Info/iStat-pro.shtml]
+
+## Safari extensions
+# HoverSee (http://www.macupdate.com/app/mac/34951/hoversee-safari-extension)
+# Close Left/Right Tabs (http://safariextensions.com/en-US/safari/addon/124)
+
+# Sublime package manager (https://packagecontrol.io/installation)

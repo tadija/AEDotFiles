@@ -45,11 +45,6 @@ echo "Installing fonts..."
 brew cask install ${fonts[@]}
 
 echo ""
-echo "Installing Atom Packages..."
-# install atom packages
-apm install ${atom[@]}
-
-echo ""
 echo "Homebrew cleanup...\n"
 
 # cleanup

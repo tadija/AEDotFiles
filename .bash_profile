@@ -13,21 +13,21 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 ## aliases ##
 
 # paths
-alias pro="cd ~/Dropbox/Projects/"
-alias ios="cd ~/Dropbox/Projects/iOS"
-alias gh="cd ~/Dropbox/Projects/GitHub"
-alias yc="cd ~/Dropbox/Projects/Youngculture/"
+alias dev="cd ~/Dropbox/Developer/"
+alias devios="cd ~/Dropbox/Developer/iOS"
+alias devgh="cd ~/Dropbox/Developer/GitHub"
+alias devyc="cd ~/Dropbox/Developer/Youngculture/"
 alias sy="cd ~/Dropbox/Sync/"
 
 ## commands ##
 
 # git work / home global
-alias gwg="git config --global user.name 'Marko Tadić' && git config --global user.email 'm.tadic@youngculture.com' && git config --global user.name && git config --global user.email"
-alias ghg="git config --global user.name 'Marko Tadić' && git config --global user.email 'tadija@me.com' && git config --global user.name && git config --global user.email"
+alias gwg="git config --global user.name 'Marko Tadic' && git config --global user.email 'm.tadic@youngculture.com' && git config --global user.name && git config --global user.email"
+alias ghg="git config --global user.name 'Marko Tadic' && git config --global user.email 'tadija@me.com' && git config --global user.name && git config --global user.email"
 
 # git work / home local
-alias gwl="git config user.name 'Marko Tadić' && git config user.email 'm.tadic@youngculture.com' && git config user.name && git config user.email"
-alias ghl="git config user.name 'Marko Tadić' && git config user.email 'tadija@me.com' && git config user.name && git config user.email"
+alias gwl="git config user.name 'Marko Tadic' && git config user.email 'm.tadic@youngculture.com' && git config user.name && git config user.email"
+alias ghl="git config user.name 'Marko Tadic' && git config user.email 'tadija@me.com' && git config user.name && git config user.email"
 
 # show / hide hidden files in finder
 alias show="defaults write com.apple.finder AppleShowAllFiles true && killall Finder"
