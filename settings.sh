@@ -40,14 +40,14 @@ app_directory_path="/Applications"
 binaries=(
   # brew-cask is required for installing apps later
   caskroom/cask/brew-cask
-  graphicsmagick
-  webkit2png
+  ack
   ffmpeg
+  git
+  graphicsmagick
+  hub
   trash
   tree
-  ack
-  git
-  hub
+  webkit2png
 )
 
 ###############################################################################
@@ -56,33 +56,34 @@ binaries=(
 
 apps=(
   appzapper
-  forklift
-  unrarx
-  safari-tab-switching
-  google-chrome
+  arduino
+  calibre
+  cocoapods
+  coconutbattery
+  dropbox
+  fabric
   firefox
   flash
-  dropbox
+  forklift
+  google-chrome
+  google-drive
+  macdown
+  recordit
+  safari-tab-switching
+  simpholders
+  sketch
+  sketchup
   skype
+  sourcetree
+  sublime-text3
+  torbrowser
   transmission
   transmit
   tunnelbear
-  sketch
-  xscope
-  sublime-text3
-  macdown
-  sourcetree
-  fabric
-  simpholders
-  arduino
-  sketchup
+  unrarx
   vlc
-  calibre
-  torbrowser
   vox
-  recordit
-  coconutbattery
-  google-drive
+  xscope
 )
 
 ###############################################################################

@@ -63,6 +63,8 @@ curl -fsSL https://raw.githubusercontent.com/supermarin/Alcatraz/master/Scripts/
 # Manual installation of packages from Alcatraz
 ###############################################################################
 
+cd ~
+
 red='\033[0;31m'
 green='\033[0;32m'
 default='\033[0m'
