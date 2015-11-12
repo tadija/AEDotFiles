@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 #
-# AESetupOSX
-#
-# 01.Terminal.sh
+# AEDotFiles
 #
 # Copyright (c) 2015 Marko Tadić <tadija@me.com> http://tadija.net
 #
@@ -26,49 +24,21 @@
 # SOFTWARE.
 #
 
-source 00.Config.sh
-
-###############################################################################
-# Set default path and get current directory
-###############################################################################
-
-PATH=/usr/local/bin:$PATH
-DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-
-###############################################################################
-# Set .bash_profile
-###############################################################################
-
-echo ""
-echo "Symlink and load bash profile"
-
-# backup .profile if already exists
-if [ -f ~/.profile ]; then
-  mv ~/.profile ~/.profile.backup
-fi
-# load new .profile
-cp $DIR/.bash_profile ~/.profile
-source ~/.profile
-
-###############################################################################
-# Set Terminal theme
-###############################################################################
-
 echo ""
 echo "Get and set Piperita theme for Terminal"
 echo ""
 
 # create temp directory
-cd $DIR && mkdir .tmp && cd .tmp
+cd /tmp && mkdir piperita && cd piperita
 # get 'piperita' theme
 git clone https://github.com/jacobtomlinson/terminal-piperita.git
 # add it to terminal
-open $DIR/.tmp/terminal-piperita/schemes/Terminal/Piperita.terminal
+open /tmp/piperita/terminal-piperita/schemes/Terminal/Piperita.terminal
 sleep 1
 # set as default theme
 defaults write com.apple.Terminal "Default Window Settings" -string "Piperita"
 defaults write com.apple.Terminal "Startup Window Settings" -string "Piperita"
 # remove temp directory
-rm -rf $DIR/.tmp
+rm -rf /tmp/piperita
 # quit terminal
 osascript -e 'tell application "Terminal" to quit' & exit

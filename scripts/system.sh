@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 #
-# AESetupOSX
-#
-# 05.System.sh
+# AEDotFiles
 #
 # Copyright (c) 2015 Marko Tadić <tadija@me.com> http://tadija.net
 #
@@ -128,8 +126,8 @@ green='\033[0;32m'
 default='\033[0m'
 
 echo ""
-echo "${red}REMINDER:"
-echo "${red}Don't forget manual settings..."
+echo -e "${red}REMINDER:"
+echo -e "${red}Don't forget manual settings..."
 
 ### system preferences
 
@@ -219,5 +217,5 @@ echo "${red}Don't forget manual settings..."
 ###############################################################################
 
 echo ""
-echo "${green}Done!"
+echo -e "${green}Done!"
 echo ""

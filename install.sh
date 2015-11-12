@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 #
-# AESetupOSX
-#
-# 04.Apps.sh
+# AEDotFiles
 #
 # Copyright (c) 2015 Marko Tadić <tadija@me.com> http://tadija.net
 #
@@ -26,26 +24,11 @@
 # SOFTWARE.
 #
 
-source 00.Config.sh
-source 02.Homebrew.sh
+# backup .bash_profile if it already exists
+if [ -f ~/.bash_profile ]; then
+mv ~/.bash_profile ~/.bash_profile.backup
+fi
 
-echo ""
-echo "Installing apps..."
-# install apps
-brew cask install --appdir=$app_directory_path ${apps[@]}
-
-echo ""
-echo "Installing quicklook plugins..."
-# install quicklook plugins
-brew cask install ${quicklook[@]}
-
-echo ""
-echo "Installing fonts..."
-# install fonts
-brew cask install ${fonts[@]}
-
-echo ""
-echo "Homebrew cleanup...\n"
-
-# cleanup
-brew cleanup
+# configure and load new .bash_profile
+cp ~/.dotfiles/profile/default.sh ~/.bash_profile
+source ~/.bash_profile

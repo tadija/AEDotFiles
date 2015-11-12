@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 #
-# AESetupOSX
-#
-# 00.Config.sh
+# AEDotFiles
 #
 # Copyright (c) 2015 Marko Tadić <tadija@me.com> http://tadija.net
 #
@@ -26,7 +24,7 @@
 # SOFTWARE.
 #
 
-echo "Getting config...\n"
+echo -e "Getting settings...\n"
 
 ###############################################################################
 # General
@@ -63,7 +61,6 @@ apps=(
   safari-tab-switching
   google-chrome
   firefox
-  safari-tab-switching
   flash
   dropbox
   skype
@@ -84,6 +81,8 @@ apps=(
   torbrowser
   vox
   recordit
+  coconutbattery
+  google-drive
 )
 
 ###############################################################################
