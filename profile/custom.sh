@@ -20,11 +20,11 @@ alias gitwho="echo 'Git user:' && git config user.name && git config user.email"
 alias glp="git log --pretty=format:'%h %s' --graph"
 
 # git work / home local
-alias gwl="git config user.name 'Marko Tadic' && git config user.email 'm.tadic@youngculture.com' && git config user.name && git config user.email"
+alias gwl="git config user.name 'Marko Tadic' && git config user.email 'marko.tadic@appculture.com' && git config user.name && git config user.email"
 alias ghl="git config user.name 'Marko Tadic' && git config user.email 'tadija@me.com' && git config user.name && git config user.email"
 
 # git work / home global
-alias gwg="git config --global user.name 'Marko Tadic' && git config --global user.email 'm.tadic@youngculture.com' && git config --global user.name && git config --global user.email"
+alias gwg="git config --global user.name 'Marko Tadic' && git config --global user.email 'marko.tadic@appculture.com' && git config --global user.name && git config --global user.email"
 alias ghg="git config --global user.name 'Marko Tadic' && git config --global user.email 'tadija@me.com' && git config --global user.name && git config --global user.email"
 
 # show / hide hidden files in finder
