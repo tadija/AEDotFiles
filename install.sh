@@ -24,8 +24,7 @@
 # SOFTWARE.
 #
 
-echo "Hello $USER"
-echo ""
+echo -e "Hello $USER\n"
 
 # backup .bash_profile if it already exists
 if [ -f ~/.bash_profile ]; then
@@ -38,7 +37,6 @@ cp ~/.dotfiles/profile/default.sh ~/.bash_profile
 source ~/.bash_profile
 
 # print stuff
-echo ""
 echo -e "This is how you new .bash_profile looks: \n"
 echo "---"
 cat ~/.bash_profile
@@ -52,3 +50,4 @@ echo "---"
 
 echo ""
 echo "https://github.com/tadija/AEDotFiles"
+echo ""
