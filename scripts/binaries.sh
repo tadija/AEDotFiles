@@ -24,8 +24,8 @@
 # SOFTWARE.
 #
 
-source $DOT_FILES/config.sh
-source homebrew.sh
+source $DOT_FILES/settings.sh
+source $DOT_FILES/scripts/homebrew.sh
 
 echo ""
 echo -e "Installing binaries... \n"
