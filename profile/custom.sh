@@ -15,7 +15,7 @@ alias sy="cd ~/Dropbox/Sync/"
 alias addssh="cd ~/Dropbox/Sync/.ssh && chmod 400 id_rsa && ssh-add id_rsa"
 
 # git general
-alias gitwho="echo 'git user:' && git config user.name && git config user.email"
+alias gitwho="echo 'Git user:' && git config user.name && git config user.email"
 alias glp="git log --pretty=format:'%h %s' --graph"
 
 # git work / home local
