@@ -24,4 +24,11 @@
 # SOFTWARE.
 #
 
-source config.sh
+# backup .bash_profile if it already exists
+if [ -f ~/.bash_profile ]; then
+mv ~/.bash_profile ~/.bash_profile.backup
+fi
+
+# create new .bash_profile
+cp ~/.dotfiles/profile/default.sh ~/.bash_profile
+source ~/.bash_profile
