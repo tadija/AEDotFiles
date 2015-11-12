@@ -61,7 +61,6 @@ apps=(
   safari-tab-switching
   google-chrome
   firefox
-  safari-tab-switching
   flash
   dropbox
   skype
@@ -82,6 +81,7 @@ apps=(
   torbrowser
   vox
   recordit
+  coconutbattery
 )
 
 ###############################################################################
