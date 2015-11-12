@@ -24,25 +24,31 @@
 # SOFTWARE.
 #
 
+echo "Hello $USER"
+echo ""
+
 # backup .bash_profile if it already exists
 if [ -f ~/.bash_profile ]; then
 mv ~/.bash_profile ~/.bash_profile.backup
-echo -e "current .bash_profile is copied to .bash_profile.backup \n"
+echo -e "Your current .bash_profile is copied to .bash_profile.backup \n"
 fi
 
 # configure and load new .bash_profile
 cp ~/.dotfiles/profile/default.sh ~/.bash_profile
 source ~/.bash_profile
 
-# show info
+# print stuff
 echo ""
 echo -e "This is how you new .bash_profile looks: \n"
-cat ~/.bash_profile
-
-echo ""
-echo "You can now begin with the setup: \n"
-cat $DOT_FILES/profile/setup.sh
-
-echo ""
 echo "---"
+cat ~/.bash_profile
+echo "---"
+
+echo ""
+echo -e "You can now begin with the setup: \n"
+echo "---"
+cat $DOT_FILES/profile/setup.sh
+echo "---"
+
+echo ""
 echo "https://github.com/tadija/AEDotFiles"

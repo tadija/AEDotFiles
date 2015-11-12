@@ -4,6 +4,7 @@
 
 # shortcuts
 alias ..="cd .."
+alias rmd="rm -rf"
 
 alias dev="cd ~/Dropbox/Developer/"
 alias devios="cd ~/Dropbox/Developer/iOS"
