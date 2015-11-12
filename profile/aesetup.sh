@@ -1,0 +1,1 @@
+alias aesetup-terminal=". ~/.dotfiles/scripts/terminal.sh"
