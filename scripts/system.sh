@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 #
-# AESetupOSX
-#
-# 05.System.sh
+# AEDotFiles
 #
 # Copyright (c) 2015 Marko Tadić <tadija@me.com> http://tadija.net
 #

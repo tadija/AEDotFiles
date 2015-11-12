@@ -24,7 +24,7 @@
 # SOFTWARE.
 #
 
-source $DF_PATH/config.sh
+source $DOT_FILES/config.sh
 source homebrew.sh
 
 echo ""

@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 #
-# AESetupOSX
-#
-# 04.Apps.sh
+# AEDotFiles
 #
 # Copyright (c) 2015 Marko Tadić <tadija@me.com> http://tadija.net
 #
@@ -26,26 +24,23 @@
 # SOFTWARE.
 #
 
-source 00.Config.sh
-source 02.Homebrew.sh
+source $DOT_FILES/config.sh
+source homebrew.sh
 
 echo ""
 echo "Installing apps..."
-# install apps
 brew cask install --appdir=$app_directory_path ${apps[@]}
 
 echo ""
 echo "Installing quicklook plugins..."
-# install quicklook plugins
 brew cask install ${quicklook[@]}
 
 echo ""
 echo "Installing fonts..."
-# install fonts
 brew cask install ${fonts[@]}
 
 echo ""
-echo "Homebrew cleanup...\n"
+echo -e "Homebrew cleanup...\n"
 
 # cleanup
 brew cleanup

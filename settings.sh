@@ -24,7 +24,7 @@
 # SOFTWARE.
 #
 
-echo -e "Getting config...\n"
+echo -e "Getting settings...\n"
 
 ###############################################################################
 # General

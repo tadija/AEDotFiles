@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 #
-# AESetupOSX
-#
-# 06.Custom.sh
+# AEDotFiles
 #
 # Copyright (c) 2015 Marko Tadić <tadija@me.com> http://tadija.net
 #
@@ -26,35 +24,13 @@
 # SOFTWARE.
 #
 
-source ~/.profile
-
 ###############################################################################
 # Configure SSH key
 ###############################################################################
 
 echo ""
 echo "Add SSH key"
-ssh-add ~/Dropbox/Sync/.ssh/id_rsa
-
-###############################################################################
-# Configure .profile
-###############################################################################
-
-echo ""
-echo "Sync .profile"
-# backup remote .profile if already exists
-if [ -f ~/Dropbox/Sync/.profile ]; then
-  mv ~/Dropbox/Sync/.profile ~/Dropbox/Sync/.profile.backup
-fi
-# copy local to remote
-cp ~/.profile ~/Dropbox/Sync/.profile
-# backup local .profile if already exists
-if [ -f ~/.profile ]; then
-  mv ~/.profile ~/.profile.backup
-fi
-# symlink remote .profile
-ln -s ~/Dropbox/Sync/.profile ~/.profile
-source ~/.profile
+addssh
 
 ###############################################################################
 # Configure .gitconfig
@@ -62,8 +38,11 @@ source ~/.profile
 
 echo ""
 echo "Copy and set .gitconfig"
-cp ~/Dropbox/Sync/.gitconfig ~/.gitconfig
-ghg
+if [ -f ~/.gitconfig ]; then
+mv ~/.gitconfig ~/.gitconfig.backup
+fi
+cp $DOT_FILES/config/.gitconfig ~/.gitconfig
+gitwho
 
 ###############################################################################
 # Configure Xcode

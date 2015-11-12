@@ -29,6 +29,6 @@ if [ -f ~/.bash_profile ]; then
 mv ~/.bash_profile ~/.bash_profile.backup
 fi
 
-# create new .bash_profile
+# configure and load new .bash_profile
 cp ~/.dotfiles/profile/default.sh ~/.bash_profile
 source ~/.bash_profile
