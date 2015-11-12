@@ -21,6 +21,10 @@ alias sy="cd ~/Dropbox/Sync/"
 
 ## commands ##
 
+# git general
+alias gitcheck="git config user.name && git config user.email"
+alias glp="git log --pretty=format:'%h %s' --graph"
+
 # git work / home global
 alias gwg="git config --global user.name 'Marko Tadic' && git config --global user.email 'm.tadic@youngculture.com' && git config --global user.name && git config --global user.email"
 alias ghg="git config --global user.name 'Marko Tadic' && git config --global user.email 'tadija@me.com' && git config --global user.name && git config --global user.email"
