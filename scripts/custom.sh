@@ -45,6 +45,12 @@ cp $DOT_FILES/config/.gitconfig ~/.gitconfig
 gitwho
 
 ###############################################################################
+# Configure Sublime Text
+###############################################################################
+
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+
+###############################################################################
 # Configure Xcode
 ###############################################################################
 
@@ -68,8 +74,8 @@ green='\033[0;32m'
 default='\033[0m'
 
 echo ""
-echo "${red}REMINDER:"
-echo "${red}Don't forget manual settings..."
+echo -e "${red}REMINDER:"
+echo -e "${red}Don't forget manual settings..."
 
 # Install packages:
 # DerivedData Exterminator
@@ -81,7 +87,7 @@ echo "${red}Don't forget manual settings..."
 ###############################################################################
 
 echo ""
-echo "${green}Done!"
+echo -e "${green}Done!"
 echo ""
 
 ###############################################################################
