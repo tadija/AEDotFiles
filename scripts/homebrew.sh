@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 #
-# AESetupOSX
-#
-# 03.Binaries.sh
+# AEDotFiles
 #
 # Copyright (c) 2015 Marko Tadić <tadija@me.com> http://tadija.net
 #
@@ -26,17 +24,25 @@
 # SOFTWARE.
 #
 
-source 00.Config.sh
-source 02.Homebrew.sh
+echo "Checking Homebrew..."
 
-echo ""
-echo "Installing binaries...\n"
+# install homebrew (if it's not already installed)
+if test ! $(which brew); then
+  echo "Installing homebrew..."
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
-# install binaries
-brew install ${binaries[@]}
+echo "Updating Homebrew..."
 
-echo ""
-echo "Homebrew cleanup...\n"
+# update
+brew update
+brew upgrade
+
+# tap versions and fonts
+brew tap caskroom/versions
+brew tap caskroom/fonts
+
+echo "Homebrew cleanup..."
 
 # cleanup
 brew cleanup

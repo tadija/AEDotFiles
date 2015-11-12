@@ -24,17 +24,14 @@
 # SOFTWARE.
 #
 
-echo "Getting config...\n"
+echo -e "Getting config...\n"
 
 ###############################################################################
 # General
 ###############################################################################
 
-# base path to AEDotFiles
-dot_files_path="~/.dotfiles"
-
 # path where brew-cask will install apps
-cask_app_directory="/Applications"
+app_directory_path="/Applications"
 
 ###############################################################################
 # Binaries to install
