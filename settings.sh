@@ -72,6 +72,7 @@ apps=(
   safari-tab-switching
   simpholders
   sketch
+  sketch-toolbox
   sketchup
   skype
   sourcetree

@@ -6,11 +6,12 @@
 alias ..="cd .."
 alias rmd="rm -rf"
 
-alias dev="cd ~/Dropbox/Developer/"
-alias devios="cd ~/Dropbox/Developer/iOS"
-alias devgh="cd ~/Dropbox/Developer/GitHub"
-alias devyc="cd ~/Dropbox/Developer/Youngculture/"
-alias sy="cd ~/Dropbox/Sync/"
+alias dbd="cd ~/Dropbox/Developer/"
+alias dbdios="cd ~/Dropbox/Developer/iOS"
+alias dbdgh="cd ~/Dropbox/Developer/GitHub"
+alias dbdac="cd ~/Dropbox/Developer/appculture/"
+alias dbdweb="cd ~/Dropbox/Developer/Web/"
+alias dbsy="cd ~/Dropbox/Sync/"
 
 # ssh
 alias addssh="cd ~/Dropbox/Sync/.ssh && chmod 400 id_rsa && ssh-add id_rsa"
