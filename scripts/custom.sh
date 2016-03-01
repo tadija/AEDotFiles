@@ -25,14 +25,6 @@
 #
 
 ###############################################################################
-# Configure SSH key
-###############################################################################
-
-echo ""
-echo "Add SSH key"
-addssh
-
-###############################################################################
 # Configure .gitconfig
 ###############################################################################
 
@@ -57,7 +49,7 @@ ln -s ~/Dropbox/Sync/CodeSnippets ~/Library/Developer/Xcode/UserData
 echo ""
 echo "Installing Alcatraz..."
 # install alcatraz (package manager)
-curl -fsSL https://raw.githubusercontent.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/supermarin/Alcatraz/deploy/Scripts/install.sh | sh
 
 ###############################################################################
 # Manual installation of packages from Alcatraz
@@ -73,6 +65,7 @@ echo ""
 echo -e "${red}REMINDER:"
 echo -e "${red}Don't forget manual settings..."
 
+# Configure SSH Keys
 # Install packages:
 # DerivedData Exterminator
 # MCLog
@@ -102,5 +95,6 @@ echo ""
 ## Safari extensions
 # HoverSee (http://www.macupdate.com/app/mac/34951/hoversee-safari-extension)
 # Close Left/Right Tabs (http://safariextensions.com/en-US/safari/addon/124)
+# Pocket (https://getpocket.com/safari/)
 
 # Sublime package manager (https://packagecontrol.io/installation)

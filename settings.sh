@@ -55,16 +55,17 @@ binaries=(
 ###############################################################################
 
 apps=(
+  java
   appzapper
   arduino
   calibre
+  charles
   cocoapods
   coconutbattery
   dropbox
   fabric
   firefox
   flash
-  forklift
   google-chrome
   google-drive
   macdown
@@ -76,6 +77,7 @@ apps=(
   sketchup
   skype
   sourcetree
+  sqlitebrowser
   sublime-text3
   torbrowser
   transmission
@@ -84,6 +86,7 @@ apps=(
   unrarx
   vlc
   vox
+  wwdc
   xscope
 )
 
@@ -96,6 +99,7 @@ quicklook=(
   qlmarkdown
   qlstephen
   quicklook-json
+  provisioning
 )
 
 ###############################################################################

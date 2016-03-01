@@ -1,0 +1,17 @@
+Host github.com
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa.tadija
+  IdentitiesOnly yes
+
+Host bitbucket.org
+  Hostname bitbucket.org
+  User git
+  IdentityFile ~/.ssh/id_rsa.tadija
+  IdentitiesOnly yes
+
+Host bitbucket-appculture
+  Hostname bitbucket.org
+  User git
+  IdentityFile ~/.ssh/id_rsa.appculture
+  IdentitiesOnly yes

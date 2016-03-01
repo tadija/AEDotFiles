@@ -62,6 +62,7 @@ defaults write com.apple.finder ShowStatusBar -bool true
 
 echo ""
 echo "Allowing text selection in Quick Look/Preview in Finder by default"
+# this does not work in El Capitan
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
 echo ""
@@ -148,8 +149,8 @@ echo -e "${red}Don't forget manual settings..."
 ## keyboard
 # use F keys as standard function keys
 # add serbian latin input source
-# select previous input source shortcut to cmd+shift+space
-# add shortcut for service / new terminal at folder ctrl+shift+t
+# turn on previous input source keyboard shortcut to ctrl+space
+# add shortcut for service / new terminal at folder cmd+alt+b
 
 ## mouse
 # secondary click
@@ -211,6 +212,8 @@ echo -e "${red}Don't forget manual settings..."
 
 ## text editing
 # line numbers
+# code folding ribbon
+# page guide at column: 120
 
 ###############################################################################
 # The End

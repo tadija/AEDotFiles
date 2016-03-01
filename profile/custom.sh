@@ -13,12 +13,10 @@ alias dbdac="cd ~/Dropbox/Developer/appculture/"
 alias dbdweb="cd ~/Dropbox/Developer/Web/"
 alias dbsy="cd ~/Dropbox/Sync/"
 
-# ssh
-alias addssh="cd ~/Dropbox/Sync/.ssh && chmod 400 id_rsa && ssh-add id_rsa"
-
 # git general
 alias gitwho="echo 'Git user:' && git config user.name && git config user.email"
 alias glp="git log --pretty=format:'%h %s' --graph"
+alias gitundo="git reset --soft HEAD^"
 
 # git work / home local
 alias gwl="git config user.name 'Marko Tadic' && git config user.email 'marko.tadic@appculture.com' && git config user.name && git config user.email"
