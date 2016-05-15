@@ -17,6 +17,8 @@ alias dbsy="cd ~/Dropbox/Sync/"
 alias gitwho="echo 'Git user:' && git config user.name && git config user.email"
 alias glp="git log --pretty=format:'%h %s' --graph"
 alias gitundo="git reset --soft HEAD^"
+alias gitsubmodulesupdate="git submodule update --init --recursive"
+alias gitsubmodulespull="git submodule foreach git pull origin master"
 
 # git work / home local
 alias gwl="git config user.name 'Marko Tadic' && git config user.email 'marko.tadic@appculture.com' && git config user.name && git config user.email"
