@@ -41,6 +41,7 @@ brew upgrade
 # tap versions and fonts
 brew tap caskroom/versions
 brew tap caskroom/fonts
+brew tap homebrew/completions
 
 echo "Homebrew cleanup..."
 

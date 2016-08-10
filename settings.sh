@@ -40,9 +40,8 @@ app_directory_path="/Applications"
 binaries=(
   # brew-cask is required for installing apps later
   caskroom/cask/brew-cask
+  bash-completion
   ack
-  ffmpeg
-  git
   graphicsmagick
   hub
   trash
