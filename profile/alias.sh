@@ -2,14 +2,9 @@
 # tadija
 ###############################################################################
 
-# bash completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-. $(brew --prefix)/etc/bash_completion
-fi
-
 # shortcuts
+alias home="cd ~"
 alias ..="cd .."
-alias rmd="rm -rf"
 
 alias dbd="cd ~/Dropbox/Developer/"
 alias dbdios="cd ~/Dropbox/Developer/iOS"
@@ -17,6 +12,8 @@ alias dbdgh="cd ~/Dropbox/Developer/GitHub"
 alias dbdac="cd ~/Dropbox/Developer/appculture/"
 alias dbdweb="cd ~/Dropbox/Developer/Web/"
 alias dbsy="cd ~/Dropbox/Sync/"
+
+alias rmd="rm -rf"
 
 # git general
 alias gitwho="echo 'Git user:' && git config user.name && git config user.email"

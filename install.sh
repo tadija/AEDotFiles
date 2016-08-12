@@ -33,7 +33,7 @@ echo -e "Your current .bash_profile is copied to .bash_profile.backup \n"
 fi
 
 # configure and load new .bash_profile
-cp ~/.dotfiles/profile/default.sh ~/.bash_profile
+cp ~/.dotfiles/profile/main.sh ~/.bash_profile
 source ~/.bash_profile
 
 # print stuff
