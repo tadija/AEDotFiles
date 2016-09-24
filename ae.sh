@@ -33,7 +33,7 @@ echo -e "Your current .bash_profile is copied to .bash_profile.backup \n"
 fi
 
 # configure and load new .bash_profile
-cp ~/.dotfiles/profile/main.sh ~/.bash_profile
+cp ~/.dotfiles/profile/template.sh ~/.bash_profile
 source ~/.bash_profile
 
 # print stuff
@@ -43,9 +43,14 @@ cat ~/.bash_profile
 echo "---"
 
 echo ""
-echo -e "You can now begin with the setup: \n"
+echo -e "You can now begin with the setup by running these commands: \n"
 echo "---"
-cat $DOT_FILES/profile/setup.sh
+echo "setup-terminal"
+echo "setup-homebrew"
+echo "setup-binaries"
+echo "setup-apps"
+echo "setup-system"
+echo "setup-custom"
 echo "---"
 
 echo ""

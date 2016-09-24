@@ -5,8 +5,8 @@
 
 ## Step 1
 ``` bash
-git clone https://github.com/tadija/AEDotFiles.git ~/.dotfiles
-. ~/.dotfiles/install.sh
+git clone https://github.com/tadija/AEDotFiles.git ~/.dotfiles && cd ~/.dotfiles
+. ae.sh
 ```
 
 ## Step 2
