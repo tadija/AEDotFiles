@@ -25,12 +25,6 @@
 #
 
 ###############################################################################
-# Configure Swiftenv
-###############################################################################
-
-git clone https://github.com/kylef/swiftenv.git ~/.swiftenv
-
-###############################################################################
 # Configure .gitconfig
 ###############################################################################
 
@@ -43,22 +37,15 @@ cp $DOT_FILES/config/.gitconfig ~/.gitconfig
 gitwho
 
 ###############################################################################
-# Configure Xcode
+# Install Vapor
 ###############################################################################
 
 echo ""
-echo "Symlink Xcode Snippets"
-# symlink CodeSnippets
-rm -rf ~/Library/Developer/Xcode/UserData/CodeSnippets
-ln -s ~/Dropbox/Sync/CodeSnippets ~/Library/Developer/Xcode/UserData
-
-echo ""
-echo "Installing Alcatraz..."
-# install alcatraz (package manager)
-curl -fsSL https://raw.githubusercontent.com/supermarin/Alcatraz/deploy/Scripts/install.sh | sh
+echo "Installing Vapor..."
+curl -sL toolbox.vapor.sh | bash
 
 ###############################################################################
-# Manual installation of packages from Alcatraz
+# End
 ###############################################################################
 
 cd ~
@@ -71,36 +58,71 @@ echo ""
 echo -e "${red}REMINDER:"
 echo -e "${red}Don't forget manual settings..."
 
-# Configure SSH Keys
-# Install packages:
-# DerivedData Exterminator
-# MCLog
-# Open With Application
-# SCXcodeMinimap
-# Tomorrow & Tomorrow Night themes
-
-###############################################################################
-
 echo ""
 echo -e "${green}Done!"
 echo ""
 
 ###############################################################################
-# Other Manual Configuration and Installations
+# Manual Configuration and Installations
 ###############################################################################
 
-## Set Hack 14 Font in:
-# Terminal
-# Sublime
-# Xcode
+### Xcode
+
+## Symlink
+# rm -rf ~/Library/Developer/Xcode/UserData/
+# ln -s ~/Dropbox/Sync/Xcode/UserData ~/Library/Developer/Xcode/UserData
+
+## Accounts
+# setup accounts, profiles and certificates
+
+## Behaviors
+# running starts / show debug navigator && debugger with console view
+# running completes / show project navigator && hide debugger
+
+## Fonts & colors
+# Tomorrow Night Eighties [https://github.com/chriskempson/tomorrow-theme]
+# SF Mono 14
+
+## Text editing
+# line numbers
+# code folding ribbon
+# page guide at column: 120
+
+### Sublime
+
+# package manager [https://packagecontrol.io/installation]
+# font SF Mono 14
+# material theme [https://github.com/equinusocio/material-theme]
+
+## Terminal
+# Font SF Mono 12
+
+### System
+
+## Configure SSH Keys
+
+## Symlinks
+# sudo rm -rf Movies
+# ln -s /Volumes/aemac.hdd/Movies Movies
+# sudo rm -rf Music
+# ln -s /Volumes/aemac.hdd/Music Music
+# sudo rm -rf Pictures
+# ln -s /Volumes/aemac.hdd/Pictures Pictures
+
+### Safari
+
+## General
+# safari opens with all windows from last session
+# turn off open safe files after downloading
+
+## Advanced
+# show full website address
+
+## Extensions
+# HoverSee [http://www.macupdate.com/app/mac/34951/hoversee-safari-extension]
+# Close Left/Right Tabs [http://safariextensions.com/en-US/safari/addon/124]
+# Refind [https://refind.com]
 
 ## Widgets
 # Currency Converter Widget [https://www.apple.com/downloads/dashboard/calculate_convert/currencyconverter_palplesoftware.html]
 # iStat Widget [http://mac.softpedia.com/get/Dashboard-Widgets/Status-Info/iStat-pro.shtml]
-
-## Safari extensions
-# HoverSee (http://www.macupdate.com/app/mac/34951/hoversee-safari-extension)
-# Close Left/Right Tabs (http://safariextensions.com/en-US/safari/addon/124)
-# Pocket (https://getpocket.com/safari/)
-
-# Sublime package manager (https://packagecontrol.io/installation)

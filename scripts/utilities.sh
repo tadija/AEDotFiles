@@ -28,10 +28,10 @@ source $DOT_FILES/settings.sh
 source $DOT_FILES/scripts/homebrew.sh
 
 echo ""
-echo -e "Installing binaries... \n"
+echo -e "Installing utilities... \n"
 
 # install binaries
-brew install ${binaries[@]}
+brew install ${utilities[@]}
 
 echo ""
 echo -e "Homebrew cleanup... \n"

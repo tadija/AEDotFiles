@@ -34,19 +34,23 @@ echo -e "Getting settings...\n"
 app_directory_path="/Applications"
 
 ###############################################################################
-# Binaries to install
+# Utilities to install
 ###############################################################################
 
-binaries=(
+utilities=(
   # brew-cask is required for installing apps later
   caskroom/cask/brew-cask
   bash-completion
   ack
+  carthage
+  cocoapods
   graphicsmagick
+  heroku
   hub
+  mysql
+  kylef/formulae/swiftenv
   trash
   tree
-  webkit2png
 )
 
 ###############################################################################
@@ -54,35 +58,29 @@ binaries=(
 ###############################################################################
 
 apps=(
-  java
   appzapper
-  arduino
   calibre
   charles
-  cocoapods
-  coconutbattery
   dropbox
   fabric
-  firefox
   flash
-  google-chrome
   google-drive
+  java
   macdown
+  paw
   recordit
   safari-tab-switching
+  sequel-pro
   simpholders
   sketch
   sketch-toolbox
-  sketchup
   skype
   sourcetree
   sqlitebrowser
-  sublime-text3
+  sublime-text
   torbrowser
   transmission
-  transmit
   tunnelbear
-  unrarx
   vlc
   vox
   wwdc

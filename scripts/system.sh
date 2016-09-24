@@ -61,11 +61,6 @@ echo "Showing status bar in Finder by default"
 defaults write com.apple.finder ShowStatusBar -bool true
 
 echo ""
-echo "Allowing text selection in Quick Look/Preview in Finder by default"
-# this does not work in El Capitan
-defaults write com.apple.finder QLEnableTextSelection -bool true
-
-echo ""
 echo "Displaying full POSIX path as Finder window title"
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
@@ -191,29 +186,6 @@ echo -e "${red}Don't forget manual settings..."
 
 ## view options
 # calculate all sizes / use as defaults
-
-### safari
-
-## general
-# safari opens with all windows from last session
-# turn off open safe files after downloading
-
-## advanced
-# show full website address
-
-### xcode
-
-## accounts
-# setup accounts, profiles and certificates
-
-## behaviors
-# running starts / show debug navigator && debugger with console view
-# running completes / show project navigator && hide debugger
-
-## text editing
-# line numbers
-# code folding ribbon
-# page guide at column: 120
 
 ###############################################################################
 # The End
