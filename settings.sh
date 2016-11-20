@@ -39,14 +39,15 @@ app_directory_path="/Applications"
 
 utilities=(
   # brew-cask is required for installing apps later
-  caskroom/cask/brew-cask
-  bash-completion
   ack
+  bash-completion
+  caskroom/cask/brew-cask
   carthage
   cocoapods
   graphicsmagick
   heroku
   hub
+  mas
   mysql
   kylef/formulae/swiftenv
   trash
@@ -62,14 +63,13 @@ apps=(
   calibre
   charles
   dropbox
-  fabric
-  flash
+  flash-player
   google-drive
   java
+  kodi
   macdown
   paw
   recordit
-  safari-tab-switching
   sequel-pro
   simpholders
   sketch

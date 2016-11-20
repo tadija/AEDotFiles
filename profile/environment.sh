@@ -6,7 +6,7 @@ if test $(which brew); then
 fi
 
 # Swiftenv
-if test $(which brew); then
+if test $(which swiftenv); then
   export SWIFTENV_ROOT="$HOME/.swiftenv"
   export PATH="$SWIFTENV_ROOT/bin:$PATH"
   eval "$(swiftenv init -)"
