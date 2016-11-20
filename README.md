@@ -21,7 +21,7 @@ git clone https://github.com/tadija/AEDotFiles.git ~/.dotfiles && cd ~/.dotfiles
 
 - Run initial script:
 ``` bash
-. ~/.dotfiles/ae.sh
+. ae.sh
 ```
 
 - Install [Piperita theme](https://github.com/jacobtomlinson/terminal-piperita) for Terminal:
@@ -32,21 +32,6 @@ setup-terminal
 - Install / Update / Upgrade [Homebrew](http://brew.sh):
 ``` bash
 setup-homebrew
-```
-
-- Configure **.gitconfig** file:
-``` bash
-open -a Xcode ~/.dotfiles/config/.gitconfig
-```
-
-- Configure **.gitignore** file:
-``` bash
-open -a Xcode ~/.dotfiles/config/.gitignore
-```
-
-- Configure **shortcuts.sh** file:
-``` bash
-open -a Xcode ~/.dotfiles/profile/shortcuts.sh
 ```
 
 ## Step 2 [go]
@@ -68,7 +53,27 @@ setup-apps
 
 ## Step 3 [custom / optional]
 
-- Configure system settings (the way I like)
+- Configure **.gitconfig** file:
+``` bash
+open -a Xcode ~/.dotfiles/config/.gitconfig
+```
+
+- Configure **.gitignore** file:
+``` bash
+open -a Xcode ~/.dotfiles/config/.gitignore
+```
+
+- Configure **shortcuts.sh** file:
+``` bash
+open -a Xcode ~/.dotfiles/profile/shortcuts.sh
+```
+
+- Configure **system.sh** script (system settings the way I like):
+``` bash
+open -a Xcode ~/.dotfiles/scripts/system.sh
+```
+
+- Run **system.sh** script:
 ``` bash
 setup-system
 ```
