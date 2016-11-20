@@ -30,6 +30,7 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall F
 # random
 alias checkperm="stat -f '%OLp'"
 alias logicl="brctl log --wait --shorten"
+alias sketchdebug="tail -f /var/log/system.log|grep Sketch"
 
 # homebrew
 alias bcs="brew cask search"

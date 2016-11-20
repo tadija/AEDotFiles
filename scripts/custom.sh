@@ -66,6 +66,8 @@ echo ""
 # Manual Configuration and Installations
 ###############################################################################
 
+# Sync Dropbox
+
 ### Xcode
 
 ## Symlink
@@ -93,6 +95,7 @@ echo ""
 # package manager [https://packagecontrol.io/installation]
 # font SF Mono 14
 # material theme [https://github.com/equinusocio/material-theme]
+# http://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/
 
 ## Terminal
 # Font SF Mono 12
@@ -100,6 +103,8 @@ echo ""
 ### System
 
 ## Configure SSH Keys
+# cp -rf .ssh from dropbox to ~
+# chmod 400 id_rsa.*
 
 ## Symlinks
 # sudo rm -rf Movies
