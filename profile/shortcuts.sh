@@ -22,6 +22,8 @@ alias gitundo="git reset --soft HEAD^"
 alias gitsubmodulesupdate="git submodule update --init --recursive"
 alias gitsubmodulespull="git submodule foreach git pull origin master"
 alias gitlocalizablestrings="echo \"*.strings diff=localizablestrings\" > .gitattributes"
+alias gitstash="git stash && git stash apply"
+alias gitopen="open -a SourceTree ."
 
 # show / hide hidden files in finder
 alias show="defaults write com.apple.finder AppleShowAllFiles true && killall Finder"
@@ -40,6 +42,13 @@ alias bcz="brew cask zap"
 alias bcd="brew cask doctor"
 alias bcc="brew cask cleanup"
 alias bcl="brew cask list"
+
+# swift
+alias sb="swift build"
+alias st="swift test"
+alias spi="swift package init"
+alias spu="swift package update"
+alias spx="swift package generate-xcodeproj"
 
 ###############################################################################
 # custom (tadija)

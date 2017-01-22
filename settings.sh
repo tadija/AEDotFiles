@@ -64,7 +64,7 @@ apps=(
   charles
   dropbox
   flash-player
-  google-drive
+  flux
   java
   kodi
   macdown
