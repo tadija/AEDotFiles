@@ -22,6 +22,8 @@ alias gitundo="git reset --soft HEAD^"
 alias gitsubmodulesupdate="git submodule update --init --recursive"
 alias gitsubmodulespull="git submodule foreach git pull origin master"
 alias gitlocalizablestrings="echo \"*.strings diff=localizablestrings\" > .gitattributes"
+alias gitstate="git remote update && git status -uno"
+alias gitcleanup="git reflog expire --all --expire=now && git gc --prune=now --aggressive"
 alias gitstash="git stash && git stash apply"
 alias gitopen="open -a SourceTree ."
 
