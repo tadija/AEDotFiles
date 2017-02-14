@@ -59,6 +59,7 @@ utilities=(
 ###############################################################################
 
 apps=(
+  apptivate
   appzapper
   calibre
   charles
@@ -72,6 +73,7 @@ apps=(
   recordit
   sequel-pro
   simpholders
+  sip
   sketch
   sketch-toolbox
   skype
@@ -85,6 +87,22 @@ apps=(
   vox
   wwdc
   xscope
+)
+
+###############################################################################
+# App Store Apps to install (TODO: automate with mas)
+###############################################################################
+
+apps=(
+  forklift
+  mactracker
+  magnet
+  noizio
+  pastebot
+  skitch
+  slack
+  telegram-desktop
+  xcode
 )
 
 ###############################################################################

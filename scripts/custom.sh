@@ -103,16 +103,9 @@ echo ""
 ### System
 
 ## Configure SSH Keys
-# cp -rf .ssh from dropbox to ~
+# cp -rf ~/Dropbox/Sync/.ssh ~/.ssh
 # chmod 400 id_rsa.*
-
-## Symlinks
-# sudo rm -rf Movies
-# ln -s /Volumes/aemac.hdd/Movies Movies
-# sudo rm -rf Music
-# ln -s /Volumes/aemac.hdd/Music Music
-# sudo rm -rf Pictures
-# ln -s /Volumes/aemac.hdd/Pictures Pictures
+# ssh-add id_rsa.*
 
 ### Safari
 

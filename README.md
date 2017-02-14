@@ -38,7 +38,7 @@ setup-homebrew
 
 - Configure **settings.sh** file (what's gonna be installed):
 ``` bash
-open -a Xcode ~/.dotfiles/settings.sh
+open -a TextEdit ~/.dotfiles/settings.sh
 ```
 
 - Install all utilities from `settings.sh`:
@@ -55,22 +55,22 @@ setup-apps
 
 - Configure **.gitconfig** file:
 ``` bash
-open -a Xcode ~/.dotfiles/config/.gitconfig
+open -a TextEdit ~/.dotfiles/config/.gitconfig
 ```
 
 - Configure **.gitignore** file:
 ``` bash
-open -a Xcode ~/.dotfiles/config/.gitignore
+open -a TextEdit ~/.dotfiles/config/.gitignore
 ```
 
 - Configure **shortcuts.sh** file:
 ``` bash
-open -a Xcode ~/.dotfiles/profile/shortcuts.sh
+open -a TextEdit ~/.dotfiles/profile/shortcuts.sh
 ```
 
 - Configure **system.sh** script (system settings the way I like):
 ``` bash
-open -a Xcode ~/.dotfiles/scripts/system.sh
+open -a TextEdit ~/.dotfiles/scripts/system.sh
 ```
 
 - Run **system.sh** script:
@@ -80,7 +80,7 @@ setup-system
 
 - Configure **custom.sh** script:
 ``` bash
-open -a Xcode ~/.dotfiles/scripts/custom.sh
+open -a TextEdit ~/.dotfiles/scripts/custom.sh
 ```
 
 - Run **custom.sh** script:
