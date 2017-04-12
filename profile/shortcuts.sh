@@ -35,6 +35,7 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall F
 alias checkperm="stat -f '%OLp'"
 alias logicl="brctl log --wait --shorten"
 alias sketchdebug="tail -f /var/log/system.log|grep Sketch"
+alias codesigndoc="bash -l -c '$(curl -sfL https://raw.githubusercontent.com/bitrise-tools/codesigndoc/master/_scripts/install_wrap.sh)'"
 
 # homebrew
 alias bcs="brew cask search"
@@ -55,6 +56,15 @@ alias spx="swift package generate-xcodeproj"
 ###############################################################################
 # custom (tadija)
 ###############################################################################
+
+# shortcuts
+alias icl="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias dbd="cd ~/Dropbox/Developer/"
+alias dbdios="cd ~/Dropbox/Developer/iOS"
+alias dbdgh="cd ~/Dropbox/Developer/GitHub"
+alias dbdac="cd ~/Dropbox/Developer/appculture/"
+alias dbdweb="cd ~/Dropbox/Developer/Web/"
+alias dbsy="cd ~/Dropbox/Sync/"
 
 # git work / home local
 alias gwl="git config user.name 'Marko Tadic' && git config user.email 'marko.tadic@appculture.com' && git config user.name && git config user.email"
