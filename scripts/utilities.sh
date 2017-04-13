@@ -30,6 +30,9 @@ source $DOT_FILES/scripts/homebrew.sh
 echo ""
 echo -e "Installing utilities... \n"
 
+# install cask
+brew tap caskroom/cask
+
 # install binaries
 brew install ${utilities[@]}
 

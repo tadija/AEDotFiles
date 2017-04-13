@@ -38,25 +38,38 @@ app_directory_path="/Applications"
 ###############################################################################
 
 utilities=(
-  # brew-cask is required for installing apps later
   ack
   bash-completion
-  caskroom/cask/brew-cask
   carthage
   cocoapods
-  fastlane
   graphicsmagick
   heroku
   hub
-  mas
+  mas # required for installing app store apps
   mysql
   kylef/formulae/swiftenv
   trash
   tree
+  vapor/tap/vapor
 )
 
 ###############################################################################
-# Apps to install
+# App Store Apps to install
+###############################################################################
+
+appIDs=(
+  412448059 # forklift
+  430255202 # mactracker
+  441258766 # magnet
+  928871589 # noizio
+  1179623856 # pastebot
+  803453959 # slack
+  747648890 # telegram
+  497799835 # xcode
+)
+
+###############################################################################
+# Apps to install (outside App Store)
 ###############################################################################
 
 apps=(
@@ -65,10 +78,9 @@ apps=(
   calibre
   charles
   dropbox
+  fastlane
   flash-player
-  flux
   java
-  kodi
   macdown
   paw
   recordit
@@ -88,22 +100,6 @@ apps=(
   vox
   wwdc
   xscope
-)
-
-###############################################################################
-# App Store Apps to install (TODO: automate with mas)
-###############################################################################
-
-apps=(
-  forklift
-  mactracker
-  magnet
-  noizio
-  pastebot
-  skitch
-  slack
-  telegram-desktop
-  xcode
 )
 
 ###############################################################################

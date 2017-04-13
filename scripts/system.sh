@@ -37,18 +37,6 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 60
 
 ###############################################################################
-# Keyboard
-###############################################################################
-
-echo ""
-echo "Enabling full keyboard access for all controls (e.g. enable Tab in modal dialogs)"
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-
-echo ""
-echo "Disabling auto-correct"
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-
-###############################################################################
 # Finder
 ###############################################################################
 
@@ -145,7 +133,7 @@ echo -e "${red}Don't forget manual settings..."
 # use F keys as standard function keys
 # add serbian latin input source
 # turn on previous input source keyboard shortcut to ctrl+space
-# add shortcut for service / new terminal at folder cmd+alt+b
+# add shortcut for service / new terminal at folder cmd+alt+§
 
 ## mouse
 # secondary click

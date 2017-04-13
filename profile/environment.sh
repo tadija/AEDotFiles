@@ -12,6 +12,6 @@ if test $(which swiftenv); then
 fi
 
 # fastlane
-if test $(which swiftenv); then
+if test $(which fastlane); then
   export PATH="$HOME/.fastlane/bin:$PATH"
 fi

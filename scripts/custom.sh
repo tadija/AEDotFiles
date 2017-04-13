@@ -25,54 +25,17 @@
 #
 
 ###############################################################################
-# Configure .gitconfig
-###############################################################################
-
-echo ""
-echo "Copy and set .gitconfig"
-if [ -f ~/.gitconfig ]; then
-mv ~/.gitconfig ~/.gitconfig.backup
-fi
-cp $DOT_FILES/config/.gitconfig ~/.gitconfig
-gitwho
-
-###############################################################################
-# Install Vapor
-###############################################################################
-
-echo ""
-echo "Installing Vapor..."
-curl -sL toolbox.vapor.sh | bash
-
-###############################################################################
-# End
-###############################################################################
-
-cd ~
-
-red='\033[0;31m'
-green='\033[0;32m'
-default='\033[0m'
-
-echo ""
-echo -e "${red}REMINDER:"
-echo -e "${red}Don't forget manual settings..."
-
-echo ""
-echo -e "${green}Done!"
-echo ""
-
-###############################################################################
 # Manual Configuration and Installations
 ###############################################################################
 
-# Sync Dropbox
+# iCloud
+# ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/iCloud
 
 ### Xcode
 
 ## Symlink
 # rm -rf ~/Library/Developer/Xcode/UserData/
-# ln -s ~/Dropbox/Sync/Xcode/UserData ~/Library/Developer/Xcode/UserData
+# ln -s ~/iCloud/Documents/Sync/Xcode/UserData ~/Library/Developer/Xcode/UserData
 
 ## Accounts
 # setup accounts, profiles and certificates
@@ -90,20 +53,28 @@ echo ""
 # code folding ribbon
 # page guide at column: 120
 
+### Sketch
+
+## Symlink
+# rm -rf ~/Library/Application\ Support/com.bohemiancoding.sketch3
+# ln -s ~/iCloud/Documents/Sync/Sketch/com.bohemiancoding.sketch3 ~/Library/Application\ Support/com.bohemiancoding.sketch3
+
 ### Sublime
 
 # package manager [https://packagecontrol.io/installation]
-# font SF Mono 14
+# "font_face": "Hack"
+# install Tomorrow Night Italics Color Scheme
 # material theme [https://github.com/equinusocio/material-theme]
 # http://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/
 
 ## Terminal
-# Font SF Mono 12
+# Font: SF Mono Regular 13
+# Window Size: 140 / 36
 
 ### System
 
 ## Configure SSH Keys
-# cp -rf ~/Dropbox/Sync/.ssh ~/.ssh
+# cp -rf ~/iCloud/Documents/Sync/.ssh ~/.ssh
 # chmod 400 id_rsa.*
 # ssh-add id_rsa.*
 
@@ -124,3 +95,4 @@ echo ""
 ## Widgets
 # Currency Converter Widget [https://www.apple.com/downloads/dashboard/calculate_convert/currencyconverter_palplesoftware.html]
 # iStat Widget [http://mac.softpedia.com/get/Dashboard-Widgets/Status-Info/iStat-pro.shtml]
+# echoes [http://www.echoes.gr] (open in dashboard)

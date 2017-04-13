@@ -13,6 +13,7 @@ alias setup-custom=". $DOT_FILES/scripts/custom.sh"
 # shortcuts
 alias ..="cd .."
 alias rmd="rm -rf"
+alias reload="source ~/.bash_profile"
 function cdl { cd $1; ls; }
 
 # git general
@@ -58,13 +59,8 @@ alias spx="swift package generate-xcodeproj"
 ###############################################################################
 
 # shortcuts
-alias icl="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias dbd="cd ~/Dropbox/Developer/"
-alias dbdios="cd ~/Dropbox/Developer/iOS"
-alias dbdgh="cd ~/Dropbox/Developer/GitHub"
-alias dbdac="cd ~/Dropbox/Developer/appculture/"
-alias dbdweb="cd ~/Dropbox/Developer/Web/"
-alias dbsy="cd ~/Dropbox/Sync/"
+shopt -s cdable_vars
+export cloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
 # git work / home local
 alias gwl="git config user.name 'Marko Tadic' && git config user.email 'marko.tadic@appculture.com' && git config user.name && git config user.email"

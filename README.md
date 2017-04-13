@@ -55,7 +55,17 @@ setup-apps
 
 - Configure **.gitconfig** file:
 ``` bash
+# edit gitconfig file
 open -a TextEdit ~/.dotfiles/config/.gitconfig
+
+# move it to the right place
+if [ -f ~/.gitconfig ]; then
+mv ~/.gitconfig ~/.gitconfig.backup
+fi
+cp $DOT_FILES/config/.gitconfig ~/.gitconfig
+
+# check if everything is ok
+gitwho
 ```
 
 - Configure **.gitignore** file:
@@ -76,16 +86,6 @@ open -a TextEdit ~/.dotfiles/scripts/system.sh
 - Run **system.sh** script:
 ``` bash
 setup-system
-```
-
-- Configure **custom.sh** script:
-``` bash
-open -a TextEdit ~/.dotfiles/scripts/custom.sh
-```
-
-- Run **custom.sh** script:
-``` bash
-setup-custom
 ```
 
 `done for fun`
