@@ -7,7 +7,11 @@ fi
 
 # Swiftenv
 if test $(which swiftenv); then
-  export SWIFTENV_ROOT="$HOME/.swiftenv"
-  export PATH="$SWIFTENV_ROOT/bin:$PATH"
+  export PATH="$HOME/.swiftenv/bin:$PATH"
   eval "$(swiftenv init -)"
+fi
+
+# fastlane
+if test $(which swiftenv); then
+  export PATH="$HOME/.fastlane/bin:$PATH"
 fi

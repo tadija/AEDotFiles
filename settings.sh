@@ -44,6 +44,7 @@ utilities=(
   caskroom/cask/brew-cask
   carthage
   cocoapods
+  fastlane
   graphicsmagick
   heroku
   hub
