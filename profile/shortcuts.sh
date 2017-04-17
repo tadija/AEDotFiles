@@ -58,9 +58,11 @@ alias spx="swift package generate-xcodeproj"
 # custom (tadija)
 ###############################################################################
 
-# shortcuts
-shopt -s cdable_vars
-export cloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+# directory navigation shortcuts
+icldocs=~/iCloud/Documents
+icldev=$icldocs/Developer
+iclgh=$icldev/GitHub
+CDPATH=.:$icldocs:$icldev:$icldev/appculture:$icldev/AppStore:$iclgh:$iclgh/\#minimal:$iclgh/\#research:$icldev/Lab
 
 # git work / home local
 alias gwl="git config user.name 'Marko Tadic' && git config user.email 'marko.tadic@appculture.com' && git config user.name && git config user.email"
