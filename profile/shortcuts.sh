@@ -37,6 +37,8 @@ alias checkperm="stat -f '%OLp'"
 alias logicl="brctl log --wait --shorten"
 alias sketchdebug="tail -f /var/log/system.log|grep Sketch"
 alias codesigndoc="bash -l -c '$(curl -sfL https://raw.githubusercontent.com/bitrise-tools/codesigndoc/master/_scripts/install_wrap.sh)'"
+alias off="pmset sleepnow"
+alias update="brew update && brew upgrade && brew cleanup && mas upgrade"
 
 # homebrew
 alias bcs="brew cask search"
