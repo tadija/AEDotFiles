@@ -96,6 +96,7 @@ apps=(
   torbrowser
   transmission
   tunnelbear
+  vanilla
   vlc
   vox
   wwdc
