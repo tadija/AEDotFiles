@@ -26,9 +26,14 @@ alias gitsubmodulespull="git submodule foreach git pull origin master"
 alias gitlocalizablestrings="echo \"*.strings diff=localizablestrings\" > .gitattributes"
 alias gitstate="git remote update && git status -uno"
 alias gitcleanup="git reflog expire --all --expire=now && git gc --prune=now --aggressive"
-alias gitss="git stash save \"`date \"+%Y%m%d-%H%M%S\"`\""
+alias gitss="gitStashWithTimestamp"
 alias gitsa="git stash apply"
 alias gitssa="gitss && gitsa"
+
+gitStashWithTimestamp() {
+  ts=$(date "+%Y%m%d-%H%M%S")
+  git stash save $ts
+}
 
 # show / hide hidden files in finder
 alias show="defaults write com.apple.finder AppleShowAllFiles true && killall Finder"
