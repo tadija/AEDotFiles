@@ -39,9 +39,13 @@ gitStashWithTimestamp() {
 alias show="defaults write com.apple.finder AppleShowAllFiles true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall Finder"
 
+# icloud
+alias icloudlog="brctl log --wait --shorten"
+alias icloudoff="sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall on && /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off"
+alias icloudon="sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall off && /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned on"
+
 # random
 alias checkperm="stat -f '%OLp'"
-alias logicl="brctl log --wait --shorten"
 alias sketchdebug="tail -f /var/log/system.log|grep Sketch"
 alias codesigndoc="bash -l -c '$(curl -sfL https://raw.githubusercontent.com/bitrise-tools/codesigndoc/master/_scripts/install_wrap.sh)'"
 alias off="pmset sleepnow"
