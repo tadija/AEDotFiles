@@ -45,6 +45,7 @@ alias icloudoff="sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblock
 alias icloudon="sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall off && /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned on"
 
 # random
+alias sshadd="cd ~/.ssh && ssh-add -K tadija_rsa && ssh-add -K appculture_rsa && cd -"
 alias checkperm="stat -f '%OLp'"
 alias sketchdebug="tail -f /var/log/system.log|grep Sketch"
 alias codesigndoc="bash -l -c '$(curl -sfL https://raw.githubusercontent.com/bitrise-tools/codesigndoc/master/_scripts/install_wrap.sh)'"
