@@ -68,15 +68,15 @@
 # http://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/
 
 ## Terminal
-# Font: SF Mono Regular 13
+# Font: SF Mono Regular 14
 # Window Size: 140 / 36
 
 ### System
 
 ## Configure SSH Keys
 # cp -rf ~/iCloud/Documents/Sync/.ssh ~/.ssh
-# chmod 400 id_rsa.*
-# ssh-add id_rsa.*
+# chmod 400 (each private key)
+# ssh-add -K (each private key)
 
 ### Safari
 
@@ -88,7 +88,6 @@
 # show full website address
 
 ## Extensions
-# HoverSee [http://www.macupdate.com/app/mac/34951/hoversee-safari-extension]
 # Close Left/Right Tabs [http://safariextensions.com/en-US/safari/addon/124]
 # Refind [https://refind.com]
 

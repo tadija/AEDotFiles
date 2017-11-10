@@ -61,7 +61,6 @@ appIDs=(
   412448059 # forklift
   430255202 # mactracker
   441258766 # magnet
-  928871589 # noizio
   1179623856 # pastebot
   803453959 # slack
   747648890 # telegram
@@ -75,30 +74,29 @@ appIDs=(
 apps=(
   apptivate
   appzapper
+  atom
   calibre
   charles
-  dropbox
   fastlane
+  firefox
   flash-player
+  google-chrome
   java
   macdown
+  opensim
   paw
   recordit
+  reflector
   sequel-pro
-  simpholders
   sip
   sketch
-  sketch-toolbox
   skype
   sourcetree
-  sqlitebrowser
+  db-browser-for-sqlite
   sublime-text
   torbrowser
   transmission
-  tunnelbear
-  vanilla
   vlc
-  vox
   wwdc
   xscope
 )

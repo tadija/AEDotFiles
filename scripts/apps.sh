@@ -28,10 +28,6 @@ source $DOT_FILES/settings.sh
 source $DOT_FILES/scripts/homebrew.sh
 
 echo ""
-echo "Installing apps from App Store..."
-mas install ${appIDs[*]}
-
-echo ""
 echo "Installing apps outside App Store..."
 brew cask install --appdir=$app_directory_path ${apps[@]}
 
@@ -48,3 +44,9 @@ echo -e "Homebrew cleanup...\n"
 
 # cleanup
 brew cleanup
+
+echo ""
+echo "Installing apps from App Store..."
+mas install ${appIDs[*]}
+
+sudo xcodebuild -license accept
