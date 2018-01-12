@@ -41,6 +41,7 @@ utilities=(
   ack
   bash-completion
   carthage
+  cloc
   cocoapods
   graphicsmagick
   heroku
