@@ -43,6 +43,7 @@ utilities=(
   carthage
   cloc
   cocoapods
+  imagemagick
   graphicsmagick
   heroku
   hub
