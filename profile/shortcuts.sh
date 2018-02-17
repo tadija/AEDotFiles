@@ -53,6 +53,8 @@ alias codesigndoc="bash -l -c '$(curl -sfL https://raw.githubusercontent.com/bit
 alias off="pmset sleepnow"
 alias update="brew update && brew upgrade && brew cleanup && mas upgrade"
 alias xcopen="xcfile() { local workspace=$(find *.xcworkspace 2>/dev/null | head -1); local project=$(find *.xcodeproj 2>/dev/null | head -1); \${workspace:-\${project}} ; }; open -a Xcode \"${xcfile}\""
+alias alphacheck="sips -g all"
+alias alphadisable="mogrify -alpha off"
 
 # homebrew
 alias bcs="brew cask search"
