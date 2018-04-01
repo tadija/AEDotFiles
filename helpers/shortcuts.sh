@@ -7,12 +7,10 @@
 ###############################################################################
 
 # dotfiles setup
-alias setup-terminal=". $DOT_FILES/scripts/terminal.sh"
-alias setup-homebrew=". $DOT_FILES/scripts/homebrew.sh"
-alias setup-utilities=". $DOT_FILES/scripts/utilities.sh"
-alias setup-apps=". $DOT_FILES/scripts/apps.sh"
-alias setup-system=". $DOT_FILES/scripts/system.sh"
-alias setup-custom=". $DOT_FILES/scripts/custom.sh"
+alias setup-terminal=". $DOT_FILES/setup/terminal.sh"
+alias setup-homebrew=". $DOT_FILES/setup/homebrew.sh"
+alias setup-installations=". $DOT_FILES/setup/installations.sh"
+alias setup-defaults=". $DOT_FILES/setup/defaults.sh"
 
 # shortcuts
 alias ..="cd .."
