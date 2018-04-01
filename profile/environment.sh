@@ -1,3 +1,7 @@
+# https://github.com/tadija/AEDotFiles
+# Copyright (c) Marko Tadić 2015-2018
+# Licensed under the MIT license. See LICENSE file.
+
 # bash completion
 if test $(which brew); then
   if [ -f $(brew --prefix)/etc/bash_completion ]; then
