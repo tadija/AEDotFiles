@@ -44,6 +44,7 @@ utilities=(
   cloc
   cocoapods
   imagemagick
+  git
   graphicsmagick
   heroku
   hub
