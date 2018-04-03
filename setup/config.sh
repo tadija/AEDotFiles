@@ -2,6 +2,12 @@
 # Copyright (c) Marko Tadić 2015-2018
 # Licensed under the MIT license. See LICENSE file.
 
+export GIT_HOME_NAME="Marko Tadic"
+export GIT_HOME_EMAIL="tadija@me.com"
+
+export GIT_WORK_NAME="Marko Tadic"
+export GIT_WORK_EMAIL="marko.tadic@appculture.com"
+
 apps_installation_path="/Applications"
 
 # Command Line Tools
@@ -13,12 +19,14 @@ cli=(
   cocoapods
   imagemagick
   git
+  git-flow
   graphicsmagick
   heroku
   hub
   mas # required for installing app store apps
   mysql
   kylef/formulae/swiftenv
+  speedtest-cli
   trash
   tree
   vapor/tap/vapor

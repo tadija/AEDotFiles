@@ -25,7 +25,6 @@
 
 # [Terminal]
 # Font: SF Mono Regular 14
-# Window Size: 140 / 36
 
 # [SSH]
 # cp -rf ~/iCloud/Documents/Sync/.ssh ~/.ssh

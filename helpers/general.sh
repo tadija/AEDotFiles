@@ -7,7 +7,7 @@ alias update="brew update && brew upgrade && brew cask upgrade && brew cleanup &
 
 alias ..="cd .."
 alias ls='ls -GFh'
-alias ll="ls -ll"
+alias ll="ls -lo"
 alias la="ll -a"
 alias rmd="rm -rf"
 
@@ -15,3 +15,13 @@ alias show="defaults write com.apple.finder AppleShowAllFiles true && killall Fi
 alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall Finder"
 
 alias off="pmset sleepnow"
+
+# https://superuser.com/a/729207/776109
+function cd() {
+    if [ -z "$*" ]; then
+        destination=~
+    else
+        destination=$*
+    fi
+    builtin cd "${destination}" >/dev/null && ll
+}
