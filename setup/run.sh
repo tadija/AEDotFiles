@@ -30,7 +30,7 @@ echo "------------------------------------------------"
 cat ~/.bash_profile
 echo "------------------------------------------------"
 
-echo -e "\n> You can now begin with the setup by running these commands:\n"
+echo -e "\n> You can now continue the setup by running these commands:\n"
 echo "setup-terminal"
 echo "setup-homebrew"
 echo "setup-installations"
