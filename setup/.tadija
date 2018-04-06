@@ -6,6 +6,9 @@
 # Manual Config Reminder
 ###############################################################################
 
+[Dot Files]
+cd & ln -s ~/Documents/Developer/GitHub/AEDotFiles .dotfiles
+
 # [iCloud]
 # ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/iCloud
 
