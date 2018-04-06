@@ -1,0 +1,44 @@
+# https://github.com/tadija/AEDotFiles
+# Copyright (c) Marko Tadić 2015-2018
+# Licensed under the MIT license. See LICENSE file.
+
+###############################################################################
+# Manual Config Reminder
+###############################################################################
+
+[Dot Files]
+cd & ln -s ~/Documents/Developer/GitHub/AEDotFiles .dotfiles
+
+# [iCloud]
+# ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/iCloud
+
+# [Xcode]
+# rm -rf ~/Library/Developer/Xcode/UserData/
+# ln -s ~/iCloud/Documents/Sync/Xcode/UserData ~/Library/Developer/Xcode/UserData
+# Tomorrow Night Eighties [https://github.com/chriskempson/tomorrow-theme]
+
+# [Sketch]
+# rm -rf ~/Library/Application\ Support/com.bohemiancoding.sketch3
+# ln -s ~/iCloud/Documents/Sync/Sketch/com.bohemiancoding.sketch3 ~/Library/Application\ Support/com.bohemiancoding.sketch3
+
+# [Sublime]
+# package manager [https://packagecontrol.io/installation]
+# http://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/
+# "font_face": "Hack"
+
+# [Terminal]
+# Font: SF Mono Regular 14
+
+# [SSH]
+# cp -rf ~/iCloud/Documents/Sync/.ssh ~/.ssh
+# chmod 400 (each private key)
+# ssh-add -K (each private key)
+
+# [Safari]
+# Close Left/Right Tabs [http://safariextensions.com/en-US/safari/addon/124]
+# Refind [https://refind.com]
+
+# [Widgets]
+# Currency Converter Widget [https://www.apple.com/downloads/dashboard/calculate_convert/currencyconverter_palplesoftware.html]
+# iStat Widget [http://mac.softpedia.com/get/Dashboard-Widgets/Status-Info/iStat-pro.shtml]
+# echoes [http://www.echoes.gr] (open in dashboard)

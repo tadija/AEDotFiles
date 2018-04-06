@@ -1,91 +1,56 @@
 # AEDotFiles
-**From vanilla to personalized OSX in less then 30 minutes**
+**From vanilla to personalized macOS in less then 30 minutes**
 
-> I'm done with manually configuring everything after clean installation of OSX. If this can help you too, then great, feel free to customize it and use for your own needs.
+> I'm done with manually configuring everything after clean installation of macOS. If this can help you too, then great, feel free to customize it and use for your own needs.
 
-Open Terminal and follow instructions:
+Start Terminal app and follow instructions:
 
-## Step 0 [get ready]
+## Step 1 [get ready]
 
-- Install Xcode Command Line Tools:
+- Install [Xcode Command Line Tools](https://developer.apple.com/download/more/)
 ``` bash
 xcode-select --install
 ```
 
-## Step 1 [set]
-
-- Clone this repo:  
+- Clone this repo
 ``` bash
-git clone https://github.com/tadija/AEDotFiles.git ~/.dotfiles && cd ~/.dotfiles
+git clone https://github.com/tadija/AEDotFiles.git ~/.dotfiles
 ```
 
-- Run initial script:
+## Step 2 [set]
+
+- Run [initial setup](setup/run.sh)
 ``` bash
-. ae.sh
+. ~/.dotfiles/setup/run.sh
 ```
 
-- Install [Piperita theme](https://github.com/jacobtomlinson/terminal-piperita) for Terminal:
+- Configure [AE theme](setup/AE.terminal) for Terminal
 ``` bash
 setup-terminal
 ```
 
-- Install / Update / Upgrade [Homebrew](http://brew.sh):
+- Install / Update / Upgrade [Homebrew](http://brew.sh)
 ``` bash
 setup-homebrew
 ```
 
-## Step 2 [go]
+## Step 3 [go]
 
-- Configure **settings.sh** file (what's gonna be installed):
+- Configure [stuff](setup/config.sh)
 ``` bash
-open -a TextEdit ~/.dotfiles/settings.sh
+open -a TextEdit ~/.dotfiles/setup/config.sh
 ```
 
-- Install all utilities from `settings.sh`:
+- Install [everything](setup/installations.sh)
 ``` bash
-setup-utilities
+setup-installations
 ```
 
-- Install all apps, quicklook plugins and fonts from `settings.sh`:
+- Update [few system preferences](setup/defaults.sh)
 ``` bash
-setup-apps
+setup-defaults
 ```
 
-## Step 3 [custom / optional]
-
-- Configure **.gitconfig** file:
-``` bash
-# edit gitconfig file
-open -a TextEdit ~/.dotfiles/config/.gitconfig
-
-# move it to the right place
-if [ -f ~/.gitconfig ]; then
-mv ~/.gitconfig ~/.gitconfig.backup
-fi
-cp $DOT_FILES/config/.gitconfig ~/.gitconfig
-
-# check if everything is ok
-gitwho
-```
-
-- Configure **.gitignore** file:
-``` bash
-open -a TextEdit ~/.dotfiles/config/.gitignore
-```
-
-- Configure **shortcuts.sh** file:
-``` bash
-open -a TextEdit ~/.dotfiles/profile/shortcuts.sh
-```
-
-- Configure **system.sh** script (system settings the way I like):
-``` bash
-open -a TextEdit ~/.dotfiles/scripts/system.sh
-```
-
-- Run **system.sh** script:
-``` bash
-setup-system
-```
+- Edit [.bash_profile](.bash_profile) until you're satisfied
 
 `done for fun`

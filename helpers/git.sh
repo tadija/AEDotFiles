@@ -1,0 +1,31 @@
+# https://github.com/tadija/AEDotFiles
+# Copyright (c) Marko Tadić 2015-2018
+# Licensed under the MIT license. See LICENSE file.
+
+alias gitwho="echo 'Git user:' && git config user.name && git config user.email"
+alias gits="git status"
+alias gitstate="git remote update && git status -uno"
+alias gitlog="git log --pretty=format:'%h %s' --graph"
+alias gitopen="open -a SourceTree ."
+alias gitsubmodulesupdate="git submodule update --init --recursive"
+alias gitsubmodulespull="git submodule foreach git pull origin master"
+alias gitcm="git add . && git gui citool"
+alias gitam="git add . && git gui citool --amend"
+alias gitss="gitStashWithTimestamp"
+alias gitsa="git stash apply"
+alias gitssa="gitss && gitsa"
+alias gitundo="git reset --soft HEAD^"
+alias gitrh="git reset --hard"
+alias gitlocalizablestrings="echo \"*.strings diff=localizablestrings\" > .gitattributes"
+alias gitcleanup="git reflog expire --all --expire=now && git gc --prune=now --aggressive"
+
+gitStashWithTimestamp() {
+  ts=$(date "+%Y%m%d-%H%M%S")
+  git stash save $ts
+}
+
+alias githomelocal="git config user.name '${GIT_HOME_NAME}' && git config user.email '${GIT_HOME_EMAIL}' && git config user.name && git config user.email"
+alias githomeglobal="git config --global user.name '${GIT_HOME_NAME}' && git config --global user.email '${GIT_HOME_EMAIL}' && git config --global user.name && git config --global user.email"
+
+alias gitworklocal="git config user.name '${GIT_WORK_NAME}' && git config user.email '${GIT_WORK_EMAIL}' && git config user.name && git config user.email"
+alias gitworkglobal="git config --global user.name '${GIT_WORK_NAME}' && git config --global user.email '${GIT_WORK_EMAIL}' && git config --global user.name && git config --global user.email"

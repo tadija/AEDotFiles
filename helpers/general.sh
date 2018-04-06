@@ -1,0 +1,27 @@
+# https://github.com/tadija/AEDotFiles
+# Copyright (c) Marko Tadić 2015-2018
+# Licensed under the MIT license. See LICENSE file.
+
+alias reload="source ~/.bash_profile"
+alias update="brew update && brew upgrade && brew cask upgrade && brew cleanup && mas upgrade"
+
+alias ..="cd .."
+alias ls='ls -GFh'
+alias ll="ls -lo"
+alias la="ll -a"
+alias rmd="rm -rf"
+
+alias show="defaults write com.apple.finder AppleShowAllFiles true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall Finder"
+
+alias off="pmset sleepnow"
+
+# https://superuser.com/a/729207/776109
+function cd() {
+    if [ -z "$*" ]; then
+        destination=~
+    else
+        destination=$*
+    fi
+    builtin cd "${destination}" >/dev/null && ll
+}
