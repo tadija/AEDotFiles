@@ -60,4 +60,4 @@ function parse_git_dirty {
 }
 
 # http://ezprompt.net
-export PS1="${CLR_BLACK}\t |${CLR_RESET} ${CLR_USER}\u@\h:\`exit_code\`${CLR_RESET} ${CLR_BLUE}\w${CLR_RESET} ${CLR_YELLOW}\`parse_git_branch\`${CLR_RESET}\n\$ "
+export PS1="${CLR_CYAN}\t |${CLR_RESET} ${CLR_USER}\u@\h:\`exit_code\`${CLR_RESET} ${CLR_BLUE}\w${CLR_RESET} ${CLR_YELLOW}\`parse_git_branch\`${CLR_RESET}\n\$ "
