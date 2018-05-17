@@ -21,6 +21,10 @@ cd & ln -s ~/Documents/Developer/GitHub/AEDotFiles .dotfiles
 # rm -rf ~/Library/Application\ Support/com.bohemiancoding.sketch3
 # ln -s ~/iCloud/Documents/Sync/Sketch/com.bohemiancoding.sketch3 ~/Library/Application\ Support/com.bohemiancoding.sketch3
 
+# [TeaCode]
+rm -rf ~/Library/Application\ Support/com.apptorium.TeaCode-dm
+ln -s ~/iCloud/Documents/Sync/TeaCode/com.apptorium.TeaCode-dm ~/Library/Application\ Support/com.apptorium.TeaCode-dm
+
 # [Sublime]
 # package manager [https://packagecontrol.io/installation]
 # http://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/
