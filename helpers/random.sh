@@ -18,4 +18,8 @@ alias icloudlog="brctl log --wait --shorten"
 alias icloudoff="sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall on && /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off"
 alias icloudon="sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall off && /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned on"
 alias sketchdebug="tail -f /var/log/system.log|grep Sketch"
-alias editdotfiles='atom ~/.dotfiles && gitopen ~/.dotfiles'
+alias editdotfiles='cd ~/.dotfiles && atom . && gitopen'
+
+png2jpg() {
+  mogrify -resize $1 -format jpg -quality 90 *.png
+}
