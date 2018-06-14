@@ -25,6 +25,15 @@ fi
 ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
 source ~/.bash_profile
 
+# backup .lldbinit if it already exists
+if [ -f ~/.lldbinit ]; then
+mv ~/.lldbinit ~/.lldbinit.backup
+echo -e "> Your current .lldbinit is copied to .lldbinit.backup"
+fi
+
+# configure new .lldbinit
+ln -s ~/.dotfiles/.lldbinit ~/.lldbinit
+
 echo -e "\n> This is how you new .bash_profile looks: \n"
 echo "------------------------------------------------"
 cat ~/.bash_profile

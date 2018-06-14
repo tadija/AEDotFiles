@@ -22,6 +22,7 @@ alias gitlocalizablestrings="echo \"*.strings diff=localizablestrings\" > .gitat
 alias gitcleanup="git reflog expire --all --expire=now && git gc --prune=now --aggressive"
 alias gitdt="git difftool -y"
 alias gitmt="git mergetool -y"
+alias gitpf="git push --force"
 
 gitStashWithTimestamp() {
   ts=$(date "+%Y%m%d-%H%M%S")

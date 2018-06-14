@@ -27,6 +27,7 @@ cli=(
   mysql
   kylef/formulae/swiftenv
   speedtest-cli
+  swiftlint
   trash
   tree
   vapor/tap/vapor

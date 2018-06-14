@@ -1,0 +1,5 @@
+command script import ~/.dotfiles/helpers/nudge.py
+
+command alias poc expression -l objc -O --
+command alias flush expression -l objc -- (void)[CATransaction flush]
+command alias skip thread jump --by 1
