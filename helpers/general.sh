@@ -15,6 +15,7 @@ alias show="defaults write com.apple.finder AppleShowAllFiles true && killall Fi
 alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall Finder"
 
 alias off="pmset sleepnow"
+alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 
 # https://superuser.com/a/729207/776109
 function cd() {
