@@ -7,6 +7,7 @@ alias xcwhich="xcode-select --print-path"
 alias cartupdate="carthage update --platform iOS --no-use-binaries"
 alias codesigndoc="bash -l -c '$(curl -sfL https://raw.githubusercontent.com/bitrise-tools/codesigndoc/master/_scripts/install_wrap.sh)'"
 alias fl="fastlane"
+alias flx="bundle exec fastlane"
 alias alphacheck="sips -g all"
 alias alphadisable="mogrify -alpha off"
 
