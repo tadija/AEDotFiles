@@ -25,6 +25,7 @@ cli=(
   hub
   mas # required for installing app store apps
   mysql
+  rbenv
   kylef/formulae/swiftenv
   speedtest-cli
   swiftlint
