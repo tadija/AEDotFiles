@@ -15,6 +15,14 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 60
 
 ###############################################################################
+# Xcode
+###############################################################################
+
+echo ""
+echo "Enabling simulator beside Xcode in full screen mode"
+defaults write com.apple.iphonesimulator AllowFullscreenMode -bool YES
+
+###############################################################################
 # Finder
 ###############################################################################
 
