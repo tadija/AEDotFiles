@@ -1,5 +1,8 @@
 command script import ~/.dotfiles/helpers/nudge.py
 
+command alias reload command source ~/.lldbinit
 command alias poc expression -l objc -O --
+command alias recdesc expression -l objc -O -- [`self.view` recursiveDescription]
 command alias flush expression -l objc -- (void)[CATransaction flush]
 command alias skip thread jump --by 1
+command alias tl type lookup
