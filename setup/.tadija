@@ -15,7 +15,6 @@ cd & ln -s ~/Documents/Developer/GitHub/AEDotFiles .dotfiles
 # [Xcode]
 # rm -rf ~/Library/Developer/Xcode/UserData/
 # ln -s ~/iCloud/Documents/Sync/Xcode/UserData ~/Library/Developer/Xcode/UserData
-# Tomorrow Night Eighties [https://github.com/chriskempson/tomorrow-theme]
 
 # [Sketch]
 # rm -rf ~/Library/Application\ Support/com.bohemiancoding.sketch3
@@ -46,19 +45,3 @@ ln -s ~/iCloud/Documents/Sync/TeaCode/com.apptorium.TeaCode-dm ~/Library/Applica
 # Currency Converter Widget [https://www.apple.com/downloads/dashboard/calculate_convert/currencyconverter_palplesoftware.html]
 # iStat Widget [http://mac.softpedia.com/get/Dashboard-Widgets/Status-Info/iStat-pro.shtml]
 # echoes [http://www.echoes.gr] (open in dashboard)
-
-# [AE.terminal theme]
-# Background: #1F2834 Opacity: 90% Blur: 30%
-# Text: #E0E8ED
-# Bold Text: #FF0028
-# Selection: #60A0E5 Opacity: 33%
-# Cursor: #99FFFF
-# - ANSI
-# Black: #687380 Bright: #151719
-# Red: #FF6666 Bright: #FF3333
-# Green: #99FF99 Bright: #33FF00
-# Yellow: #FFFF66 Bright: #FFFF00
-# Blue: #60A0E5 Bright: #0099FF
-# Magenta: #FF99FF Bright: #FF66FF
-# Cyan: #99FFFF Bright: #00FFFF
-# White: #E0E8ED Bright: #FFFFFF
