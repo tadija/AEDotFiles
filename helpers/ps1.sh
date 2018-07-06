@@ -2,16 +2,6 @@
 # Copyright (c) Marko Tadić 2015-2018
 # Licensed under the MIT license. See LICENSE file.
 
-# get different smiley based on exit code
-function exit_code() {
-  if [ $? == 0 ]
-  then
-    echo ")"
-  else
-    echo "("
-  fi
-}
-
 # get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
@@ -60,4 +50,4 @@ function parse_git_dirty {
 }
 
 # http://ezprompt.net
-export PS1="${CLR_CYAN}\t |${CLR_RESET} ${CLR_USER}\u@\h:\`exit_code\`${CLR_RESET} ${CLR_BLUE}\w${CLR_RESET} ${CLR_YELLOW}\`parse_git_branch\`${CLR_RESET}\n\$ "
+export PS1="${CLR_MAGENTA}\t${CLR_RESET} ${CLR_BLUE}\w${CLR_RESET} ${CLR_YELLOW}\`parse_git_branch\`${CLR_RESET}\n${CLR_USER}\u@\h:${CLR_RESET}\$ "
