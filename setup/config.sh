@@ -37,12 +37,12 @@ cli=(
 
 # Homebrew Apps
 apps=(
+  alfred
   apptivate
   appzapper
   atom
   calibre
   charles
-  fastlane
   firefox
   flash-player
   google-chrome
