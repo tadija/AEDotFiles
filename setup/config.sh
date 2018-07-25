@@ -32,7 +32,6 @@ cli=(
   trash
   tree
   vapor/tap/vapor
-  xcenv
 )
 
 # Homebrew Apps

@@ -2,11 +2,6 @@
 # Copyright (c) Marko Tadić 2015-2018
 # Licensed under the MIT license. See LICENSE file.
 
-# https://github.com/xcenv/xcenv
-if test $(which xcenv); then
-  eval "$(xcenv init -)"
-fi
-
 # https://swiftenv.fuller.li
 if test $(which swiftenv); then
   eval "$(swiftenv init -)"
