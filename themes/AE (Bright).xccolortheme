@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>DVTConsoleDebuggerInputTextColor</key>
-	<string>0.898039 0.898039 0.898039 1</string>
+	<string>0.960784 0.960784 0.960784 1</string>
 	<key>DVTConsoleDebuggerInputTextFont</key>
 	<string>SFMono-Bold - 12.0</string>
 	<key>DVTConsoleDebuggerOutputTextColor</key>
@@ -70,20 +70,6 @@
 	<string>0.755591 0.755568 0.755581 1</string>
 	<key>DVTMarkupTextStrongFont</key>
 	<string>.AppleSystemUIFontBold - 11.0</string>
-	<key>DVTScrollbarMarkerAnalyzerColor</key>
-	<string>0.403922 0.372549 1 1</string>
-	<key>DVTScrollbarMarkerBreakpointColor</key>
-	<string>0.290196 0.290196 0.968627 1</string>
-	<key>DVTScrollbarMarkerDiffColor</key>
-	<string>0.556863 0.556863 0.556863 1</string>
-	<key>DVTScrollbarMarkerDiffConflictColor</key>
-	<string>0.968627 0.290196 0.290196 1</string>
-	<key>DVTScrollbarMarkerErrorColor</key>
-	<string>0.968627 0.290196 0.290196 1</string>
-	<key>DVTScrollbarMarkerRuntimeIssueColor</key>
-	<string>0.643137 0.509804 1 1</string>
-	<key>DVTScrollbarMarkerWarningColor</key>
-	<string>0.937255 0.717647 0.34902 1</string>
 	<key>DVTSourceTextBackground</key>
 	<string>0.0980392 0.0980392 0.0980392 1</string>
 	<key>DVTSourceTextBlockDimBackgroundColor</key>

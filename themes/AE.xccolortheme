@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>DVTConsoleDebuggerInputTextColor</key>
-	<string>0.803922 0.803922 0.803922 1</string>
+	<string>0.960784 0.960784 0.960784 1</string>
 	<key>DVTConsoleDebuggerInputTextFont</key>
 	<string>SFMono-Bold - 12.0</string>
 	<key>DVTConsoleDebuggerOutputTextColor</key>
@@ -15,11 +15,11 @@
 	<key>DVTConsoleDebuggerPromptTextFont</key>
 	<string>SFMono-Bold - 12.0</string>
 	<key>DVTConsoleExectuableInputTextColor</key>
-	<string>0.803922 0.803922 0.803922 1</string>
+	<string>0.827451 0.827451 0.827451 1</string>
 	<key>DVTConsoleExectuableInputTextFont</key>
 	<string>SFMono-Bold - 12.0</string>
 	<key>DVTConsoleExectuableOutputTextColor</key>
-	<string>0.803922 0.803922 0.803922 1</string>
+	<string>0.827451 0.827451 0.827451 1</string>
 	<key>DVTConsoleExectuableOutputTextFont</key>
 	<string>SFMono-Regular - 12.0</string>
 	<key>DVTConsoleTextBackgroundColor</key>
@@ -70,20 +70,6 @@
 	<string>0.755591 0.755568 0.755581 1</string>
 	<key>DVTMarkupTextStrongFont</key>
 	<string>.AppleSystemUIFontBold - 11.0</string>
-	<key>DVTScrollbarMarkerAnalyzerColor</key>
-	<string>0.403922 0.372549 1 1</string>
-	<key>DVTScrollbarMarkerBreakpointColor</key>
-	<string>0.290196 0.290196 0.968627 1</string>
-	<key>DVTScrollbarMarkerDiffColor</key>
-	<string>0.556863 0.556863 0.556863 1</string>
-	<key>DVTScrollbarMarkerDiffConflictColor</key>
-	<string>0.968627 0.290196 0.290196 1</string>
-	<key>DVTScrollbarMarkerErrorColor</key>
-	<string>0.968627 0.290196 0.290196 1</string>
-	<key>DVTScrollbarMarkerRuntimeIssueColor</key>
-	<string>0.643137 0.509804 1 1</string>
-	<key>DVTScrollbarMarkerWarningColor</key>
-	<string>0.937255 0.717647 0.34902 1</string>
 	<key>DVTSourceTextBackground</key>
 	<string>0.129412 0.129412 0.129412 1</string>
 	<key>DVTSourceTextBlockDimBackgroundColor</key>
@@ -137,7 +123,7 @@
 		<key>xcode.syntax.number</key>
 		<string>0.866614 0.396109 0.210844 1</string>
 		<key>xcode.syntax.plain</key>
-		<string>0.8 0.8 0.8 1</string>
+		<string>0.827451 0.827451 0.827451 1</string>
 		<key>xcode.syntax.preprocessor</key>
 		<string>0.898039 0.541176 0.180392 1</string>
 		<key>xcode.syntax.string</key>
