@@ -44,6 +44,7 @@ apps=(
   charles
   firefox
   flash-player
+  fork
   google-chrome
   java
   macdown
