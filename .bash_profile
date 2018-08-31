@@ -2,8 +2,8 @@ export DOT_FILES=~/.dotfiles
 
 source $DOT_FILES/setup/config.sh
 
+source $DOT_FILES/helpers/init.sh
 source $DOT_FILES/helpers/paths.sh
-source $DOT_FILES/helpers/cdpath.sh
 source $DOT_FILES/helpers/colors.sh
 source $DOT_FILES/helpers/ps1.sh
 
