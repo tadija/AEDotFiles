@@ -13,6 +13,7 @@ apps_installation_path="/Applications"
 # Command Line Tools
 cli=(
   ack
+  bat # https://github.com/sharkdp/bat
   bash-completion
   carthage
   cloc

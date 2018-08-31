@@ -10,6 +10,7 @@ alias ls='ls -GFh'
 alias ll="ls -lo"
 alias la="ll -a"
 alias rmd="rm -rf"
+alias cat="bat"
 
 alias show="defaults write com.apple.finder AppleShowAllFiles true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall Finder"
