@@ -18,6 +18,7 @@ cli=(
   carthage
   cloc
   cocoapods
+  fzf # https://github.com/junegunn/fzf
   imagemagick
   git
   git-flow
