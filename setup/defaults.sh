@@ -22,6 +22,10 @@ echo ""
 echo "Enabling simulator beside Xcode in full screen mode"
 defaults write com.apple.iphonesimulator AllowFullscreenMode -bool YES
 
+echo ""
+echo "Show number of remaining files when indexing a project"
+defaults write com.apple.dtXcode IDEIndexerActivityShowNumericProgress -bool true
+
 ###############################################################################
 # Finder
 ###############################################################################

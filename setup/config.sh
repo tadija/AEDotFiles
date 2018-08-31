@@ -37,7 +37,6 @@ cli=(
 # Homebrew Apps
 apps=(
   alfred
-  apptivate
   appzapper
   atom
   calibre
@@ -56,7 +55,6 @@ apps=(
   sip
   sketch
   skype
-  sourcetree
   db-browser-for-sqlite
   sublime-text
   torbrowser
@@ -71,7 +69,6 @@ appIDs=(
   412448059 # forklift
   430255202 # mactracker
   441258766 # magnet
-  1179623856 # pastebot
   803453959 # slack
   747648890 # telegram
   497799835 # xcode
