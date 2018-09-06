@@ -32,6 +32,7 @@ cli=(
   kylef/formulae/swiftenv
   speedtest-cli
   swiftlint
+  tldr
   trash
   tree
   vapor/tap/vapor
