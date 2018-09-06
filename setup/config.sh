@@ -18,7 +18,8 @@ cli=(
   carthage
   cloc
   cocoapods
-  fd # https://github.com/sharkdp/fd/
+  fasd # https://github.com/clvv/fasd
+  fd # https://github.com/sharkdp/fd
   fzf # https://github.com/junegunn/fzf
   imagemagick
   git

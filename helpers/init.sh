@@ -26,3 +26,8 @@ if test $(which fzf); then
   export FZF_DEFAULT_COMMAND='fd --type file'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
+
+# https://github.com/clvv/fasd
+if test $(which fasd); then
+  eval "$(fasd --init auto)"
+fi
