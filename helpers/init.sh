@@ -23,4 +23,6 @@ if test $(which fzf); then
   [ -f ~/.fzf.bash ] && source ~/.fzf.bash
   export FZF_DEFAULT_OPTS="--bind pgup:preview-up --bind pgdn:preview-down "
   export FZF_DEFAULT_OPTS+="--bind='ctrl-o:execute(subl {})+abort'"
+  export FZF_DEFAULT_COMMAND='fd --type file'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
