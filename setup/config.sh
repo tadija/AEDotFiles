@@ -33,6 +33,7 @@ cli=(
   kylef/formulae/swiftenv
   speedtest-cli
   swiftlint
+  tig # https://github.com/jonas/tig
   tldr
   trash
   tree
