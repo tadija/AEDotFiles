@@ -29,6 +29,7 @@ cli=(
   hub
   mas # required for installing app store apps
   mysql
+  ranger # https://github.com/ranger/ranger
   rbenv
   kylef/formulae/swiftenv
   speedtest-cli

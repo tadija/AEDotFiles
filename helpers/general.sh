@@ -12,7 +12,8 @@ alias la="ll -a"
 alias rmd="rm -rf"
 alias cat="bat"
 alias preview="fzf --preview 'bat --color \"always\" {}'"
-alias help='tldr'
+alias help="tldr"
+alias rg="ranger"
 
 alias show="defaults write com.apple.finder AppleShowAllFiles true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall Finder"
