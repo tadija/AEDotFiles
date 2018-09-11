@@ -20,13 +20,3 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall F
 
 alias off="pmset sleepnow"
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
-
-# https://superuser.com/a/729207/776109
-function cd() {
-    if [ -z "$*" ]; then
-        destination=~
-    else
-        destination=$*
-    fi
-    builtin cd "${destination}" >/dev/null && ll
-}

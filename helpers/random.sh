@@ -19,7 +19,4 @@ alias icloudoff="sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblock
 alias icloudon="sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall off && /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned on"
 alias sketchdebug="tail -f /var/log/system.log|grep Sketch"
 alias editdotfiles="osascript -e 'tell application \"Terminal\" to do script \"cd ~/.dotfiles && fork\"'"
-
-png2jpg() {
-  mogrify -resize $1 -format jpg -quality 90 *.png
-}
+alias png2jpg="fd -e png -x convert {} {.}.jpg"
