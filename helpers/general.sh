@@ -10,19 +10,13 @@ alias ls='ls -GFh'
 alias ll="ls -lo"
 alias la="ll -a"
 alias rmd="rm -rf"
+alias cat="bat"
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+alias help="tldr"
+alias rg="ranger"
 
 alias show="defaults write com.apple.finder AppleShowAllFiles true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall Finder"
 
 alias off="pmset sleepnow"
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
-
-# https://superuser.com/a/729207/776109
-function cd() {
-    if [ -z "$*" ]; then
-        destination=~
-    else
-        destination=$*
-    fi
-    builtin cd "${destination}" >/dev/null && ll
-}

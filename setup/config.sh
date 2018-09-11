@@ -12,38 +12,45 @@ apps_installation_path="/Applications"
 
 # Command Line Tools
 cli=(
-  ack
-  bash-completion
-  carthage
-  cloc
-  cocoapods
-  imagemagick
-  git
-  git-flow
-  graphicsmagick
-  heroku
-  hub
-  mas # required for installing app store apps
-  mysql
-  rbenv
-  kylef/formulae/swiftenv
-  speedtest-cli
-  swiftlint
-  trash
-  tree
-  vapor/tap/vapor
+  ack # https://beyondgrep.com
+  bat # https://github.com/sharkdp/bat
+  bash-completion # https://salsa.debian.org/debian/bash-completion
+  carthage # https://github.com/Carthage/Carthage
+  cloc # https://github.com/AlDanial/cloc
+  cocoapods # https://github.com/CocoaPods/CocoaPods
+  fasd # https://github.com/clvv/fasd
+  fd # https://github.com/sharkdp/fd
+  fzf # https://github.com/junegunn/fzf
+  imagemagick # https://www.imagemagick.org
+  git # https://git-scm.com
+  git-flow # https://github.com/nvie/gitflow
+  graphicsmagick # http://www.graphicsmagick.org
+  heroku # https://cli.heroku.com
+  hub # https://hub.github.com
+  mas # https://github.com/mas-cli/mas
+  mysql # https://dev.mysql.com
+  ranger # https://github.com/ranger/ranger
+  rbenv # https://github.com/rbenv/rbenv
+  kylef/formulae/swiftenv # https://github.com/kylef/swiftenv
+  speedtest-cli # https://github.com/sivel/speedtest-cli
+  swiftlint # https://github.com/realm/SwiftLint
+  tig # https://github.com/jonas/tig
+  tldr # https://tldr.sh
+  trash # https://hasseg.org/trash
+  tree # http://mama.indstate.edu/users/ice/tree
+  vapor/tap/vapor # https://vapor.codes
 )
 
 # Homebrew Apps
 apps=(
   alfred
-  apptivate
   appzapper
   atom
   calibre
   charles
   firefox
   flash-player
+  fork
   google-chrome
   java
   macdown
@@ -55,7 +62,6 @@ apps=(
   sip
   sketch
   skype
-  sourcetree
   db-browser-for-sqlite
   sublime-text
   torbrowser
@@ -70,7 +76,6 @@ appIDs=(
   412448059 # forklift
   430255202 # mactracker
   441258766 # magnet
-  1179623856 # pastebot
   803453959 # slack
   747648890 # telegram
   497799835 # xcode
