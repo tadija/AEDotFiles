@@ -25,3 +25,7 @@
 	trustExitCode = true
 [commit]
 	template = ~/.stCommitMsg
+[tig "color"]
+	cursor = black cyan bold
+	title-blur = white black
+	title-focus	= black white bold
