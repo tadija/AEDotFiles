@@ -20,3 +20,4 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall F
 
 alias off="pmset sleepnow"
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+alias zap='brew rmtree'
