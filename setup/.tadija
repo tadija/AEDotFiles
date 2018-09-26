@@ -7,7 +7,7 @@
 ###############################################################################
 
 [Dot Files]
-cd & ln -s ~/Documents/Developer/GitHub/AEDotFiles .dotfiles
+cd & ln -s ~/Documents/Developer/GitHub/#random/AEDotFiles .dotfiles
 
 # [iCloud]
 # ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/iCloud
@@ -15,6 +15,7 @@ cd & ln -s ~/Documents/Developer/GitHub/AEDotFiles .dotfiles
 # [Xcode]
 # rm -rf ~/Library/Developer/Xcode/UserData/
 # ln -s ~/iCloud/Documents/Sync/Xcode/UserData ~/Library/Developer/Xcode/UserData
+# ln -s ~/Documents/Developer/GitHub/#random/xcode-snippets/CodeSnippets CodeSnippets
 
 # [Sketch]
 # rm -rf ~/Library/Application\ Support/com.bohemiancoding.sketch3
