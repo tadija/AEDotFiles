@@ -5,4 +5,4 @@
 icldocs=~/iCloud/Documents
 icldev=$icldocs/Developer
 iclgh=$icldev/GitHub
-export CDPATH=.:$icldocs:$icldev:$icldev/appculture:$icldev/AppStore:$icldev/Lab:$iclgh:$iclgh/\#minimal:$iclgh/\#research
+export CDPATH=.:$icldocs:$icldev:$icldev/appculture:$icldev/AppStore:$icldev/Lab:$iclgh:$iclgh/\#random:$iclgh/\#research:$iclgh/\#sketch
