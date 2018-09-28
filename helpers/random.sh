@@ -9,9 +9,6 @@ if test $(which brew); then
   fi
 fi
 
-# https://hub.github.com
-eval "$(hub alias -s)"
-
 alias sshadd="cd ~/.ssh && ssh-add -K tadija_rsa && ssh-add -K appculture_rsa && cd -"
 alias checkperm="stat -f '%OLp'"
 alias icloudlog="brctl log --wait --shorten"

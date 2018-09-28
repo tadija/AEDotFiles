@@ -10,7 +10,6 @@ alias ls='ls -GFh'
 alias ll="ls -lo"
 alias la="ll -a"
 alias rmd="rm -rf"
-alias cat="bat"
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias help="tldr"
 alias rg="ranger"
@@ -20,3 +19,4 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall F
 
 alias off="pmset sleepnow"
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+alias zap='brew rmtree'

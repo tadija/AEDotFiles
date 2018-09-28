@@ -15,6 +15,7 @@ echo "[brew] updating..."
 brew update
 brew upgrade
 
+brew tap beeftornado/rmtree # https://github.com/beeftornado/homebrew-rmtree
 brew tap caskroom/cask
 brew tap caskroom/versions
 brew tap caskroom/fonts

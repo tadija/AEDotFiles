@@ -4,6 +4,8 @@
 
 alias sb="swift build"
 alias st="swift test"
+alias sr="swift run"
 alias spi="swift package init"
+alias spiexe="swift package init --type executable"
 alias spu="swift package update"
 alias spx="swift package generate-xcodeproj"

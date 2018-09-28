@@ -12,6 +12,11 @@ if test $(which rbenv); then
   eval "$(rbenv init -)"
 fi
 
+# https://hub.github.com
+if test $(which hub); then
+  eval "$(hub alias -s)"
+fi
+
 # http://fastlane.tools
 if test $(which fastlane); then
   export LC_ALL=en_US.UTF-8
@@ -33,4 +38,9 @@ fi
 if test $(which fasd); then
   export _FASD_BACKENDS="native spotlight current"
   eval "$(fasd --init auto)"
+fi
+
+# https://github.com/sharkdp/bat
+if test $(which bat); then
+  alias cat="bat"
 fi
