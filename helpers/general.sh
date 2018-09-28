@@ -10,7 +10,6 @@ alias ls='ls -GFh'
 alias ll="ls -lo"
 alias la="ll -a"
 alias rmd="rm -rf"
-alias cat="bat"
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias help="tldr"
 alias rg="ranger"
