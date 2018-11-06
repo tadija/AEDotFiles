@@ -34,6 +34,15 @@ fi
 # configure new .lldbinit
 ln -s ~/.dotfiles/.lldbinit ~/.lldbinit
 
+# backup .tmux.conf if it already exists
+if [ -f ~/.tmux.conf ]; then
+mv ~/.tmux.conf ~/.tmux.conf.backup
+echo -e "> Your current .tmux.conf is copied to .tmux.conf.backup"
+fi
+
+# configure new .tmux.conf
+ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
+
 echo -e "\n> This is how you new .bash_profile looks: \n"
 echo "------------------------------------------------"
 cat ~/.bash_profile
