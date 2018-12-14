@@ -51,7 +51,7 @@ echo "------------------------------------------------"
 echo -e "\n> You can now continue the setup by running these commands:\n"
 echo "setup-terminal"
 echo "setup-homebrew"
-echo "setup-installations"
 echo "setup-defaults"
+echo "setup-installations"
 
 echo -e "\n> https://github.com/tadija/AEDotFiles\n"
