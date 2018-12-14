@@ -29,7 +29,3 @@ brew cleanup
 echo ""
 echo "[mas] installing App Store apps..."
 mas install ${appIDs[*]}
-
-echo ""
-echo "Accept Xcode License:"
-sudo xcodebuild -license accept
