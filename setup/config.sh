@@ -2,12 +2,6 @@
 # Copyright (c) Marko Tadić 2015-2018
 # Licensed under the MIT license. See LICENSE file.
 
-export GIT_HOME_NAME="Marko Tadic"
-export GIT_HOME_EMAIL="tadija@me.com"
-
-export GIT_WORK_NAME="Marko Tadic"
-export GIT_WORK_EMAIL="marko.tadic@appculture.com"
-
 apps_installation_path="/Applications"
 
 # Command Line Tools
@@ -45,6 +39,7 @@ cli=(
 # Homebrew Apps
 apps=(
   alfred
+  apptivate
   appzapper
   atom
   calibre
@@ -65,8 +60,8 @@ apps=(
   skype
   db-browser-for-sqlite
   sublime-text
-  torbrowser
   transmission
+  visual-studio-code
   vlc
   wwdc
   xscope

@@ -4,9 +4,11 @@
 
 alias xcopen="xcfile() { local workspace=$(find *.xcworkspace 2>/dev/null | head -1); local project=$(find *.xcodeproj 2>/dev/null | head -1); \${workspace:-\${project}} ; }; open -a Xcode \"${xcfile}\""
 alias xcwhich="xcode-select --print-path"
-alias cartupdate="carthage update --platform iOS --no-use-binaries"
+alias cartbs="carthage bootstrap --platform iOS --no-use-binaries"
+alias cartup="carthage update --platform iOS --no-use-binaries"
 alias codesigndoc="bash -l -c '$(curl -sfL https://raw.githubusercontent.com/bitrise-tools/codesigndoc/master/_scripts/install_wrap.sh)'"
 alias fl="bundle exec fastlane"
+alias flup="bundle update fastlane"
 alias alphacheck="sips -g all"
 alias alphadisable="mogrify -alpha off"
 

@@ -2,8 +2,8 @@
 # Copyright (c) Marko Tadić 2015-2018
 # Licensed under the MIT license. See LICENSE file.
 
-source $DOT_FILES/setup/config.sh
-source $DOT_FILES/setup/homebrew.sh
+source $df/setup/config.sh
+source $df/setup/homebrew.sh
 
 echo ""
 echo "[brew] installing command line tools..."
@@ -29,7 +29,3 @@ brew cleanup
 echo ""
 echo "[mas] installing App Store apps..."
 mas install ${appIDs[*]}
-
-echo ""
-echo "Accept Xcode License:"
-sudo xcodebuild -license accept

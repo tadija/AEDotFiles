@@ -2,7 +2,7 @@
 # Copyright (c) Marko Tadić 2015-2018
 # Licensed under the MIT license. See LICENSE file.
 
-alias bcs="brew cask search"
+alias bs="brew search"
 alias bci="brew cask install"
 alias bcu="brew cask uninstall"
 alias bcz="brew cask zap"

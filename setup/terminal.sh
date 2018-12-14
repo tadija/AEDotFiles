@@ -6,7 +6,7 @@ echo ""
 echo "Configuring AE theme..."
 echo ""
 
-open ~/.dotfiles/setup/AE.terminal
+open ~/.dotfiles/themes/AE.terminal
 sleep 1
 defaults write com.apple.Terminal "Default Window Settings" -string "AE"
 defaults write com.apple.Terminal "Startup Window Settings" -string "AE"
