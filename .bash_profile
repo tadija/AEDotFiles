@@ -1,13 +1,13 @@
 export df=~/.dotfiles
 
+source $df/setup/setup.sh
+source $df/setup/personal.sh
 source $df/setup/config.sh
 
 source $df/helpers/init.sh
-source $df/helpers/paths.sh
 source $df/helpers/colors.sh
 source $df/helpers/ps1.sh
 
-source $df/helpers/setup.sh
 source $df/helpers/general.sh
 source $df/helpers/homebrew.sh
 source $df/helpers/git.sh
