@@ -1,16 +1,16 @@
-export DOT_FILES=~/.dotfiles
+export df=~/.dotfiles
 
-source $DOT_FILES/setup/config.sh
+source $df/setup/config.sh
 
-source $DOT_FILES/helpers/init.sh
-source $DOT_FILES/helpers/paths.sh
-source $DOT_FILES/helpers/colors.sh
-source $DOT_FILES/helpers/ps1.sh
+source $df/helpers/init.sh
+source $df/helpers/paths.sh
+source $df/helpers/colors.sh
+source $df/helpers/ps1.sh
 
-source $DOT_FILES/helpers/setup.sh
-source $DOT_FILES/helpers/general.sh
-source $DOT_FILES/helpers/homebrew.sh
-source $DOT_FILES/helpers/git.sh
-source $DOT_FILES/helpers/swift.sh
-source $DOT_FILES/helpers/xcode.sh
-source $DOT_FILES/helpers/random.sh
+source $df/helpers/setup.sh
+source $df/helpers/general.sh
+source $df/helpers/homebrew.sh
+source $df/helpers/git.sh
+source $df/helpers/swift.sh
+source $df/helpers/xcode.sh
+source $df/helpers/random.sh
