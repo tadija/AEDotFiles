@@ -38,6 +38,12 @@ ln -s ~/iCloud/Documents/Sync/TeaCode/com.apptorium.TeaCode-dm ~/Library/Applica
 # chmod 400 (each private key)
 # ssh-add -K (each private key)
 
+# [tmux]
+# ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# https://github.com/tmux-plugins/tmux-resurrect
+# https://github.com/tmux-plugins/tmux-continuum
+
 # [Safari]
 # Close Left/Right Tabs [http://safariextensions.com/en-US/safari/addon/124]
 # Refind [https://refind.com]

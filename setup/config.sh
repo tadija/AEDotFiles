@@ -36,6 +36,7 @@ cli=(
   swiftlint # https://github.com/realm/SwiftLint
   tig # https://github.com/jonas/tig
   tldr # https://tldr.sh
+  tmux # http://tmux.github.io
   trash # https://hasseg.org/trash
   tree # http://mama.indstate.edu/users/ice/tree
   vapor/tap/vapor # https://vapor.codes
