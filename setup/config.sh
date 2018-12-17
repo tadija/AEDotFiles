@@ -19,7 +19,7 @@ cli=(
   git # https://git-scm.com
   git-flow # https://github.com/nvie/gitflow
   graphicsmagick # http://www.graphicsmagick.org
-  heroku # https://cli.heroku.com
+  heroku/brew/heroku # https://cli.heroku.com
   hub # https://hub.github.com
   mas # https://github.com/mas-cli/mas
   mysql # https://dev.mysql.com
@@ -31,7 +31,6 @@ cli=(
   tig # https://github.com/jonas/tig
   tldr # https://tldr.sh
   tmux # http://tmux.github.io
-  trash # https://hasseg.org/trash
   tree # http://mama.indstate.edu/users/ice/tree
   vapor/tap/vapor # https://vapor.codes
 )
@@ -44,21 +43,21 @@ apps=(
   atom
   calibre
   charles
+  db-browser-for-sqlite
   firefox
   flash-player
   fork
   google-chrome
   java
   macdown
-  opensim
   paw
   recordit
   reflector
   sequel-pro
+  simpholders
   sip
   sketch
   skype
-  db-browser-for-sqlite
   sublime-text
   transmission
   visual-studio-code
