@@ -19,3 +19,7 @@ iclac=$icldev/appculture
 iclas=$icldev/AppStore
 
 export CDPATH=.:$icldocs:$icldev:$iclac:$iclas:$icldev/Lab:$iclgh:$iclgh/\#random:$iclgh/\#research:$iclgh/\#sketch
+
+# my aliases
+
+alias sshadd="cd ~/.ssh && ssh-add -K tadija_rsa && ssh-add -K appculture_rsa && cd -"
