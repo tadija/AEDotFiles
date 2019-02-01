@@ -5,6 +5,9 @@
 alias reload="source ~/.bash_profile"
 alias update="brew update && brew upgrade && brew cask upgrade && brew cleanup && mas upgrade"
 
+alias dfe="subl $df && fork $df"
+alias dfu="cd $df && gitsy && cd -"
+
 alias ..="cd .."
 alias ls='ls -GFh'
 alias ll="ls -lo"
