@@ -54,7 +54,7 @@ apps=(
   recordit
   reflector
   sequel-pro
-  simpholders
+  simsim
   sip
   sketch
   skype

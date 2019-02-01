@@ -23,6 +23,8 @@ alias gitcleanup="git reflog expire --all --expire=now && git gc --prune=now --a
 alias gitdt="git difftool -y"
 alias gitmt="git mergetool -y"
 alias gitpf="git push --force"
+alias gitsy="gitss && git pull && gitsa"
+alias gitsyf="gitss && gitundo && gitrh && git pull && gitsa"
 
 gitStashWithTimestamp() {
   ts=$(date "+%Y%m%d-%H%M%S")

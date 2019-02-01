@@ -7,31 +7,10 @@
 ###############################################################################
 
 [Dot Files]
-cd & ln -s ~/Documents/Developer/GitHub/#random/AEDotFiles .dotfiles
+# ln -s ~/Documents/Developer/GitHub/#random/AEDotFiles ~/.dotfiles
 
 # [iCloud]
 # ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/iCloud
-
-# [Xcode]
-# rm -rf ~/Library/Developer/Xcode/UserData/
-# ln -s ~/iCloud/Documents/Sync/Xcode/UserData ~/Library/Developer/Xcode/UserData
-# ln -s ~/Documents/Developer/GitHub/#random/xcode-snippets/CodeSnippets CodeSnippets
-
-# [Sketch]
-# rm -rf ~/Library/Application\ Support/com.bohemiancoding.sketch3
-# ln -s ~/iCloud/Documents/Sync/Sketch/com.bohemiancoding.sketch3 ~/Library/Application\ Support/com.bohemiancoding.sketch3
-
-# [TeaCode]
-rm -rf ~/Library/Application\ Support/com.apptorium.TeaCode-dm
-ln -s ~/iCloud/Documents/Sync/TeaCode/com.apptorium.TeaCode-dm ~/Library/Application\ Support/com.apptorium.TeaCode-dm
-
-# [Sublime]
-# package manager [https://packagecontrol.io/installation]
-# http://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/
-# "font_face": "Hack"
-
-# [Terminal]
-# Font: SF Mono Regular 14
 
 # [SSH]
 # cp -rf ~/iCloud/Documents/Sync/.ssh ~/.ssh
@@ -44,11 +23,42 @@ ln -s ~/iCloud/Documents/Sync/TeaCode/com.apptorium.TeaCode-dm ~/Library/Applica
 # https://github.com/tmux-plugins/tmux-resurrect
 # https://github.com/tmux-plugins/tmux-continuum
 
+# [fastlane]
+# rbenv install --list
+# rbenv install 2.5.3
+# rbenv global 2.5.1
+# gem install fastlane -NV
+
+# [Services]
+# rm -rf ~/Library/Services
+# ln -s ~/iCloud/Documents/Sync/Services ~/Library/Services
+
+# [Sublime]
+# rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+# ln -s ~/iCloud/Documents/Sync/Sublime/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+
+# [Atom]
+# rm -rf ~/.atom
+# ln -s ~/iCloud/Documents/Sync/Atom ~/.atom
+
+# [Xcode]
+# rm -rf ~/Library/Developer/Xcode/UserData
+# ln -s ~/iCloud/Documents/Sync/Xcode/UserData ~/Library/Developer/Xcode/UserData
+# import accounts for code signing
+
+# [Sketch]
+# rm -rf ~/Library/Application\ Support/com.bohemiancoding.sketch3
+# ln -s ~/iCloud/Documents/Sync/Sketch/com.bohemiancoding.sketch3 ~/Library/Application\ Support/com.bohemiancoding.sketch3
+
+# [TeaCode]
+rm -rf ~/Library/Application\ Support/com.apptorium.TeaCode-dm
+ln -s ~/iCloud/Documents/Sync/TeaCode/com.apptorium.TeaCode-dm ~/Library/Application\ Support/com.apptorium.TeaCode-dm
+
 # [Safari]
-# Close Left/Right Tabs [http://safariextensions.com/en-US/safari/addon/124]
+# Close Left / Right Tabs -> https://redfinsolutions.com/blog/close-tabs-right-safari
+# Keyboard / App Shortcuts / safari-close-left (CMD-SHIFT-Z) safari-close-right (CMD-SHIFT-X)
 # Refind [https://refind.com]
 
 # [Widgets]
 # Currency Converter Widget [https://www.apple.com/downloads/dashboard/calculate_convert/currencyconverter_palplesoftware.html]
 # iStat Widget [http://mac.softpedia.com/get/Dashboard-Widgets/Status-Info/iStat-pro.shtml]
-# echoes [http://www.echoes.gr] (open in dashboard)

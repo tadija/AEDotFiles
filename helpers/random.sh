@@ -9,11 +9,9 @@ if test $(which brew); then
   fi
 fi
 
-alias sshadd="cd ~/.ssh && ssh-add -K tadija_rsa && ssh-add -K appculture_rsa && cd -"
 alias checkperm="stat -f '%OLp'"
 alias icloudlog="brctl log --wait --shorten"
 alias icloudoff="sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall on && /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off"
 alias icloudon="sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall off && /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned on"
 alias sketchdebug="tail -f /var/log/system.log|grep Sketch"
-alias editdotfiles="osascript -e 'tell application \"Terminal\" to do script \"cd ~/.dotfiles && fork\"'"
 alias png2jpg="fd -e png -x convert {} {.}.jpg"

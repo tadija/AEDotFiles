@@ -6,6 +6,7 @@ alias xcopen="xcfile() { local workspace=$(find *.xcworkspace 2>/dev/null | head
 alias xcwhich="xcode-select --print-path"
 alias cartbs="carthage bootstrap --platform iOS --no-use-binaries"
 alias cartup="carthage update --platform iOS --no-use-binaries"
+alias cartcc="rm -rf ~/Library/Caches/org.carthage.CarthageKit"
 alias codesigndoc="bash -l -c '$(curl -sfL https://raw.githubusercontent.com/bitrise-tools/codesigndoc/master/_scripts/install_wrap.sh)'"
 alias fl="bundle exec fastlane"
 alias flup="bundle update fastlane"
