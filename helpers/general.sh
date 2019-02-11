@@ -4,6 +4,7 @@
 
 alias reload="source ~/.bash_profile"
 alias update="brew update && brew upgrade && brew cask upgrade && brew cleanup && mas upgrade"
+alias restore="tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh; do sleep 0.2; done)& tmux ; }"
 
 alias dfe="subl $df && fork $df"
 alias dfu="cd $df && gitsy && cd -"
