@@ -40,7 +40,6 @@ apps=(
   alfred
   apptivate
   appzapper
-  atom
   calibre
   charles
   db-browser-for-sqlite
