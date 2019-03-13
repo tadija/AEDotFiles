@@ -21,6 +21,7 @@ cli=(
   graphicsmagick # http://www.graphicsmagick.org
   heroku/brew/heroku # https://cli.heroku.com
   hub # https://hub.github.com
+  jq # https://stedolan.github.io/jq
   mas # https://github.com/mas-cli/mas
   mysql # https://dev.mysql.com
   ranger # https://github.com/ranger/ranger
@@ -40,7 +41,6 @@ apps=(
   alfred
   apptivate
   appzapper
-  atom
   calibre
   charles
   db-browser-for-sqlite
