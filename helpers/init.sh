@@ -2,6 +2,11 @@
 # Copyright (c) Marko Tadić 2015-2018
 # Licensed under the MIT license. See LICENSE file.
 
+# https://github.com/apple/swift-package-manager
+if [ -n "`which swift`" ]; then
+  eval "`swift package completion-tool generate-bash-script`"
+fi
+
 # https://swiftenv.fuller.li
 if test $(which swiftenv); then
   eval "$(swiftenv init -)"

@@ -12,6 +12,7 @@ alias fl="bundle exec fastlane"
 alias flup="bundle update fastlane"
 alias alphacheck="sips -g all"
 alias alphadisable="mogrify -alpha off"
+alias xcr="spx && sleep 1 && xed ."
 
 # usage: $ simrec recording.mp4
 simrec() {
