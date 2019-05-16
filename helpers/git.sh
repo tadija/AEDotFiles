@@ -25,7 +25,6 @@ alias gitmt="git mergetool -y"
 alias gitpf="git push --force"
 alias gitsy="gitss && git pull && gitsa"
 alias gitsyf="gitss && gitundo && gitrh && git pull && gitsa"
-alias gitmto="git merge-to"
 
 gitStashWithTimestamp() {
   ts=$(date "+%Y%m%d-%H%M%S")
