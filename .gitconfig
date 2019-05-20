@@ -17,6 +17,7 @@
 	textconv = "iconv -f utf-16 -t utf-8"
 [alias]
 	merge-to = "!gitMergeTo() { export tmp_branch=`git branch | grep '* ' | tr -d '* '` && git checkout $1 && git merge --no-ff --no-edit $tmp_branch; unset tmp_branch; }; gitMergeTo"
+	merge-to-ff = "!gitMergeTo() { export tmp_branch=`git branch | grep '* ' | tr -d '* '` && git checkout $1 && git merge --no-edit $tmp_branch; unset tmp_branch; }; gitMergeTo"
 	squash-to = "!gitSquashTo() { export tmp_branch=`git branch | grep '* ' | tr -d '* '` && git checkout $1 && git merge --squash $tmp_branch && git commit --no-edit; unset tmp_branch; }; gitSquashTo"
 	rename-tag = "!sh -c 'set -e;git tag $2 $1; git tag -d $1;git push origin :refs/tags/$1;git push --tags' -"
 [commit]
