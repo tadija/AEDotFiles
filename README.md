@@ -1,4 +1,5 @@
 # AEDotFiles
+
 **From vanilla to personalized macOS in less then 30 minutes**
 
 > I'm done with manually configuring everything after clean installation of macOS. If this can help you too, then great, feel free to customize it and use for your own needs.

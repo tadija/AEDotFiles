@@ -13,6 +13,7 @@ alias ..="cd .."
 alias ls='ls -GFh'
 alias ll="ls -lo"
 alias la="ll -a"
+alias grep="grep --color=auto"
 alias rmd="rm -rf"
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias help="tldr"

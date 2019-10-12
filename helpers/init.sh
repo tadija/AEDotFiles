@@ -7,6 +7,13 @@ if [ -n "`which swift`" ]; then
   eval "`swift package completion-tool generate-bash-script`"
 fi
 
+# https://bash-completion.alioth.debian.org
+if test $(which brew); then
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+  fi
+fi
+
 # https://swiftenv.fuller.li
 if test $(which swiftenv); then
   eval "$(swiftenv init -)"

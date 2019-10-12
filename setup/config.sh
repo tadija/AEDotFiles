@@ -39,8 +39,7 @@ cli=(
 # Homebrew Apps
 apps=(
   alfred
-  apptivate
-  appzapper
+  appcleaner
   calibre
   charles
   db-browser-for-sqlite
@@ -52,7 +51,6 @@ apps=(
   macdown
   paw
   recordit
-  reflector
   sequel-pro
   simsim
   sip
@@ -60,8 +58,6 @@ apps=(
   skype
   sublime-text
   transmission
-  visual-studio-code
-  vlc
   wwdc
   xscope
 )

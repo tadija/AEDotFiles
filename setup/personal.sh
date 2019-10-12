@@ -12,14 +12,24 @@ export GIT_WORK_EMAIL="marko.tadic@appculture.com"
 
 # my paths
 
-icldocs=~/iCloud/Documents
-icldev=$icldocs/Developer
-iclgh=$icldev/GitHub
-iclac=$icldev/appculture
-iclas=$icldev/AppStore
+dev=~/Developer
+gh=$dev/GitHub
+ac=$dev/appculture
+as=$dev/AppStore
+web=$dev/Web
+lab=$dev/Lab
+local=$dev:$gh:$ac:$as:$web:$lab
 
-export CDPATH=.:$icldocs:$icldev:$iclac:$iclas:$icldev/Lab:$iclgh:$iclgh/\#random:$iclgh/\#research:$iclgh/\#sketch
+cldocs=~/Cloud/Documents
+cldev=$cldocs/Developer
+clgh=$cldev/GitHub
+clac=$cldev/appculture
+clas=$cldev/AppStore
+cloud=$cldocs:$cldev:$clgh:$clac:$clas
+
+export CDPATH=.:$local:$cloud
 
 # my aliases
 
 alias sshadd="cd ~/.ssh && ssh-add -K tadija_rsa && ssh-add -K appculture_rsa && cd -"
+alias disablecursorblink="defaults write -g NSTextInsertionPointBlinkPeriod -float 60000"
