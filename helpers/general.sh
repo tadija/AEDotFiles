@@ -1,5 +1,5 @@
 # https://github.com/tadija/AEDotFiles
-# Copyright (c) Marko Tadić 2015-2018
+# Copyright (c) Marko Tadić 2015-2019
 # Licensed under the MIT license. See LICENSE file.
 
 alias reload="source ~/.bash_profile"
@@ -13,6 +13,7 @@ alias ..="cd .."
 alias ls='ls -GFh'
 alias ll="ls -lo"
 alias la="ll -a"
+alias grep="grep --color=auto"
 alias rmd="rm -rf"
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias help="tldr"

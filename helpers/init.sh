@@ -1,10 +1,17 @@
 # https://github.com/tadija/AEDotFiles
-# Copyright (c) Marko Tadić 2015-2018
+# Copyright (c) Marko Tadić 2015-2019
 # Licensed under the MIT license. See LICENSE file.
 
 # https://github.com/apple/swift-package-manager
 if [ -n "`which swift`" ]; then
   eval "`swift package completion-tool generate-bash-script`"
+fi
+
+# https://bash-completion.alioth.debian.org
+if test $(which brew); then
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+  fi
 fi
 
 # https://swiftenv.fuller.li

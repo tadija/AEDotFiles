@@ -1,5 +1,5 @@
 # https://github.com/tadija/AEDotFiles
-# Copyright (c) Marko Tadić 2015-2018
+# Copyright (c) Marko Tadić 2015-2019
 # Licensed under the MIT license. See LICENSE file.
 
 ###############################################################################
@@ -7,13 +7,13 @@
 ###############################################################################
 
 [Dot Files]
-# ln -s ~/Documents/Developer/GitHub/#random/AEDotFiles ~/.dotfiles
+# ln -s ~/Developer/GitHub/AEDotFiles ~/.dotfiles
 
 # [iCloud]
-# ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/iCloud
+# ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/Cloud
 
 # [SSH]
-# cp -rf ~/iCloud/Documents/Sync/.ssh ~/.ssh
+# cp -rf ~/Cloud/Documents/Sync/.ssh ~/.ssh
 # chmod 400 (each private key)
 # ssh-add -K (each private key)
 
@@ -31,28 +31,29 @@
 
 # [Services]
 # rm -rf ~/Library/Services
-# ln -s ~/iCloud/Documents/Sync/Services ~/Library/Services
+# ln -s ~/Cloud/Documents/Sync/Services ~/Library/Services
 
 # [Sublime]
 # rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-# ln -s ~/iCloud/Documents/Sync/Sublime/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-
-# [Atom]
-# rm -rf ~/.atom
-# ln -s ~/iCloud/Documents/Sync/Atom ~/.atom
+# ln -s ~/Cloud/Documents/Sync/Sublime/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 
 # [Xcode]
-# rm -rf ~/Library/Developer/Xcode/UserData
-# ln -s ~/iCloud/Documents/Sync/Xcode/UserData ~/Library/Developer/Xcode/UserData
+# cd ~/Library/Developer/Xcode/UserData
+# ln -s ~/Cloud/Documents/Sync/Xcode/CodeSnippets CodeSnippets
+# ln -s ~/Cloud/Documents/Sync/Xcode/FontAndColorThemes FontAndColorThemes
+# ln -s ~/Cloud/Documents/Sync/Xcode/KeyBindings KeyBindings
+# ln -s ~/Cloud/Documents/Sync/Xcode/xcdebugger xcdebugger
 # import accounts for code signing
 
 # [Sketch]
-# rm -rf ~/Library/Application\ Support/com.bohemiancoding.sketch3
-# ln -s ~/iCloud/Documents/Sync/Sketch/com.bohemiancoding.sketch3 ~/Library/Application\ Support/com.bohemiancoding.sketch3
+# cd ~/Library/Application\ Support/com.bohemiancoding.sketch3
+# ln -s ~/Cloud/Documents/Sync/Sketch/Libraries Libraries
+# ln -s ~/Cloud/Documents/Sync/Sketch/Plugins Plugins
+# ln -s ~/Cloud/Documents/Sync/Sketch/Templates Templates
 
 # [TeaCode]
 rm -rf ~/Library/Application\ Support/com.apptorium.TeaCode-dm
-ln -s ~/iCloud/Documents/Sync/TeaCode/com.apptorium.TeaCode-dm ~/Library/Application\ Support/com.apptorium.TeaCode-dm
+ln -s ~/Cloud/Documents/Sync/TeaCode/com.apptorium.TeaCode-dm ~/Library/Application\ Support/com.apptorium.TeaCode-dm
 
 # [Safari]
 # Close Left / Right Tabs -> https://redfinsolutions.com/blog/close-tabs-right-safari

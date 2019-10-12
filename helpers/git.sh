@@ -1,13 +1,13 @@
 # https://github.com/tadija/AEDotFiles
-# Copyright (c) Marko Tadić 2015-2018
+# Copyright (c) Marko Tadić 2015-2019
 # Licensed under the MIT license. See LICENSE file.
 
 alias gitwho="echo 'Git user:' && git config user.name && git config user.email"
 alias gits="git status"
 alias gitstate="git remote update && git status -uno"
 alias gitlog="git log --pretty=format:'%h %s' --graph"
-alias gitsubmodulesupdate="git submodule update --init --recursive"
-alias gitsubmodulespull="git submodule foreach git pull origin master"
+alias gitsmupdate="git submodule update --init --recursive"
+alias gitsmpull="git submodule foreach git pull origin master"
 alias gitcm="git add . && git commit --allow-empty-message -m ''"
 alias gitam="git add . && git commit --amend --no-edit --allow-empty-message"
 alias gitcmui="git add . && git gui citool"
@@ -18,7 +18,7 @@ alias gitssa="gitss && gitsa"
 alias gitsc="git stash clear"
 alias gitundo="git reset --soft HEAD^"
 alias gitrh="git reset --hard"
-alias gitlocalizablestrings="echo \"*.strings diff=localizablestrings\" > .gitattributes"
+alias gitlocstr="echo \"*.strings diff=localizablestrings\" > .gitattributes"
 alias gitcleanup="git reflog expire --all --expire=now && git gc --prune=now --aggressive"
 alias gitdt="git difftool -y"
 alias gitmt="git mergetool -y"
