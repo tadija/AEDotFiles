@@ -4,54 +4,71 @@
 # Copyright (c) Marko Tadić 2015-2019
 # Licensed under the MIT license. See LICENSE file.
 
-echo -e "\n> Hello $USER!\n"
+echo ""
+print "Hello $USER!"
 
-# backup .gitconfig if it already exists
-if [ -f ~/.gitconfig ]; then
-mv ~/.gitconfig ~/.gitconfig.backup
-echo -e "> Your current .gitconfig is copied to .gitconfig.backup"
-fi
+shellFile=$(getShellFile)
 
-# configure new .gitconfig
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+backupFile "$HOME/$shellFile"
+backupFile "$HOME/.gitconfig"
+backupFile "$HOME/.lldbinit"
+backupFile "$HOME/.tmux.conf"
 
-# backup .bash_profile if it already exists
-if [ -f ~/.bash_profile ]; then
-mv ~/.bash_profile ~/.bash_profile.backup
-echo -e "> Your current .bash_profile is copied to .bash_profile.backup"
-fi
+df=$HOME/.dotfiles
+ln -s $df/.shell_file $HOME/.shell_file
+ln -s $df/.gitconfig $HOME/.gitconfig
+ln -s $df/.lldbinit $HOME/.lldbinit
+ln -s $df/.tmux.conf $HOME/.tmux.conf
 
-# configure and load new .bash_profile
-ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
-source ~/.bash_profile
+mv $HOME/.shell_file $HOME/$shellFile
 
-# backup .lldbinit if it already exists
-if [ -f ~/.lldbinit ]; then
-mv ~/.lldbinit ~/.lldbinit.backup
-echo -e "> Your current .lldbinit is copied to .lldbinit.backup"
-fi
+print "This is how your new $shellFile looks now:"
+printFile $HOME/$shellFile
 
-# configure new .lldbinit
-ln -s ~/.dotfiles/.lldbinit ~/.lldbinit
+print "Loading $shellFile:"
+source $HOME/$shellFile
+echo "" && print "Finished loading $shellFile"
 
-# backup .tmux.conf if it already exists
-if [ -f ~/.tmux.conf ]; then
-mv ~/.tmux.conf ~/.tmux.conf.backup
-echo -e "> Your current .tmux.conf is copied to .tmux.conf.backup"
-fi
+print "You can now continue the setup with these commands: \n\n\
+• setup-terminal \n\
+• setup-defaults \n\
+• setup-homebrew \n\
+• setup-installations"
 
-# configure new .tmux.conf
-ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
+print "https://github.com/tadija/AEDotFiles"
 
-echo -e "\n> This is how you new .bash_profile looks: \n"
-echo "------------------------------------------------"
-cat ~/.bash_profile
-echo "------------------------------------------------"
+### - helpers
 
-echo -e "\n> You can now continue the setup by running these commands:\n"
-echo "setup-terminal"
-echo "setup-defaults"
-echo "setup-homebrew"
-echo "setup-installations"
+function print() {
+  echo "> $1"
+  echo ""
+}
 
-echo -e "\n> https://github.com/tadija/AEDotFiles\n"
+function printFile() {
+  echo "- Displaying $1"
+  dashes=----------------------------------------
+  echo "<$dashes"
+  cat $1
+  echo "$dashes>"
+  echo ""
+}
+
+function getShellFile() {
+  if [ -n "$ZSH_VERSION" ]; then
+    echo ".zshrc"
+  elif [ -n "$BASH_VERSION" ]; then
+    echo ".bash_profile"
+  else
+    print "This shell is not supported... ¯\_(ツ)_/¯"
+    exit 1
+  fi
+}
+
+function backupFile() {
+  if [ -e $1 ]; then
+    timestamp=$(date "+%Y%m%d-%H%M%S")
+    backupFile=$1.backup.$timestamp
+    mv "$1" "$backupFile"
+    print "Moved existing $1 -> $backupFile"
+  fi
+}
