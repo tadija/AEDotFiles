@@ -2,41 +2,43 @@
 # Copyright (c) Marko Tadić 2015-2019
 # Licensed under the MIT license. See LICENSE file.
 
-# https://github.com/apple/swift-package-manager
-if [ -n "`which swift`" ]; then
-  eval "`swift package completion-tool generate-bash-script`"
-fi
+if [ -n "$BASH_VERSION" ]; then
+  # https://bash-completion.alioth.debian.org
+  if [ -x "$(command -v brew)" ]; then
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+    fi
+  fi
 
-# https://bash-completion.alioth.debian.org
-if test $(which brew); then
-  if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+  # https://github.com/apple/swift-package-manager
+  if [ -x "$(command -v swift)" ]; then
+    eval "`swift package completion-tool generate-bash-script`"
   fi
 fi
 
 # https://swiftenv.fuller.li
-if test $(which swiftenv); then
+if [ -x "$(command -v swiftenv)" ]; then
   eval "$(swiftenv init -)"
 fi
 
 # https://github.com/rbenv/rbenv
-if test $(which rbenv); then
+if [ -x "$(command -v rbenv)" ]; then
   eval "$(rbenv init -)"
 fi
 
 # https://hub.github.com
-if test $(which hub); then
+if [ -x "$(command -v hub)" ]; then
   eval "$(hub alias -s)"
 fi
 
 # http://fastlane.tools
-if test $(which fastlane); then
+if [ -x "$(command -v fastlane)" ]; then
   export LC_ALL=en_US.UTF-8
   export LANG=en_US.UTF-8
 fi
 
 # https://github.com/junegunn/fzf
-if test $(which fzf); then
+if [ -x "$(command -v fzf)" ]; then
   [ -f ~/.fzf.bash ] && source ~/.fzf.bash
   export FZF_DEFAULT_OPTS="--bind pgup:preview-up --bind pgdn:preview-down "
   export FZF_DEFAULT_OPTS+="--bind='ctrl-p:execute(bat {})+abort' "
@@ -47,12 +49,12 @@ if test $(which fzf); then
 fi
 
 # https://github.com/clvv/fasd
-if test $(which fasd); then
+if [ -x "$(command -v fasd)" ]; then
   export _FASD_BACKENDS="native spotlight current"
   eval "$(fasd --init auto)"
 fi
 
 # https://github.com/sharkdp/bat
-if test $(which bat); then
+if [ -x "$(command -v bat)" ]; then
   alias cat="bat"
 fi

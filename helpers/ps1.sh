@@ -49,5 +49,10 @@ function parse_git_dirty {
 	fi
 }
 
-# http://ezprompt.net
-export PS1="${CLR_MAGENTA}\t${CLR_RESET} ${CLR_BLUE}\w${CLR_RESET} ${CLR_YELLOW}\`parse_git_branch\`${CLR_RESET}\n${CLR_USER}\u@\h:${CLR_RESET}\$ "
+if [ -n "$ZSH_VERSION" ]; then
+	# tmp prompt for zsh
+	export PS1="%10F%m%f:%11F%1~%f \$ "
+elif [ -n "$BASH_VERSION" ]; then
+	# http://ezprompt.net
+	export PS1="${CLR_MAGENTA}\t${CLR_RESET} ${CLR_BLUE}\w${CLR_RESET} ${CLR_YELLOW}\`parse_git_branch\`${CLR_RESET}\n${CLR_USER}\u@\h:${CLR_RESET}\$ "
+fi
