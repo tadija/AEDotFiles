@@ -2,7 +2,15 @@
 # Copyright (c) Marko Tadić 2015-2019
 # Licensed under the MIT license. See LICENSE file.
 
-alias reload="source ~/.bash_profile"
+function getShellFile() {
+  if [ -n "$ZSH_VERSION" ]; then
+    echo ".zshrc"
+  elif [ -n "$BASH_VERSION" ]; then
+    echo ".bash_profile"
+  fi
+}
+
+alias reload="source ~/$(getShellFile)"
 alias update="brew update && brew upgrade && brew cask upgrade && brew cleanup && mas upgrade"
 alias restore="tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh; do sleep 0.2; done)& tmux ; }"
 
