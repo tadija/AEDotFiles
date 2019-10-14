@@ -39,13 +39,20 @@ fi
 
 # https://github.com/junegunn/fzf
 if [ -x "$(command -v fzf)" ]; then
-  [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-  export FZF_DEFAULT_OPTS="--bind pgup:preview-up --bind pgdn:preview-down "
-  export FZF_DEFAULT_OPTS+="--bind='ctrl-p:execute(bat {})+abort' "
-  export FZF_DEFAULT_OPTS+="--bind='ctrl-o:execute(subl {})' "
-  export FZF_DEFAULT_OPTS+="--bind='ctrl-c:execute-silent(cat {} | pbcopy)' "
+  if [ -n "$BASH_VERSION" ]; then
+    [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+  elif [ -n "$ZSH_VERSION" ]; then
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+  fi
+  
+  export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" --bind pgup:preview-up --bind pgdn:preview-down"
+  export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" --bind='ctrl-p:execute(bat {})+abort'"
+  export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" --bind='ctrl-o:execute(subl {})'"
+  export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" --bind='ctrl-c:execute-silent(cat {} | pbcopy)'"
+
   export FZF_DEFAULT_COMMAND='fd --type file'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_CTRL_T_OPTS="--preview-window right:50% --preview 'bat {}'"
 fi
 
 # https://github.com/clvv/fasd
