@@ -18,7 +18,7 @@ export CLR_RESET="\[\e[0m\]"
 # red color for root user
 if [[ $(id -u) == 0 ]]
 then
-    export CLR_USER=$CLR_RED
+  export CLR_USER=$CLR_RED
 else
-    export CLR_USER=$CLR_GREEN
+  export CLR_USER=$CLR_GREEN
 fi
