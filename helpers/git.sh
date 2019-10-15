@@ -36,3 +36,9 @@ alias githomeglobal="git config --global user.name '${GIT_HOME_NAME}' && git con
 
 alias gitworklocal="git config user.name '${GIT_WORK_NAME}' && git config user.email '${GIT_WORK_EMAIL}' && git config user.name && git config user.email"
 alias gitworkglobal="git config --global user.name '${GIT_WORK_NAME}' && git config --global user.email '${GIT_WORK_EMAIL}' && git config --global user.name && git config --global user.email"
+
+alias gf="git-flow"
+alias gfi="gf init"
+alias gff="gf feature"
+alias gfr="gf release"
+alias gfh="gf hotfix"
