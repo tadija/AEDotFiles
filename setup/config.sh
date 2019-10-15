@@ -4,11 +4,19 @@
 
 apps_installation_path="/Applications"
 
+# Quicklook plugins
+qlplugins=(
+  qlcolorcode
+  qlmarkdown
+  qlstephen
+  quicklook-json
+  provisioning
+)
+
 # Command Line Tools
 cli=(
   ack # https://beyondgrep.com
   bat # https://github.com/sharkdp/bat
-  bash-completion # https://salsa.debian.org/debian/bash-completion
   carthage # https://github.com/Carthage/Carthage
   cloc # https://github.com/AlDanial/cloc
   cocoapods # https://github.com/CocoaPods/CocoaPods
@@ -47,42 +55,14 @@ apps=(
   flash-player
   fork
   google-chrome
-  java
   macdown
   paw
-  recordit
   sequel-pro
   simsim
   sip
   sketch
   skype
   sublime-text
-  transmission
   wwdc
   xscope
-)
-
-# App Store Apps
-appIDs=(
-  412448059 # forklift
-  430255202 # mactracker
-  441258766 # magnet
-  803453959 # slack
-  747648890 # telegram
-  497799835 # xcode
-)
-
-# Quicklook plugins
-qlplugins=(
-  qlcolorcode
-  qlmarkdown
-  qlstephen
-  quicklook-json
-  provisioning
-)
-
-# Fonts
-fonts=(
-  font-hack
-  font-play
 )

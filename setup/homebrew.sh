@@ -5,7 +5,7 @@
 echo "[brew] checking..."
 
 # install homebrew if needed
-if test ! $(which brew); then
+if ! [ -x "$(command -v brew)" ]; then
   echo "[brew] installing..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
@@ -14,11 +14,6 @@ echo "[brew] updating..."
 
 brew update
 brew upgrade
-
-brew tap beeftornado/rmtree # https://github.com/beeftornado/homebrew-rmtree
-brew tap caskroom/cask
-brew tap caskroom/versions
-brew tap caskroom/fonts
 
 echo "[brew] cleanup..."
 
