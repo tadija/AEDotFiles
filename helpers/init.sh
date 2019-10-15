@@ -44,15 +44,31 @@ if [ -x "$(command -v fzf)" ]; then
   elif [ -n "$ZSH_VERSION" ]; then
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
   fi
-  
+
+  export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" --height 100% --layout=reverse"
+  export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" --preview 'bat --color "always" {}' --preview-window=right:60%:wrap:hidden"
+
   export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" --bind pgup:preview-up --bind pgdn:preview-down"
-  export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" --bind='ctrl-p:execute(bat {})+abort'"
+  export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" --bind='ctrl-p:toggle-preview'"
   export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" --bind='ctrl-o:execute(subl {})'"
   export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" --bind='ctrl-c:execute-silent(cat {} | pbcopy)'"
 
-  export FZF_DEFAULT_COMMAND='fd --type file'
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_CTRL_T_OPTS="--preview-window right:50% --preview 'bat {}'"
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+
+  export FZF_CTRL_T_OPTS="--preview-window=right:60%:wrap"
+
+  # Use fd (https://github.com/sharkdp/fd) instead of the default find
+  # command for listing path candidates.
+  # - The first argument to the function ($1) is the base path to start traversal
+  # - See the source code (completion.{bash,zsh}) for the details.
+  _fzf_compgen_path() {
+    fd --hidden --follow --exclude ".git" . "$1"
+  }
+
+  # Use fd to generate the list for directory completion
+  _fzf_compgen_dir() {
+    fd --type d --hidden --follow --exclude ".git" . "$1"
+  }
 fi
 
 # https://github.com/clvv/fasd
