@@ -18,6 +18,7 @@ alias dfe="subl $df && fork $df"
 alias dfu="cd $df && gitsy && cd -"
 
 alias ..="cd .."
+alias cdh="cd $HOME"
 alias ls='ls -GFh'
 alias ll="ls -lo"
 alias la="ll -a"
@@ -25,7 +26,7 @@ alias grep="grep --color=auto"
 alias rmd="rm -rf"
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias help="tldr"
-alias rg="ranger"
+alias rng="ranger"
 
 alias show="defaults write com.apple.finder AppleShowAllFiles true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall Finder"

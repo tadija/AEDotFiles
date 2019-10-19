@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # https://github.com/tadija/AEDotFiles
 # Copyright (c) Marko Tadić 2015-2019
 # Licensed under the MIT license. See LICENSE file.
@@ -67,10 +65,4 @@ print "Loading $shellFile:"
 source $HOME/$shellFile
 echo "" && print "Finished loading $shellFile"
 
-print "You can now continue the setup with these commands: \n\n\
-• setup-terminal \n\
-• setup-defaults \n\
-• setup-homebrew \n\
-• setup-installations"
-
-print "https://github.com/tadija/AEDotFiles"
+print "See more: https://github.com/tadija/AEDotFiles"

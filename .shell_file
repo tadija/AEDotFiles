@@ -1,6 +1,5 @@
 export df=~/.dotfiles
 
-source $df/setup/setup.sh
 source $df/setup/personal.sh
 source $df/setup/config.sh
 

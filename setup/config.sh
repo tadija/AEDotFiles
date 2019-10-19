@@ -15,7 +15,6 @@ qlplugins=(
 
 # Command Line Tools
 cli=(
-  ack # https://beyondgrep.com
   bat # https://github.com/sharkdp/bat
   carthage # https://github.com/Carthage/Carthage
   cloc # https://github.com/AlDanial/cloc
@@ -34,6 +33,7 @@ cli=(
   mysql # https://dev.mysql.com
   ranger # https://github.com/ranger/ranger
   rbenv # https://github.com/rbenv/rbenv
+  ripgrep # https://github.com/BurntSushi/ripgrep
   kylef/formulae/swiftenv # https://github.com/kylef/swiftenv
   speedtest-cli # https://github.com/sivel/speedtest-cli
   swiftlint # https://github.com/realm/SwiftLint
@@ -58,11 +58,13 @@ apps=(
   macdown
   paw
   sequel-pro
+  sherlock
   simsim
   sip
   sketch
   skype
   sublime-text
+  teacode
   wwdc
   xscope
 )
