@@ -4,39 +4,6 @@
 # Copyright (c) Marko Tadić 2015-2019
 # Licensed under the MIT license. See LICENSE file.
 
-echo ""
-print "Hello $USER!"
-
-shellFile=$(getShellFile)
-
-backupFile "$HOME/$shellFile"
-backupFile "$HOME/.gitconfig"
-backupFile "$HOME/.lldbinit"
-backupFile "$HOME/.tmux.conf"
-
-df=$HOME/.dotfiles
-ln -s $df/.shell_file $HOME/.shell_file
-ln -s $df/.gitconfig $HOME/.gitconfig
-ln -s $df/.lldbinit $HOME/.lldbinit
-ln -s $df/.tmux.conf $HOME/.tmux.conf
-
-mv $HOME/.shell_file $HOME/$shellFile
-
-print "This is how your new $shellFile looks now:"
-printFile $HOME/$shellFile
-
-print "Loading $shellFile:"
-source $HOME/$shellFile
-echo "" && print "Finished loading $shellFile"
-
-print "You can now continue the setup with these commands: \n\n\
-• setup-terminal \n\
-• setup-defaults \n\
-• setup-homebrew \n\
-• setup-installations"
-
-print "https://github.com/tadija/AEDotFiles"
-
 ### - helpers
 
 function print() {
@@ -72,3 +39,38 @@ function backupFile() {
     print "Moved existing $1 -> $backupFile"
   fi
 }
+
+### - main
+
+echo ""
+print "Hello $USER!"
+
+shellFile=$(getShellFile)
+
+backupFile "$HOME/$shellFile"
+backupFile "$HOME/.gitconfig"
+backupFile "$HOME/.lldbinit"
+backupFile "$HOME/.tmux.conf"
+
+df=$HOME/.dotfiles
+ln -s $df/.shell_file $HOME/.shell_file
+ln -s $df/.gitconfig $HOME/.gitconfig
+ln -s $df/.lldbinit $HOME/.lldbinit
+ln -s $df/.tmux.conf $HOME/.tmux.conf
+
+mv $HOME/.shell_file $HOME/$shellFile
+
+print "This is how your new $shellFile looks now:"
+printFile $HOME/$shellFile
+
+print "Loading $shellFile:"
+source $HOME/$shellFile
+echo "" && print "Finished loading $shellFile"
+
+print "You can now continue the setup with these commands: \n\n\
+• setup-terminal \n\
+• setup-defaults \n\
+• setup-homebrew \n\
+• setup-installations"
+
+print "https://github.com/tadija/AEDotFiles"
