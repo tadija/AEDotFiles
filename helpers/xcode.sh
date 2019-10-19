@@ -18,10 +18,12 @@ alias xcr="spx && sleep 1 && xed ."
 simrec() {
   xcrun simctl io booted recordVideo "$1"
 }
+
 # usage: $ simurl http://apple.com
 simurl() {
   xcrun simctl openurl booted "$1"
 }
+
 # usage: $ xcswitch /Applications/Xcode-beta.app
 xcswitch() {
   sudo xcode-select --switch "$1"

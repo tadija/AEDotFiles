@@ -18,7 +18,6 @@
 # ssh-add -K (each private key)
 
 # [tmux]
-# ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # https://github.com/tmux-plugins/tmux-resurrect
 # https://github.com/tmux-plugins/tmux-continuum
@@ -59,7 +58,3 @@ ln -s ~/Cloud/Documents/Sync/TeaCode/com.apptorium.TeaCode-dm ~/Library/Applicat
 # Close Left / Right Tabs -> https://redfinsolutions.com/blog/close-tabs-right-safari
 # Keyboard / App Shortcuts / safari-close-left (CMD-SHIFT-Z) safari-close-right (CMD-SHIFT-X)
 # Refind [https://refind.com]
-
-# [Widgets]
-# Currency Converter Widget [https://www.apple.com/downloads/dashboard/calculate_convert/currencyconverter_palplesoftware.html]
-# iStat Widget [http://mac.softpedia.com/get/Dashboard-Widgets/Status-Info/iStat-pro.shtml]

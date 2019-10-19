@@ -2,6 +2,13 @@
 # Copyright (c) Marko Tadić 2015-2019
 # Licensed under the MIT license. See LICENSE file.
 
+# git
+
+alias githomelocal="git config user.name '${GIT_HOME_NAME}' && git config user.email '${GIT_HOME_EMAIL}' && git config user.name && git config user.email"
+alias githomeglobal="git config --global user.name '${GIT_HOME_NAME}' && git config --global user.email '${GIT_HOME_EMAIL}' && git config --global user.name && git config --global user.email"
+alias gitworklocal="git config user.name '${GIT_WORK_NAME}' && git config user.email '${GIT_WORK_EMAIL}' && git config user.name && git config user.email"
+alias gitworkglobal="git config --global user.name '${GIT_WORK_NAME}' && git config --global user.email '${GIT_WORK_EMAIL}' && git config --global user.name && git config --global user.email"
+
 alias gitwho="echo 'Git user:' && git config user.name && git config user.email"
 alias gits="git status"
 alias gitstate="git remote update && git status -uno"
@@ -31,8 +38,10 @@ gitStashWithTimestamp() {
   git stash save $ts
 }
 
-alias githomelocal="git config user.name '${GIT_HOME_NAME}' && git config user.email '${GIT_HOME_EMAIL}' && git config user.name && git config user.email"
-alias githomeglobal="git config --global user.name '${GIT_HOME_NAME}' && git config --global user.email '${GIT_HOME_EMAIL}' && git config --global user.name && git config --global user.email"
+# git-flow
 
-alias gitworklocal="git config user.name '${GIT_WORK_NAME}' && git config user.email '${GIT_WORK_EMAIL}' && git config user.name && git config user.email"
-alias gitworkglobal="git config --global user.name '${GIT_WORK_NAME}' && git config --global user.email '${GIT_WORK_EMAIL}' && git config --global user.name && git config --global user.email"
+alias gf="git-flow"
+alias gfi="gf init"
+alias gff="gf feature"
+alias gfr="gf release"
+alias gfh="gf hotfix"

@@ -2,7 +2,7 @@
 
 **From vanilla to personalized macOS in less then 30 minutes**
 
-> I'm done with manually configuring everything after clean installation of macOS. If this can help you too, then great, feel free to customize it and use for your own needs.
+> If this can help you too, then great, feel free to customize it and use for your own needs.
 
 Install and run Xcode then start Terminal app and follow instructions:
 
@@ -10,62 +10,64 @@ Install and run Xcode then start Terminal app and follow instructions:
 
 - Clone this repo into your home directory
 
-``` bash
-$ git clone https://github.com/tadija/AEDotFiles.git ~/.dotfiles
-```
+	``` bash
+	$ git clone https://github.com/tadija/AEDotFiles.git ~/.dotfiles
+	```
 
-- Run [initial setup](setup/run.sh) which will make your new [.bash_profile](.bash_profile)
+- Run [initial setup](setup/run.sh) which will make your new [.shell_file](.shell_file)
 
-``` bash
-$ . ~/.dotfiles/setup/run.sh
-```
+	``` bash
+	$ . ~/.dotfiles/setup/run.sh
+	```
 
-- Configure [AE theme](themes/AE.terminal) for Terminal
+- Configure [AE theme](themes/AE.terminal) for Terminal (optional)
 
-``` bash
-$ setup-terminal
-```
+	``` bash
+	$ . $df/setup/terminal.sh
+	```
 
 ## Step 2 [set]
 
-- Update [few system preferences](setup/defaults.sh)
+- Configure and save [your custom stuff](setup/personal.sh)
 
-``` bash
-$ setup-defaults
-```
+	``` bash
+	$ open -t $EDITOR ~/.dotfiles/setup/personal.sh
+	```
 
-- Configure and save [your stuff](setup/personal.sh)
+- Configure and save [what's gonna be installed](setup/config.sh)
 
-``` bash
-$ open -a TextEdit ~/.dotfiles/setup/personal.sh
-```
-
+	``` bash
+	$ open -t $EDITOR ~/.dotfiles/setup/config.sh
+	```
+	
 - Reload new settings and configure default Git user
 
-``` bash
-# choose between `githomeglobal` or `gitworkglobal`
-$ reload && githomeglobal
-```
+	``` bash
+	# choose between `githomeglobal` or `gitworkglobal`
+	$ reload && githomeglobal
+	```
 
 ## Step 3 [go]
 
-- Configure [what's gonna be installed](setup/config.sh)
-
-``` bash
-$ open -a TextEdit ~/.dotfiles/setup/config.sh
-```
-
 - Install / Update / Upgrade [Homebrew](http://brew.sh)
 
-``` bash
-$ setup-homebrew
-```
+	``` bash
+	$ . $df/setup/homebrew.sh
+	```
 
 - Install [everything](setup/installations.sh)
 
-``` bash
-$ setup-installations
-```
+	``` bash
+	$ . $df/setup/installations.sh
+	```
+	
+- Run [custom scripts](setup/personal.sh) and reload (optional)
+
+	``` bash
+	$ setup-fzf
+	$ setup-defaults
+	$ reload
+	```
 
 ---
 
