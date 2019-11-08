@@ -57,6 +57,7 @@ apps=(
   google-chrome
   macdown
   paw
+  red-eye
   sequel-pro
   sherlock
   simsim
