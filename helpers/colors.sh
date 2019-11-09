@@ -22,5 +22,3 @@ then
 else
   export CLR_USER=$CLR_GREEN
 fi
-
-autoload -U colors && colors
