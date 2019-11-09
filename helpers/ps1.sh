@@ -50,8 +50,17 @@ function parse_git_dirty {
 }
 
 if [ -n "$ZSH_VERSION" ]; then
-  # tmp prompt for zsh
-  export PS1="%10F%m%f:%11F%1~%f \$ "
+  autoload -Uz promptinit
+  promptinit
+
+  autoload -Uz vcs_info
+  precmd_vcs_info() { vcs_info }
+  precmd_functions+=( precmd_vcs_info )
+  setopt prompt_subst
+  zstyle ':vcs_info:git:*' formats '%F{yellow}[%b]%f'
+  zstyle ':vcs_info:*' enable git
+
+  PROMPT='%F{magenta}%*%f %F{blue}%~%f '\$vcs_info_msg_0_'$prompt_newline%F{green}%n@%m%f %# '
 elif [ -n "$BASH_VERSION" ]; then
   # http://ezprompt.net
   export PS1="${CLR_MAGENTA}\t${CLR_RESET} ${CLR_BLUE}\w${CLR_RESET} ${CLR_YELLOW}\`parse_git_branch\`${CLR_RESET}\n${CLR_USER}\u@\h:${CLR_RESET}\$ "

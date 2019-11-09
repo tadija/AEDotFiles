@@ -21,20 +21,46 @@ function setup-fzf() {
 function setup-defaults() {
   echo "> setup defaults..."
 
-  alias defaults-cursor="defaults write -g NSTextInsertionPointBlinkPeriod -float 60000"
-  echo "• disable cursor blinking globally"
-
-  alias defaults-xcsimfs="defaults write com.apple.iphonesimulator AllowFullscreenMode -bool YES"
-  echo "• enable simulator beside Xcode in full screen mode"
-
-  alias defaults-xcindx="defaults write com.apple.dtXcode IDEIndexerActivityShowNumericProgress -bool true"
-  echo "• show number of remaining files when indexing a project in xcode"
-
-  alias defaults-fdpath="defaults write com.apple.finder _FXShowPosixPathInTitle -bool true"
-  echo "• display full POSIX path as Finder window title"
-
-  alias defaults-dsstore="defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true"
-  echo "• disable creating .DS_Store file on network volumes"
+  sd-cursor
+  sd-xcsimfs
+  sd-xcindx
+  sd-fdpath
+  sd-dsstore
 
   echo "> defaults are set!"
+}
+
+function sd-cursor {
+  # disable cursor blinking globally
+  cmd="defaults write -g NSTextInsertionPointBlinkPeriod -float 60000"
+  eval $cmd
+  echo "• $cmd"
+}
+
+function sd-xcsimfs {
+  # enable simulator beside Xcode in full screen mode
+  cmd="defaults write com.apple.iphonesimulator AllowFullscreenMode -bool YES"
+  eval $cmd
+  echo "• $cmd"
+}
+
+function sd-xcindx {
+  # show number of remaining files when indexing a project in xcode
+  cmd="defaults write com.apple.dtXcode IDEIndexerActivityShowNumericProgress -bool true"
+  eval $cmd
+  echo "• $cmd"
+}
+
+function sd-fdpath {
+  # display full POSIX path as Finder window title
+  cmd="defaults write com.apple.finder _FXShowPosixPathInTitle -bool true"
+  eval $cmd
+  echo "• $cmd"
+}
+
+function sd-dsstore {
+  # disable creating .DS_Store file on network volumes
+  cmd="defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true"
+  eval $cmd
+  echo "• $cmd"
 }

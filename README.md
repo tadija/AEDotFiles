@@ -43,8 +43,9 @@ Install and run Xcode then start Terminal app and follow instructions:
 - Reload new settings and configure default Git user
 
 	``` bash
-	# choose between `githomeglobal` or `gitworkglobal`
-	$ reload && githomeglobal
+	$ githomeglobal # or `gitworkglobal`
+	$ reload # source .shell_file
+	$ gitwho # see current git user
 	```
 
 ## Step 3 [go]

@@ -24,12 +24,13 @@
 
 # [fastlane]
 # rbenv install --list
-# rbenv install 2.5.3
-# rbenv global 2.5.1
+# rbenv install $latest
+# rbenv global $latest
+# rbenv rehash
 # gem install fastlane -NV
 
 # [Services]
-# rm -rf ~/Library/Services
+# sudo rm -rf ~/Library/Services
 # ln -s ~/Cloud/Documents/Sync/Services ~/Library/Services
 
 # [Sublime]

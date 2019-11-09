@@ -34,3 +34,30 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles false && killall F
 alias off="pmset sleepnow"
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 alias zap='brew rmtree'
+
+if [ -n "$ZSH_VERSION" ]; then
+  # case-insensitive globbing
+  setopt NO_CASE_GLOB
+  # change directory without cd
+  setopt AUTO_CD
+  # show timestamp and elapsed time of the command
+  setopt EXTENDED_HISTORY
+  # share history across multiple zsh sessions
+  setopt SHARE_HISTORY
+  # append to history
+  setopt APPEND_HISTORY
+  # adds commands as they are typed, not at shell exit
+  setopt INC_APPEND_HISTORY
+  # do not store duplications
+  setopt HIST_IGNORE_DUPS
+  # removes blank lines from history
+  setopt HIST_REDUCE_BLANKS
+  # zsh auto correction
+  setopt CORRECT
+  setopt CORRECT_ALL
+fi
+
+if [ -n "$ZSH_VERSION" ]; then
+  autoload -Uz compinit && compinit
+  autoload -U colors && colors
+fi
