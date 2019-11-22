@@ -17,6 +17,7 @@ alias restore="tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-res
 alias dfe="subl $df && fork $df"
 alias dfu="cd $df && gitsy && cd -"
 
+alias .="open ."
 alias ..="cd .."
 alias cdh="cd $HOME"
 alias ls='ls -GFh'
