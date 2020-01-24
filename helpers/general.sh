@@ -53,9 +53,9 @@ if [ -n "$ZSH_VERSION" ]; then
   setopt HIST_IGNORE_DUPS
   # removes blank lines from history
   setopt HIST_REDUCE_BLANKS
-  # zsh auto correction
-  setopt CORRECT
-  setopt CORRECT_ALL
+  # disable zsh auto correction
+  unsetopt CORRECT
+  unsetopt CORRECT_ALL
 fi
 
 if [ -n "$ZSH_VERSION" ]; then
