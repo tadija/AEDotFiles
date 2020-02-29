@@ -39,8 +39,6 @@ alias zap='brew rmtree'
 if [ -n "$ZSH_VERSION" ]; then
   # case-insensitive globbing
   setopt NO_CASE_GLOB
-  # change directory without cd
-  setopt AUTO_CD
   # show timestamp and elapsed time of the command
   setopt EXTENDED_HISTORY
   # share history across multiple zsh sessions
@@ -53,9 +51,10 @@ if [ -n "$ZSH_VERSION" ]; then
   setopt HIST_IGNORE_DUPS
   # removes blank lines from history
   setopt HIST_REDUCE_BLANKS
-  # disable zsh auto correction
+  # disable zsh options
   unsetopt CORRECT
   unsetopt CORRECT_ALL
+  unsetopt AUTO_CD
 fi
 
 if [ -n "$ZSH_VERSION" ]; then
