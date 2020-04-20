@@ -24,7 +24,7 @@ if [ -x "$(command -v fzf)" ]; then
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_CTRL_T_OPTS="--preview-window=right:60%:wrap"
 
-  export FZF_ALT_C_COMMAND='fd --type d --max-depth 5 --hidden --follow --exclude ".git"'
+  export FZF_ALT_C_COMMAND='fd --type d --max-depth 4 --hidden --follow --exclude ".git"'
   export FZF_ALT_C_OPTS="--preview-window=right:0%"
 
   # Use fd (https://github.com/sharkdp/fd) instead of the default find command for listing path candidates.
