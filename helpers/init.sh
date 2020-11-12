@@ -1,20 +1,6 @@
 # https://github.com/tadija/AEDotFiles
 # init.sh
 
-if [ -n "$BASH_VERSION" ]; then
-  # https://bash-completion.alioth.debian.org
-  if [ -x "$(command -v brew)" ]; then
-    if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-    fi
-  fi
-
-  # https://github.com/apple/swift-package-manager
-  if [ -x "$(command -v swift)" ]; then
-    eval "`swift package completion-tool generate-bash-script`"
-  fi
-fi
-
 # https://github.com/sharkdp/bat
 if [ -x "$(command -v bat)" ]; then
   alias cat="bat"

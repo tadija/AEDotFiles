@@ -3,11 +3,7 @@
 
 # https://github.com/junegunn/fzf
 if [ -x "$(command -v fzf)" ]; then
-  if [ -n "$BASH_VERSION" ]; then
-    [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-  elif [ -n "$ZSH_VERSION" ]; then
-    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-  fi
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
   export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" --height 100% --layout=reverse"
   export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS" --preview 'bat --color "always" {}'"

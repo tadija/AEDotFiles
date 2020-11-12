@@ -5,7 +5,7 @@ source $df/setup/config.sh
 
 source $df/helpers/init.sh
 source $df/helpers/colors.sh
-source $df/helpers/ps1.sh
+source $df/helpers/prompt.sh
 
 source $df/helpers/general.sh
 source $df/helpers/fzf.sh

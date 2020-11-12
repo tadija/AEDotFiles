@@ -17,17 +17,6 @@ function printFile() {
   echo ""
 }
 
-function getShellFile() {
-  if [ -n "$ZSH_VERSION" ]; then
-    echo ".zshrc"
-  elif [ -n "$BASH_VERSION" ]; then
-    echo ".bash_profile"
-  else
-    print "This shell is not supported... ¯\_(ツ)_/¯"
-    exit 1
-  fi
-}
-
 function backupFile() {
   if [ -e $1 ]; then
     timestamp=$(date "+%Y%m%d-%H%M%S")
@@ -42,7 +31,7 @@ function backupFile() {
 echo ""
 print "Hello $USER!"
 
-shellFile=$(getShellFile)
+shellFile=".zshrc"
 
 backupFile "$HOME/$shellFile"
 backupFile "$HOME/.gitconfig"
