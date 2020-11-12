@@ -18,7 +18,6 @@ cli=(
   carthage # https://github.com/Carthage/Carthage
   cloc # https://github.com/AlDanial/cloc
   cocoapods # https://github.com/CocoaPods/CocoaPods
-  fasd # https://github.com/clvv/fasd
   fd # https://github.com/sharkdp/fd
   fzf # https://github.com/junegunn/fzf
   imagemagick # https://www.imagemagick.org
