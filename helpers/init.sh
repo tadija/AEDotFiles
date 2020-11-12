@@ -1,6 +1,5 @@
 # https://github.com/tadija/AEDotFiles
-# Copyright (c) Marko Tadić 2015-2019
-# Licensed under the MIT license. See LICENSE file.
+# init.sh
 
 if [ -n "$BASH_VERSION" ]; then
   # https://bash-completion.alioth.debian.org

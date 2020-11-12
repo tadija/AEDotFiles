@@ -1,8 +1,5 @@
 # https://github.com/tadija/AEDotFiles
-# Copyright (c) Marko Tadić 2015-2019
-# Licensed under the MIT license. See LICENSE file.
-
-# git
+# git.sh
 
 alias githomelocal="git config user.name '${GIT_HOME_NAME}' && git config user.email '${GIT_HOME_EMAIL}' && git config user.name && git config user.email"
 alias githomeglobal="git config --global user.name '${GIT_HOME_NAME}' && git config --global user.email '${GIT_HOME_EMAIL}' && git config --global user.name && git config --global user.email"
@@ -37,8 +34,6 @@ gitStashWithTimestamp() {
   ts=$(date "+%Y%m%d-%H%M%S")
   git stash save $ts
 }
-
-# git-flow
 
 alias gf="git-flow"
 alias gfi="gf init"
