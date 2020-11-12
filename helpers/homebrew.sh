@@ -1,6 +1,5 @@
 # https://github.com/tadija/AEDotFiles
-# Copyright (c) Marko Tadić 2015-2019
-# Licensed under the MIT license. See LICENSE file.
+# homebrew.sh
 
 alias bs="brew search"
 alias bci="brew cask install"

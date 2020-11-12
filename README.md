@@ -10,19 +10,19 @@ Install and run Xcode then start Terminal app and follow instructions:
 
 - Clone this repo into your home directory
 
-	``` bash
+	``` sh
 	$ git clone https://github.com/tadija/AEDotFiles.git ~/.dotfiles
 	```
 
 - Run [initial setup](setup/run.sh) which will make your new [.shell_file](.shell_file)
 
-	``` bash
+	``` sh
 	$ . ~/.dotfiles/setup/run.sh
 	```
 
 - Configure [AE theme](themes/AE.terminal) for Terminal (optional)
 
-	``` bash
+	``` sh
 	$ . $df/setup/terminal.sh
 	```
 
@@ -30,19 +30,19 @@ Install and run Xcode then start Terminal app and follow instructions:
 
 - Configure and save [your custom stuff](setup/personal.sh)
 
-	``` bash
+	``` sh
 	$ open -t $EDITOR ~/.dotfiles/setup/personal.sh
 	```
 
 - Configure and save [what's gonna be installed](setup/config.sh)
 
-	``` bash
+	``` sh
 	$ open -t $EDITOR ~/.dotfiles/setup/config.sh
 	```
 	
 - Reload new settings and configure default Git user
 
-	``` bash
+	``` sh
 	$ githomeglobal # or `gitworkglobal`
 	$ reload # source .shell_file
 	$ gitwho # see current git user
@@ -52,19 +52,19 @@ Install and run Xcode then start Terminal app and follow instructions:
 
 - Install / Update / Upgrade [Homebrew](http://brew.sh)
 
-	``` bash
+	``` sh
 	$ . $df/setup/homebrew.sh
 	```
 
 - Install [everything](setup/installations.sh)
 
-	``` bash
+	``` sh
 	$ . $df/setup/installations.sh
 	```
 	
 - Run [custom scripts](setup/personal.sh) and reload (optional)
 
-	``` bash
+	``` sh
 	$ setup-fzf
 	$ setup-defaults
 	$ reload

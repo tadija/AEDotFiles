@@ -1,6 +1,5 @@
 # https://github.com/tadija/AEDotFiles
-# Copyright (c) Marko Tadić 2015-2019
-# Licensed under the MIT license. See LICENSE file.
+# installations.sh
 
 source $df/setup/config.sh
 source $df/setup/homebrew.sh

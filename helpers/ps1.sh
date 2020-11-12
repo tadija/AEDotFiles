@@ -1,6 +1,5 @@
 # https://github.com/tadija/AEDotFiles
-# Copyright (c) Marko Tadić 2015-2019
-# Licensed under the MIT license. See LICENSE file.
+# ps1.sh
 
 # get current branch in git repo
 function parse_git_branch() {
@@ -60,8 +59,8 @@ if [ -n "$ZSH_VERSION" ]; then
   zstyle ':vcs_info:git:*' formats '%F{yellow}[%b]%f'
   zstyle ':vcs_info:*' enable git
 
-  PROMPT='%F{magenta}%*%f %F{blue}%~%f '\$vcs_info_msg_0_'$prompt_newline%F{green}%n@%m%f %# '
+  PROMPT='%F{blue}%~%f '\$vcs_info_msg_0_'$prompt_newline%F{green}%n@%m%f %# '
 elif [ -n "$BASH_VERSION" ]; then
   # http://ezprompt.net
-  export PS1="${CLR_MAGENTA}\t${CLR_RESET} ${CLR_BLUE}\w${CLR_RESET} ${CLR_YELLOW}\`parse_git_branch\`${CLR_RESET}\n${CLR_USER}\u@\h:${CLR_RESET}\$ "
+  export PS1="${CLR_BLUE}\w${CLR_RESET} ${CLR_YELLOW}\`parse_git_branch\`${CLR_RESET}\n${CLR_USER}\u@\h:${CLR_RESET}\$ "
 fi

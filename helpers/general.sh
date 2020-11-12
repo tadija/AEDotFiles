@@ -1,6 +1,5 @@
 # https://github.com/tadija/AEDotFiles
-# Copyright (c) Marko Tadić 2015-2019
-# Licensed under the MIT license. See LICENSE file.
+# general.sh
 
 function getShellFile() {
   if [ -n "$ZSH_VERSION" ]; then
@@ -17,6 +16,7 @@ alias restore="tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-res
 alias dfe="subl $df && fork $df"
 alias dfu="cd $df && gitsy && cd -"
 
+alias .="open ."
 alias ..="cd .."
 alias cdh="cd $HOME"
 alias ls='ls -GFh'
@@ -38,8 +38,6 @@ alias zap='brew rmtree'
 if [ -n "$ZSH_VERSION" ]; then
   # case-insensitive globbing
   setopt NO_CASE_GLOB
-  # change directory without cd
-  setopt AUTO_CD
   # show timestamp and elapsed time of the command
   setopt EXTENDED_HISTORY
   # share history across multiple zsh sessions
@@ -52,9 +50,10 @@ if [ -n "$ZSH_VERSION" ]; then
   setopt HIST_IGNORE_DUPS
   # removes blank lines from history
   setopt HIST_REDUCE_BLANKS
-  # zsh auto correction
-  setopt CORRECT
-  setopt CORRECT_ALL
+  # disable zsh options
+  unsetopt CORRECT
+  unsetopt CORRECT_ALL
+  unsetopt AUTO_CD
 fi
 
 if [ -n "$ZSH_VERSION" ]; then
