@@ -1,8 +1,8 @@
 # https://github.com/tadija/AEDotFiles
-# installations.sh
+# install.sh
 
-source $df/setup/config.sh
-source $df/setup/homebrew.sh
+source $df/custom/config.sh
+source $df/system/homebrew.sh
 
 echo ""
 echo "[brew] installing quicklook plugins..."

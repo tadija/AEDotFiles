@@ -1,5 +1,5 @@
 # https://github.com/tadija/AEDotFiles
-# run.sh
+# setup.sh
 
 ### - helpers
 

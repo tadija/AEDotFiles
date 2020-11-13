@@ -4,6 +4,7 @@
 apps_installation_path="/Applications"
 
 # Quicklook plugins
+
 qlplugins=(
   qlcolorcode
   qlmarkdown
@@ -13,6 +14,7 @@ qlplugins=(
 )
 
 # Command Line Tools
+
 cli=(
   bat # https://github.com/sharkdp/bat
   carthage # https://github.com/Carthage/Carthage
@@ -43,6 +45,7 @@ cli=(
 )
 
 # Homebrew Apps
+
 apps=(
   alfred
   appcleaner

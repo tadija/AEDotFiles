@@ -1,5 +1,5 @@
 # https://github.com/tadija/AEDotFiles
-# terminal.sh
+# ae-terminal.sh
 
 echo ""
 echo "Configuring AE theme..."

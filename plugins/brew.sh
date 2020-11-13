@@ -1,5 +1,5 @@
 # https://github.com/tadija/AEDotFiles
-# homebrew.sh
+# brew.sh
 
 alias bs="brew search"
 alias bci="brew cask install"

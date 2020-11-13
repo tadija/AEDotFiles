@@ -1,6 +1,10 @@
 # https://github.com/tadija/AEDotFiles
 # fzf.sh
 
+function setup-fzf() {
+  $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
+}
+
 # https://github.com/junegunn/fzf
 if [ -x "$(command -v fzf)" ]; then
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

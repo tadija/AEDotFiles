@@ -14,38 +14,44 @@ Install and run Xcode then start Terminal app and follow instructions:
 	$ git clone https://github.com/tadija/AEDotFiles.git ~/.dotfiles
 	```
 
-- Run [initial setup](setup/run.sh) which will make your new [.shell_file](.shell_file)
+- Run [setup](system/setup.sh) which will make your new [.shell_file](.shell_file)
 
 	``` sh
-	$ . ~/.dotfiles/setup/run.sh
+	$ . ~/.dotfiles/system/setup.sh
 	```
 
 - Configure [AE theme](themes/AE.terminal) for Terminal (optional)
 
 	``` sh
-	$ . $df/setup/terminal.sh
+	$ df-run ae-terminal
 	```
 
 ## Step 2 [set]
 
-- Configure and save [your custom stuff](setup/personal.sh)
+- Configure and save [your custom stuff](custom/my.sh)
 
 	``` sh
-	$ open -t $EDITOR ~/.dotfiles/setup/personal.sh
+	$ df-edit my
 	```
 
-- Configure and save [what's gonna be installed](setup/config.sh)
+- Configure and save [your config](setup/config.sh)
 
 	``` sh
-	$ open -t $EDITOR ~/.dotfiles/setup/config.sh
+	$ df-edit config
 	```
 	
-- Reload new settings and configure default Git user
+- Configure git user and [defaults](system/defaults.sh) (optional)
 
 	``` sh
-	$ githomeglobal # or `gitworkglobal`
-	$ reload # source .shell_file
-	$ gitwho # see current git user
+	$ git-user home
+	
+	$ df-run defaults
+	```
+	
+- Reload shell
+
+	``` sh
+	$ df-reload
 	```
 
 ## Step 3 [go]
@@ -53,21 +59,19 @@ Install and run Xcode then start Terminal app and follow instructions:
 - Install / Update / Upgrade [Homebrew](http://brew.sh)
 
 	``` sh
-	$ . $df/setup/homebrew.sh
+	$ df-run homebrew
 	```
 
-- Install [everything](setup/installations.sh)
+- [Install](system/install.sh) all the things from [your config](setup/config.sh)
 
 	``` sh
-	$ . $df/setup/installations.sh
+	$ df-run install
 	```
 	
-- Run [custom scripts](setup/personal.sh) and reload (optional)
+- Reload shell
 
 	``` sh
-	$ setup-fzf
-	$ setup-defaults
-	$ reload
+	$ df-reload
 	```
 
 ---
