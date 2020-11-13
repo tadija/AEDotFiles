@@ -11,6 +11,7 @@ source $df/plugins/git.sh
 source $df/plugins/git-user.sh
 source $df/plugins/swift.sh
 source $df/plugins/xcode.sh
+source $df/plugins/subl.sh
 source $df/plugins/brew.sh
 source $df/plugins/random.sh
 

@@ -30,5 +30,10 @@ function df-run() {
 }
 
 function df-edit() {
-  open -t $EDITOR $(df-find $1)
+  local file=$(df-find $1)
+  if [ -z "$EDITOR" ]; then
+    open -t $file
+  else
+    $(echo $EDITOR) $file
+  fi
 }
