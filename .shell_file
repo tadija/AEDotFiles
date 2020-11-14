@@ -1,2 +1,2 @@
 export df=~/.dotfiles
-source $df/custom/init.sh
+source $df/system/init.sh

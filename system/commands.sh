@@ -19,21 +19,80 @@ function df-find() {
   fi
 }
 
+function df-edit() {
+  local file=$(df-find $1)
+
+  if [ -e "$file" ]; then
+    if [ -z "$EDITOR" ]; then
+      open -t $file
+    else
+      $(echo $EDITOR) $file
+    fi
+  else
+    cd $df
+  fi
+}
+
 function df-run() {
   local file=$(df-find $1)
 
   if [ -e "$file" ]; then
     . "$file"
   else
-    echo "$1 - not found"
+    echo "not found: $1"
   fi
 }
 
-function df-edit() {
-  local file=$(df-find $1)
-  if [ -z "$EDITOR" ]; then
-    open -t $file
+function df-terminal() {
+  local theme="$1"
+  local file=$df/themes/$theme.terminal
+
+  if [ -e "$file" ]; then
+    echo "configuring theme for terminal..."
+    open $file
+    sleep 1
+    defaults write com.apple.Terminal "Default Window Settings" -string $theme
+    defaults write com.apple.Terminal "Startup Window Settings" -string $theme
+    exit 0
   else
-    $(echo $EDITOR) $file
+    echo "not found: $1"
   fi
+}
+
+function df-homebrew() {
+  echo "[brew] checking..."
+  if ! [ -x "$(command -v brew)" ]; then
+    echo "[brew] installing..."
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
+  echo "[brew] updating..."
+  brew update
+  brew upgrade
+
+  echo "[brew] cleanup..."
+  brew cleanup
+}
+
+function df-install() {
+  df-homebrew
+
+  echo ""
+  echo "[brew] installing quicklook plugins..."
+  brew cask install ${qlplugins[@]}
+  # remove the quarantine attribute (see: https://github.com/sindresorhus/quick-look-plugins)
+  xattr -d -r com.apple.quarantine ~/Library/QuickLook
+
+  echo ""
+  echo "[brew] installing command line tools..."
+  brew install ${cli[@]}
+
+  echo ""
+  echo "[brew] installing apps..."
+  brew cask install --appdir=$apps_installation_path ${apps[@]} --force
+
+  echo ""
+  echo -e "[brew] cleanup...\n"
+
+  brew cleanup
 }

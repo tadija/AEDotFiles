@@ -23,16 +23,10 @@ Install and run Xcode then start Terminal app and follow instructions:
 - Configure [AE theme](themes/AE.terminal) for Terminal (optional)
 
 	``` sh
-	$ df-run ae-terminal
+	$ df-terminal AE
 	```
 
 ## Step 2 [set]
-
-- Configure and save [your custom stuff](custom/my.sh)
-
-	``` sh
-	$ df-edit my
-	```
 
 - Configure and save [your config](setup/config.sh)
 
@@ -40,12 +34,10 @@ Install and run Xcode then start Terminal app and follow instructions:
 	$ df-edit config
 	```
 	
-- Configure git user and [defaults](system/defaults.sh) (optional)
+- Configure git user (optional)
 
 	``` sh
 	$ git-user home
-	
-	$ df-run defaults
 	```
 	
 - Reload shell
@@ -59,13 +51,13 @@ Install and run Xcode then start Terminal app and follow instructions:
 - Install / Update / Upgrade [Homebrew](http://brew.sh)
 
 	``` sh
-	$ df-run homebrew
+	$ df-homebrew
 	```
 
-- [Install](system/install.sh) all the things from [your config](setup/config.sh)
+- Install all the things from [your config](setup/config.sh)
 
 	``` sh
-	$ df-run install
+	$ df-install
 	```
 	
 - Reload shell

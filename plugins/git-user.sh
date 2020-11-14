@@ -10,11 +10,11 @@ function git-user() {
 		echo "name or email not found in git_user[$1]"
 	else
 		if [[ $2 == "--global" ]]; then
-			echo "> configuring global git user..."
+			echo "configuring global git user..."
 			git config user.name $name
 			git config user.email $email
 		else
-			print "> configuring local git user..."
+			echo "configuring local git user..."
 			git config user.name $name
 			git config user.email $email
 		fi

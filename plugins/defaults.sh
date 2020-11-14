@@ -1,6 +1,18 @@
 # https://github.com/tadija/AEDotFiles
 # defaults.sh
 
+function setup-defaults {
+  echo "> setup defaults..."
+
+  defaults-cursor
+  defaults-xcsimfs
+  defaults-xcindx
+  defaults-fdpath
+  defaults-dsstore
+
+  echo "> defaults are set!"
+}
+
 function defaults-cursor {
   # disable cursor blinking globally
   cmd="defaults write -g NSTextInsertionPointBlinkPeriod -float 60000"
@@ -35,13 +47,3 @@ function defaults-dsstore {
   eval $cmd
   echo "• $cmd"
 }
-
-echo "> setup defaults..."
-
-defaults-cursor
-defaults-xcsimfs
-defaults-xcindx
-defaults-fdpath
-defaults-dsstore
-
-echo "> defaults are set!"
