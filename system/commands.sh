@@ -63,7 +63,7 @@ function df-homebrew() {
   echo "[brew] checking..."
   if ! [ -x "$(command -v brew)" ]; then
     echo "[brew] installing..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   fi
 
   echo "[brew] updating..."
@@ -72,6 +72,9 @@ function df-homebrew() {
 
   echo "[brew] cleanup..."
   brew cleanup
+
+  # see: https://github.com/zsh-users/zsh-completions/issues/680#issuecomment-612960481
+  compaudit | xargs chmod g-w
 }
 
 function df-install() {

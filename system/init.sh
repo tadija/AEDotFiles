@@ -5,6 +5,8 @@ source $df/custom/config.sh
 source $df/system/commands.sh
 
 for plugin in $dfplugins; do
-	local file=$(df-find $plugin)
-	source $file
+  local file=$(df-find $plugin)
+  if [ -e "$file" ]; then
+    source $file
+  fi
 done

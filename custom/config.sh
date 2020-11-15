@@ -58,6 +58,7 @@ cli=(
   jq # https://stedolan.github.io/jq
   mas # https://github.com/mas-cli/mas
   mysql # https://dev.mysql.com
+  npm # https://www.npmjs.com
   ranger # https://github.com/ranger/ranger
   rbenv # https://github.com/rbenv/rbenv
   ripgrep # https://github.com/BurntSushi/ripgrep
@@ -80,6 +81,7 @@ apps=(
   charles
   db-browser-for-sqlite
   firefox
+  fork
   google-chrome
   macdown
   paw

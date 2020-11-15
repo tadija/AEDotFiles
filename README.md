@@ -19,6 +19,12 @@ Install and run Xcode then start Terminal app and follow instructions:
 	``` sh
 	$ . ~/.dotfiles/system/setup.sh
 	```
+	
+- Play some music while doing this? (optional)
+
+	``` sh
+	$ my-radio
+	```
 
 - Configure [AE theme](themes/AE.terminal) for Terminal (optional)
 
@@ -34,10 +40,10 @@ Install and run Xcode then start Terminal app and follow instructions:
 	$ df-edit config
 	```
 	
-- Configure git user (optional)
+- Configure global git user (optional)
 
 	``` sh
-	$ git-user home
+	$ git-user home --global
 	```
 	
 - Reload shell

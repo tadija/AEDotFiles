@@ -20,7 +20,7 @@ function printFile() {
 function backupFile() {
   if [ -e $1 ]; then
     timestamp=$(date "+%Y%m%d-%H%M%S")
-    backupFile=$1.backup.$timestamp
+    backupFile=$1-$timestamp.backup
     mv "$1" "$backupFile"
     print "Moved existing $1 -> $backupFile"
   fi
@@ -50,7 +50,7 @@ print "This is how your new $shellFile looks now:"
 printFile $HOME/$shellFile
 
 print "Loading $shellFile:"
-source $HOME/$shellFile
+source "$HOME/$shellFile"
 echo "" && print "Finished loading $shellFile"
 
 print "See more: https://github.com/tadija/AEDotFiles"

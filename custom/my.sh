@@ -1,64 +1,111 @@
 # https://github.com/tadija/AEDotFiles
 # my.sh
 
-alias sshadd="cd ~/.ssh && ssh-add -K tadija_rsa && ssh-add -K appculture_rsa && cd -"
+alias ssh-reload="cd ~/.ssh && fd -e pub -x ssh-add -K {.} && cd -"
 
-###############################################################################
-# Manual Config Reminder
-###############################################################################
+function my-radio() {
+  echo "configuring radio..."
+  cd ~/Downloads
+  curl http://tadija.net/random/radio.zip > radio.zip
+  unzip -qq radio.zip
+  yes | cp -rf Radio.app /Applications
+  rm radio.zip
+  rm -rf Radio.app
+  open -a /Applications/Radio.app
+  cd -
+  echo "ready to play! (check the menu bar)"
+}
 
-# [Dot Files]
-# ln -s ~/Developer/GitHub/AEDotFiles ~/.dotfiles
-# setup-defaults
-# setup-fzf
+function my-dotfiles() {  
+  ln -s ~/Developer/GitHub/AEDotFiles ~/.dotfiles
+  la ~/.dotfiles
+}
 
-# [iCloud]
-# ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/Cloud
+function my-cloud() {
+  ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/Cloud
+  la ~/Cloud
+}
 
-# [SSH]
-# cp -rf ~/Cloud/Documents/Sync/.ssh ~/.ssh
-# chmod 400 (each private key)
-# ssh-add -K (each private key)
+function my-ssh() {
+  cp -rf ~/Cloud/Documents/Sync/.ssh ~/.ssh
+  la ~/.ssh
 
-# [tmux]
-# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-# https://github.com/tmux-plugins/tmux-resurrect
-# https://github.com/tmux-plugins/tmux-continuum
+  # chmod 400 each private key
+  fd -e pub -x chmod 400 {.}
+  
+  # ssh-add -K each private key manually
+}
 
-# [fastlane]
-# rbenv install --list
-# rbenv install $latest
-# rbenv global $latest
-# rbenv rehash
-# gem install fastlane -NV
+function my-tmux() {
+  # https://github.com/tmux-plugins/tmux-resurrect
+  # https://github.com/tmux-plugins/tmux-continuum
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  # reload tmux
+  tmux source-file ~/.tmux.conf
+  echo "tmux reloaded"
+}
 
-# [Services]
-# sudo rm -rf ~/Library/Services
-# ln -s ~/Cloud/Documents/Sync/Services ~/Library/Services
+function my-plugins() {
+  setup-defaults
+  echo ""
+  setup-fzf
+  echo ""
+  setup-rbenv
+  echo ""
+  setup-fastlane
+  echo ""
+}
 
-# [Sublime]
-# rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-# ln -s ~/Cloud/Documents/Sync/Sublime/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+function my-services() {
+  sudo rm -rf ~/Library/Services
+  ln -s ~/Cloud/Documents/Sync/Services ~/Library/Services
+  la ~/Library/Services
+}
 
-# [Xcode]
-# cd ~/Library/Developer/Xcode/UserData
-# ln -s ~/Cloud/Documents/Sync/Xcode/CodeSnippets CodeSnippets
-# ln -s ~/Cloud/Documents/Sync/Xcode/FontAndColorThemes FontAndColorThemes
-# ln -s ~/Cloud/Documents/Sync/Xcode/KeyBindings KeyBindings
-# ln -s ~/Cloud/Documents/Sync/Xcode/xcdebugger xcdebugger
-# import accounts for code signing
+function my-sublime() {
+  rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+  ln -s ~/Cloud/Documents/Sync/Sublime/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+  la ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+}
 
-# [Sketch]
-# cd ~/Library/Application\ Support/com.bohemiancoding.sketch3
-# ln -s ~/Cloud/Documents/Sync/Sketch/Libraries Libraries
-# ln -s ~/Cloud/Documents/Sync/Sketch/Plugins Plugins
-# ln -s ~/Cloud/Documents/Sync/Sketch/Templates Templates
+function my-xcode() {
+  cd ~/Library/Developer/Xcode/UserData
 
-# [TeaCode]
-# rm -rf ~/Library/Application\ Support/com.apptorium.TeaCode-dm
-# ln -s ~/Cloud/Documents/Sync/TeaCode/com.apptorium.TeaCode-dm ~/Library/Application\ Support/com.apptorium.TeaCode-dm
+  ln -s ~/Cloud/Documents/Sync/Xcode/CodeSnippets CodeSnippets
+  ln -s ~/Cloud/Documents/Sync/Xcode/FontAndColorThemes FontAndColorThemes
+  ln -s ~/Cloud/Documents/Sync/Xcode/xcdebugger xcdebugger
 
-# [Safari]
-# Close Left / Right Tabs -> https://redfinsolutions.com/blog/close-tabs-right-safari
-# Keyboard / App Shortcuts / safari-close-left (CMD-SHIFT-Z) safari-close-right (CMD-SHIFT-X)
-# Refind [https://refind.com]
+  rmd KeyBindings
+  ln -s ~/Cloud/Documents/Sync/Xcode/KeyBindings KeyBindings
+
+  la ~/Library/Developer/Xcode/UserData
+  cd -
+
+  # import accounts for code signing manually
+}
+
+function my-sketch() {
+  cd ~/Library/Application\ Support/com.bohemiancoding.sketch3
+
+  rmd Libraries
+  ln -s ~/Cloud/Documents/Sync/Sketch/Libraries Libraries
+
+  rmd Plugins
+  ln -s ~/Cloud/Documents/Sync/Sketch/Plugins Plugins
+
+  rmd Templates
+  ln -s ~/Cloud/Documents/Sync/Sketch/Templates Templates
+
+  la ~/Library/Application\ Support/com.bohemiancoding.sketch3
+}
+
+function my-teacode() {
+  rmd ~/Library/Application\ Support/com.apptorium.TeaCode-dm
+  ln -s ~/Cloud/Documents/Sync/TeaCode/com.apptorium.TeaCode-dm ~/Library/Application\ Support/com.apptorium.TeaCode-dm
+  la ~/Library/Application\ Support/com.apptorium.TeaCode-dm
+}
+
+function my-homebridge() {
+  sudo npm install -g --unsafe-perm homebridge homebridge-config-ui-x
+  sudo hb-service install
+}
