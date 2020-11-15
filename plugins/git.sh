@@ -1,12 +1,6 @@
 # https://github.com/tadija/AEDotFiles
 # git.sh
 
-alias githomelocal="git config user.name '${GIT_HOME_NAME}' && git config user.email '${GIT_HOME_EMAIL}' && git config user.name && git config user.email"
-alias githomeglobal="git config --global user.name '${GIT_HOME_NAME}' && git config --global user.email '${GIT_HOME_EMAIL}' && git config --global user.name && git config --global user.email"
-alias gitworklocal="git config user.name '${GIT_WORK_NAME}' && git config user.email '${GIT_WORK_EMAIL}' && git config user.name && git config user.email"
-alias gitworkglobal="git config --global user.name '${GIT_WORK_NAME}' && git config --global user.email '${GIT_WORK_EMAIL}' && git config --global user.name && git config --global user.email"
-
-alias gitwho="echo 'Git user:' && git config user.name && git config user.email"
 alias gits="git status"
 alias gitstate="git remote update && git status -uno"
 alias gitlog="git log --pretty=format:'%h %s' --graph"

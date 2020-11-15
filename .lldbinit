@@ -3,3 +3,6 @@ command alias poc expression -l objc -O --
 command alias flush expression -l objc -- (void)[CATransaction flush]
 command alias skip thread jump --by 1
 command alias tl type lookup
+
+# see: https://soffes.blog/debugging-json-data-in-lldb
+command regex json 's/(.+)/expr let input = %1; print(String(data: try! JSONSerialization.data(withJSONObject: (input is Data ? (try! JSONSerialization.jsonObject(with: input as! Data, options: [])) : input as! Any), options: [.prettyPrinted]), encoding: .utf8)!)/'
