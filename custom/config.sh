@@ -86,6 +86,7 @@ apps=(
   paw
   red-eye
   sequel-pro
+  sf-symbols
   sherlock
   simsim
   sip
