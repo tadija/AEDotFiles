@@ -47,7 +47,6 @@ cli=(
   bat # https://github.com/sharkdp/bat
   carthage # https://github.com/Carthage/Carthage
   cloc # https://github.com/AlDanial/cloc
-  cocoapods # https://github.com/CocoaPods/CocoaPods
   fd # https://github.com/sharkdp/fd
   fzf # https://github.com/junegunn/fzf
   git # https://git-scm.com
@@ -87,6 +86,7 @@ apps=(
   paw
   red-eye
   sequel-pro
+  sf-symbols
   sherlock
   simsim
   sip

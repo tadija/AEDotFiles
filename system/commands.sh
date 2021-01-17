@@ -43,6 +43,14 @@ function df-run() {
   fi
 }
 
+function df-update() {
+  cd $df
+  git stash
+  git fetch && git pull
+  git stash apply
+  df-reload
+}
+
 function df-terminal() {
   local theme="$1"
   local file=$df/themes/$theme.terminal
@@ -82,7 +90,7 @@ function df-install() {
 
   echo ""
   echo "[brew] installing quicklook plugins..."
-  brew cask install ${qlplugins[@]}
+  brew install --cask ${qlplugins[@]}
   # remove the quarantine attribute (see: https://github.com/sindresorhus/quick-look-plugins)
   xattr -d -r com.apple.quarantine ~/Library/QuickLook
 
@@ -92,7 +100,7 @@ function df-install() {
 
   echo ""
   echo "[brew] installing apps..."
-  brew cask install --appdir=$apps_installation_path ${apps[@]} --force
+  brew install --cask --appdir=$apps_installation_path ${apps[@]} --force
 
   echo ""
   echo -e "[brew] cleanup...\n"

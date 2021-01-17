@@ -54,6 +54,8 @@ function my-plugins() {
   echo ""
   setup-fastlane
   echo ""
+  gem install cocoapods
+  echo ""
 }
 
 function my-services() {

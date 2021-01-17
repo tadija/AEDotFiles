@@ -32,6 +32,8 @@ Install and run Xcode then start Terminal app and follow instructions:
 	$ df-terminal AE
 	```
 
+	*(in case of some weird error run `rm ~/.zcompdump` and restart Terminal)*
+
 ## Step 2 [set]
 
 - Configure and save [your config](setup/config.sh)
@@ -39,17 +41,17 @@ Install and run Xcode then start Terminal app and follow instructions:
 	``` sh
 	$ df-edit config
 	```
-	
-- Configure global git user (optional)
 
-	``` sh
-	$ git-user home --global
-	```
-	
 - Reload shell
 
 	``` sh
 	$ df-reload
+	```
+
+- Configure global git user (optional)
+
+	``` sh
+	$ git-user home --global
 	```
 
 ## Step 3 [go]
