@@ -5,6 +5,8 @@
 	excludesfile = ~/.dotfiles/.gitignore
 [push]
 	default = simple
+[pull]
+	rebase = false
 [diff]
 	tool = opendiff
 [merge]
