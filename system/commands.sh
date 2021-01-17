@@ -43,6 +43,14 @@ function df-run() {
   fi
 }
 
+function df-update() {
+  cd $df
+  git stash
+  git fetch && git pull
+  git stash apply
+  df-reload
+}
+
 function df-terminal() {
   local theme="$1"
   local file=$df/themes/$theme.terminal
