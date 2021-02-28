@@ -1,8 +1,8 @@
 # https://github.com/tadija/AEDotFiles
 # general.sh
 
-alias update="brew update && brew upgrade && brew cask upgrade && brew cleanup && mas upgrade"
-alias restore="tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh; do sleep 0.2; done)& tmux ; }"
+alias update="brew update && brew upgrade && brew cleanup && mas upgrade"
+alias restore='pgrep -vxq tmux && tmux new -d -s delete-me && tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh && tmux kill-session -t delete-me && tmux attach || tmux attach'
 
 alias ..="cd .."
 alias cdh="cd $HOME"

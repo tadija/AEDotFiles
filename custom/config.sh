@@ -89,14 +89,14 @@ apps=(
   sf-symbols
   sherlock
   simsim
-  sip
   sketch
-  skype
   sublime-text
   teacode
+  teamviewer
   visual-studio-code
   wwdc
   xscope
+  zoom
 )
 
 apps_installation_path="/Applications"

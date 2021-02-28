@@ -28,7 +28,7 @@ function my-cloud() {
 
 function my-ssh() {
   cp -rf ~/Cloud/Documents/Sync/.ssh ~/.ssh
-  la ~/.ssh
+  cd ~/.ssh && la
 
   # chmod 400 each private key
   fd -e pub -x chmod 400 {.}
@@ -37,12 +37,20 @@ function my-ssh() {
 }
 
 function my-tmux() {
+  # install tmux plugin manager
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+  if tmux ls; then
+    # reload tmux
+    tmux source-file ~/.tmux.conf
+    echo "tmux reloaded"
+  else
+    # start new session
+    tmux new-session
+  fi
+  # prefix + I (load plugins)
   # https://github.com/tmux-plugins/tmux-resurrect
   # https://github.com/tmux-plugins/tmux-continuum
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  # reload tmux
-  tmux source-file ~/.tmux.conf
-  echo "tmux reloaded"
 }
 
 function my-plugins() {
