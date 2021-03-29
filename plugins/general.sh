@@ -4,11 +4,17 @@
 alias update="brew update && brew upgrade && brew cleanup && mas upgrade"
 alias restore='pgrep -vxq tmux && tmux new -d -s delete-me && tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh && tmux kill-session -t delete-me && tmux attach || tmux attach'
 
-alias ..="cd .."
 alias cdh="cd $HOME"
-alias ls='ls -GFh'
+alias ..="cd .."
+
+case $OSTYPE in
+  linux) alias ls='ls --color';;
+  darwin) alias ls='ls -GFh';;
+  *) ;;
+esac
 alias ll="ls -lo"
 alias la="ll -a"
+
 alias grep="grep --color=auto"
 alias o="open ."
 alias rmd="rm -rf"
