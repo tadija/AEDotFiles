@@ -14,33 +14,36 @@ Install and run Xcode then start Terminal app and follow instructions:
 	$ git clone https://github.com/tadija/AEDotFiles.git ~/.dotfiles
 	```
 
-- Run [setup](system/setup.sh) which will make your new [.shell_file](.shell_file)
+- Run this [setup script](system/setup.sh) which will make your new [.shell_file](.shell_file)
 
 	``` sh
 	$ . ~/.dotfiles/system/setup.sh
 	```
 	
-- Play some music while doing this? (optional)
+- Play some music while doing all of this? (optional)
 
 	``` sh
 	$ my-radio
 	```
 
-- Configure [AE theme](themes/AE.terminal) for Terminal (optional)
+- Configure [AE theme](themes/AE.terminal) for Terminal? (optional)
 
 	``` sh
 	$ df-terminal AE
 	```
-
-	*(in case of some weird error run `rm ~/.zcompdump` and restart Terminal)*
+	
+	*after this step run `rm ~/.zcompdump` and restart Terminal in order to fix the error:*
+	`compinit:482: bad math expression: operand expected at end of string`
 
 ## Step 2 [set]
 
-- Configure and save [your config](setup/config.sh)
+- Configure and save [your config file](custom/config.sh)
 
 	``` sh
 	$ df-edit config
 	```
+	
+	*change `$EDITOR` var if needed (hint: use "ctrl+x" to exit and save file from [the nano editor](https://en.wikipedia.org/wiki/GNU_nano))*
 
 - Reload shell
 
@@ -62,7 +65,7 @@ Install and run Xcode then start Terminal app and follow instructions:
 	$ df-homebrew
 	```
 
-- Install all the things from [your config](setup/config.sh)
+- Install all the things from [your config file](custom/config.sh)
 
 	``` sh
 	$ df-install

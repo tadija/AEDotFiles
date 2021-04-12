@@ -1,14 +1,22 @@
 # https://github.com/tadija/AEDotFiles
 # config.sh
 
-# Git User
+# Default Editor
+
+export EDITOR="nano"
+
+# Git User 
+# plugins/git-user.sh
 
 typeset -Ag git_user
 git_user[home]="Marko Tadic;tadija@me.com"
 git_user[work]="Marko Tadic;marko.tadic@appculture.com"
 
-# AEDotFiles Plugins
+# Shell Plugins
+# plugins/*.sh
 
+## "system/init.sh" will source each file (included on this list) from "plugins" dir
+## any file can be overriden by making a new file with the same name in "custom" dir
 dfplugins=(
   my
   bat
@@ -32,6 +40,7 @@ dfplugins=(
 )
 
 # Quicklook Plugins
+# ~/Library/QuickLook
 
 qlplugins=(
   provisioning
@@ -42,6 +51,7 @@ qlplugins=(
 )
 
 # Command Line Tools
+# /usr/local/Cellar
 
 cli=(
   bat # https://github.com/sharkdp/bat
@@ -72,6 +82,9 @@ cli=(
 )
 
 # Homebrew Apps
+# /Applications
+
+apps_installation_path="/Applications"
 
 apps=(
   alfred
@@ -89,14 +102,12 @@ apps=(
   sf-symbols
   sherlock
   simsim
-  sip
   sketch
-  skype
   sublime-text
   teacode
+  teamviewer
   visual-studio-code
   wwdc
   xscope
+  zoom
 )
-
-apps_installation_path="/Applications"

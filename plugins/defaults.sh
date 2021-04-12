@@ -7,7 +7,6 @@ function setup-defaults {
   defaults-cursor
   defaults-xcsimfs
   defaults-xcindx
-  defaults-fdpath
   defaults-dsstore
 
   echo "> defaults are set!"
@@ -30,13 +29,6 @@ function defaults-xcsimfs {
 function defaults-xcindx {
   # show number of remaining files when indexing a project in xcode
   cmd="defaults write com.apple.dtXcode IDEIndexerActivityShowNumericProgress -bool true"
-  eval $cmd
-  echo "• $cmd"
-}
-
-function defaults-fdpath {
-  # display full POSIX path as Finder window title
-  cmd="defaults write com.apple.finder _FXShowPosixPathInTitle -bool true"
   eval $cmd
   echo "• $cmd"
 }
