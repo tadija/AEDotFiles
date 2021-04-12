@@ -36,7 +36,7 @@ Install and run Xcode then start Terminal app and follow instructions:
 
 ## Step 2 [set]
 
-- Configure and save [your config](setup/config.sh)
+- Configure and save [your config](custom/config.sh)
 
 	``` sh
 	$ df-edit config
@@ -62,7 +62,7 @@ Install and run Xcode then start Terminal app and follow instructions:
 	$ df-homebrew
 	```
 
-- Install all the things from [your config](setup/config.sh)
+- Install all the things from [your config](custom/config.sh)
 
 	``` sh
 	$ df-install
