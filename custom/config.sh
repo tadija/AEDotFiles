@@ -60,6 +60,7 @@ cli=(
   fd # https://github.com/sharkdp/fd
   fzf # https://github.com/junegunn/fzf
   git # https://git-scm.com
+  git-lfs # https://git-lfs.github.com
   git-flow # https://github.com/nvie/gitflow
   graphicsmagick # http://www.graphicsmagick.org
   heroku/brew/heroku # https://cli.heroku.com
