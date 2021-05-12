@@ -1,6 +1,8 @@
 # https://github.com/tadija/AEDotFiles
 # brew.sh
 
+export PATH=".:/opt/homebrew/bin:$PATH"
+
 alias bs="brew search"
 alias bci="brew cask install"
 alias bcu="brew cask uninstall"

@@ -79,17 +79,16 @@ function my-sublime() {
 }
 
 function my-xcode() {
+  sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+  cd ~/Library/Developer/Xcode
+  rmd UserData
+  ln -s ~/Cloud/Documents/Sync/Xcode UserData
+  
+  mkdir Previews
   cd ~/Library/Developer/Xcode/UserData
-
-  ln -s ~/Cloud/Documents/Sync/Xcode/CodeSnippets CodeSnippets
-  ln -s ~/Cloud/Documents/Sync/Xcode/FontAndColorThemes FontAndColorThemes
-  ln -s ~/Cloud/Documents/Sync/Xcode/xcdebugger xcdebugger
-
-  rmd KeyBindings
-  ln -s ~/Cloud/Documents/Sync/Xcode/KeyBindings KeyBindings
-
-  la ~/Library/Developer/Xcode/UserData
-  cd -
+  rmd Previews
+  ln -s ~/Library/Developer/Xcode/Previews Previews
 
   # import accounts for code signing manually
 }

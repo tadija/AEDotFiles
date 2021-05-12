@@ -1,8 +1,10 @@
 # https://github.com/tadija/AEDotFiles
 # config.sh
 
-# Default Editor
+# Default Path
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Default Editor
 export EDITOR="nano"
 
 # Git User 
