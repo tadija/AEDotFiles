@@ -42,8 +42,6 @@ Install and run Xcode then start Terminal app and follow instructions:
 	``` sh
 	$ df-edit config
 	```
-	
-	*change `$EDITOR` var if needed (hint: use "ctrl+x" to exit and save file from [the nano editor](https://en.wikipedia.org/wiki/GNU_nano))*
 
 - Reload shell
 
