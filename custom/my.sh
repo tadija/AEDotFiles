@@ -79,18 +79,25 @@ function my-sublime() {
 }
 
 function my-xcode() {
-  sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-
-  cd ~/Library/Developer/Xcode
-  rmd UserData
-  ln -s ~/Cloud/Documents/Sync/Xcode UserData
-  
-  mkdir Previews
   cd ~/Library/Developer/Xcode/UserData
-  rmd Previews
-  ln -s ~/Library/Developer/Xcode/Previews Previews
 
-  # import accounts for code signing manually
+  rmd CodeSnippets
+  ln -s ~/Cloud/Documents/Sync/Xcode/CodeSnippets CodeSnippets
+
+  rmd FontAndColorThemes
+  ln -s ~/Cloud/Documents/Sync/Xcode/FontAndColorThemes FontAndColorThemes
+  
+  rmd KeyBindings
+  ln -s ~/Cloud/Documents/Sync/Xcode/KeyBindings KeyBindings
+
+  rmd xcdebugger
+  ln -s ~/Cloud/Documents/Sync/Xcode/xcdebugger xcdebugger
+
+  la ~/Library/Developer/Xcode/UserData
+  cd -
+
+  # select command line tools version
+  # import accounts for code signing
 }
 
 function my-sketch() {
