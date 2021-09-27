@@ -1,8 +1,10 @@
 # https://github.com/tadija/AEDotFiles
 # config.sh
 
-# Default Editor
+# Default Path
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Default Editor
 export EDITOR="nano"
 
 # Git User 
@@ -59,7 +61,9 @@ cli=(
   cloc # https://github.com/AlDanial/cloc
   fd # https://github.com/sharkdp/fd
   fzf # https://github.com/junegunn/fzf
+  gh # https://cli.github.com
   git # https://git-scm.com
+  git-lfs # https://git-lfs.github.com
   git-flow # https://github.com/nvie/gitflow
   graphicsmagick # http://www.graphicsmagick.org
   heroku/brew/heroku # https://cli.heroku.com
@@ -90,7 +94,6 @@ apps=(
   alfred
   appcleaner
   calibre
-  charles
   db-browser-for-sqlite
   firefox
   fork
@@ -105,7 +108,7 @@ apps=(
   sketch
   sublime-text
   teacode
-  teamviewer
+  textmate
   visual-studio-code
   wwdc
   xscope

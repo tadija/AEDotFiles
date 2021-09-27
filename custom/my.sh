@@ -81,17 +81,23 @@ function my-sublime() {
 function my-xcode() {
   cd ~/Library/Developer/Xcode/UserData
 
+  rmd CodeSnippets
   ln -s ~/Cloud/Documents/Sync/Xcode/CodeSnippets CodeSnippets
-  ln -s ~/Cloud/Documents/Sync/Xcode/FontAndColorThemes FontAndColorThemes
-  ln -s ~/Cloud/Documents/Sync/Xcode/xcdebugger xcdebugger
 
+  rmd FontAndColorThemes
+  ln -s ~/Cloud/Documents/Sync/Xcode/FontAndColorThemes FontAndColorThemes
+  
   rmd KeyBindings
   ln -s ~/Cloud/Documents/Sync/Xcode/KeyBindings KeyBindings
+
+  rmd xcdebugger
+  ln -s ~/Cloud/Documents/Sync/Xcode/xcdebugger xcdebugger
 
   la ~/Library/Developer/Xcode/UserData
   cd -
 
-  # import accounts for code signing manually
+  # select command line tools version
+  # import accounts for code signing
 }
 
 function my-sketch() {
