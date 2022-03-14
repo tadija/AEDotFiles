@@ -1,7 +1,7 @@
 # https://github.com/tadija/AEDotFiles
 # my.sh
 
-alias ssh-reload="cd ~/.ssh && fd -e pub -x ssh-add -K {.} && cd -"
+alias ssh-reload="cd ~/.ssh && fd -e pub -x ssh-add --apple-use-keychain {.} && cd -"
 
 function my-radio() {
   echo "configuring radio..."
