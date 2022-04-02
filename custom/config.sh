@@ -11,8 +11,9 @@ export EDITOR="nano"
 # plugins/git-user.sh
 
 typeset -Ag git_user
-git_user[home]="Marko Tadic;tadija@me.com"
-git_user[work]="Marko Tadic;marko.tadic@appculture.com"
+git_user[my]="Marko Tadic;tadija@me.com"
+git_user[ac]="Marko Tadic;marko.tadic@appculture.com"
+git_user[bux]="Marko Tadic;marko.tadic@getbux.com"
 
 # Shell Plugins
 # plugins/*.sh
