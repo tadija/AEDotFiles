@@ -2,9 +2,11 @@
 # rbenv.sh
 
 function setup-rbenv() {
-  # rbenv install --list
-  rbenv install 2.7.2
-  rbenv global 2.7.2
+  # https://stackoverflow.com/a/30191850
+  latest=$(rbenv install --list-all | grep -v - | tail -1)
+  echo "rbenv installing ruby $latest"
+  rbenv install $latest
+  rbenv global $latest
   rbenv rehash
 }
 
