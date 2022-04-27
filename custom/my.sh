@@ -1,7 +1,7 @@
 # https://github.com/tadija/AEDotFiles
 # my.sh
 
-alias ssh-reload="cd ~/.ssh && fd -e pub -x ssh-add -K {.} && cd -"
+alias ssh-reload="cd ~/.ssh && fd -e pub -x ssh-add --apple-use-keychain {.} && cd -"
 
 function my-radio() {
   echo "configuring radio..."
@@ -33,7 +33,7 @@ function my-ssh() {
   # chmod 400 each private key
   fd -e pub -x chmod 400 {.}
   
-  # ssh-add -K each private key manually
+  # ssh-add --apple-use-keychain each private key manually
 }
 
 function my-tmux() {
@@ -73,9 +73,9 @@ function my-services() {
 }
 
 function my-sublime() {
-  rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-  ln -s ~/Cloud/Documents/Sync/Sublime/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-  la ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+  rm -rf ~/Library/Application\ Support/Sublime\ Text/Packages/User
+  ln -s ~/Cloud/Documents/Sync/Sublime/User ~/Library/Application\ Support/Sublime\ Text/Packages/User
+  la ~/Library/Application\ Support/Sublime\ Text/Packages/User
 }
 
 function my-xcode() {
@@ -113,6 +113,7 @@ function my-sketch() {
   ln -s ~/Cloud/Documents/Sync/Sketch/Templates Templates
 
   la ~/Library/Application\ Support/com.bohemiancoding.sketch3
+  cd -
 }
 
 function my-teacode() {
