@@ -66,6 +66,11 @@ function my-plugins() {
   echo ""
 }
 
+function my-bin() {
+  sudo mkdir -p /usr/local/bin
+  sudo chown -R $(id -nu):admin /usr/local/bin
+}
+
 function my-services() {
   sudo rm -rf ~/Library/Services
   ln -s ~/Cloud/Documents/Sync/Services ~/Library/Services
