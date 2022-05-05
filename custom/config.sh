@@ -78,6 +78,7 @@ cli=(
   ripgrep # https://github.com/BurntSushi/ripgrep
   kylef/formulae/swiftenv # https://github.com/kylef/swiftenv
   speedtest-cli # https://github.com/sivel/speedtest-cli
+  swiftgen # https://github.com/SwiftGen/SwiftGen
   swiftlint # https://github.com/realm/SwiftLint
   tig # https://github.com/jonas/tig
   tldr # https://tldr.sh
