@@ -12,7 +12,6 @@ export EDITOR="nano"
 
 typeset -Ag git_user
 git_user[my]="Marko Tadic;tadija@me.com"
-git_user[ac]="Marko Tadic;marko.tadic@appculture.com"
 git_user[bux]="Marko Tadic;marko.tadic@getbux.com"
 
 # Shell Plugins
@@ -84,7 +83,7 @@ cli=(
   tldr # https://tldr.sh
   tmux # http://tmux.github.io
   tree # http://mama.indstate.edu/users/ice/tree
-  vapor/tap/vapor # https://vapor.codes
+  vapor # https://vapor.codes
 )
 
 # Homebrew Apps
@@ -97,6 +96,7 @@ apps=(
   appcleaner
   calibre
   db-browser-for-sqlite
+  docker
   firefox
   fork
   google-chrome
