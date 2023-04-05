@@ -3,6 +3,8 @@
 	email = tadija@me.com
 [core]
 	excludesfile = ~/.dotfiles/.gitignore
+[init]
+	defaultBranch = main
 [push]
 	default = simple
 [pull]
