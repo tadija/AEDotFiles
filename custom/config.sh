@@ -36,6 +36,7 @@ dfplugins=(
   subl
   swift
   swiftenv
+  vscode
   xcode
   zsh
 )
