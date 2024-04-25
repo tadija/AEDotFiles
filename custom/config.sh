@@ -7,7 +7,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Default Editor
 export EDITOR="nano"
 
-# Git User 
+# Git User
 # plugins/git-user.sh
 
 typeset -Ag git_user
@@ -57,7 +57,6 @@ qlplugins=(
 
 cli=(
   bat # https://github.com/sharkdp/bat
-  carthage # https://github.com/Carthage/Carthage
   cloc # https://github.com/AlDanial/cloc
   fd # https://github.com/sharkdp/fd
   fzf # https://github.com/junegunn/fzf
@@ -94,25 +93,24 @@ apps_installation_path="/Applications"
 apps=(
   alfred
   appcleaner
-  calibre
+  arc
   db-browser-for-sqlite
   docker
-  firefox
   fork
-  google-chrome
   macdown
-  paw
+  rapidapi
   red-eye
-  sequel-pro
+  sequel-ace
   sf-symbols
   sherlock
   simsim
   sketch
   sublime-text
-  teacode
   textmate
   visual-studio-code
   wwdc
+  xcodes
   xscope
   zoom
+  zed
 )

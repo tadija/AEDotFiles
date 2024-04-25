@@ -16,7 +16,7 @@ function greenfield() {
 function my-radio() {
   echo "configuring radio..."
   cd ~/Downloads
-  curl http://tadija.net/random/radio.zip > radio.zip
+  curl https://tadija.net/random/radio.zip > radio.zip
   unzip -qq radio.zip
   yes | cp -rf Radio.app /Applications
   rm radio.zip
@@ -26,7 +26,7 @@ function my-radio() {
   echo "ready to play! (check the menu bar)"
 }
 
-function my-dotfiles() {  
+function my-dotfiles() {
   ln -s ~/Developer/GitHub/AEDotFiles ~/.dotfiles
   la ~/.dotfiles
 }
@@ -42,7 +42,7 @@ function my-ssh() {
 
   # chmod 400 each private key
   fd -e pub -x chmod 400 {.}
-  
+
   # ssh-add --apple-use-keychain each private key manually
 }
 
@@ -101,7 +101,7 @@ function my-xcode() {
 
   rmd FontAndColorThemes
   ln -s ~/Cloud/Documents/Sync/Xcode/FontAndColorThemes FontAndColorThemes
-  
+
   rmd KeyBindings
   ln -s ~/Cloud/Documents/Sync/Xcode/KeyBindings KeyBindings
 
@@ -113,28 +113,6 @@ function my-xcode() {
 
   # select command line tools version
   # import accounts for code signing
-}
-
-function my-sketch() {
-  cd ~/Library/Application\ Support/com.bohemiancoding.sketch3
-
-  rmd Libraries
-  ln -s ~/Cloud/Documents/Sync/Sketch/Libraries Libraries
-
-  rmd Plugins
-  ln -s ~/Cloud/Documents/Sync/Sketch/Plugins Plugins
-
-  rmd Templates
-  ln -s ~/Cloud/Documents/Sync/Sketch/Templates Templates
-
-  la ~/Library/Application\ Support/com.bohemiancoding.sketch3
-  cd -
-}
-
-function my-teacode() {
-  rmd ~/Library/Application\ Support/com.apptorium.TeaCode-dm
-  ln -s ~/Cloud/Documents/Sync/TeaCode/com.apptorium.TeaCode-dm ~/Library/Application\ Support/com.apptorium.TeaCode-dm
-  la ~/Library/Application\ Support/com.apptorium.TeaCode-dm
 }
 
 function my-homebridge() {
