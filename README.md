@@ -52,7 +52,7 @@ Install and run Xcode then start Terminal app and follow instructions:
 - Configure global git user (optional)
 
 	``` sh
-	$ git-user home --global
+	$ git-user my --global
 	```
 
 ## Step 3 [go]

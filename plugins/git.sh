@@ -29,9 +29,3 @@ gitStashWithTimestamp() {
   ts=$(date "+%Y%m%d-%H%M%S")
   git stash save $ts
 }
-
-alias gf="git-flow"
-alias gfi="gf init"
-alias gff="gf feature"
-alias gfr="gf release"
-alias gfh="gf hotfix"
