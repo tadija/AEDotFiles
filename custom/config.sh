@@ -78,6 +78,7 @@ cli=(
   ripgrep # https://github.com/BurntSushi/ripgrep
   kylef/formulae/swiftenv # https://github.com/kylef/swiftenv
   speedtest-cli # https://github.com/sivel/speedtest-cli
+  swiftformat # https://github.com/nicklockwood/SwiftFormat
   swiftgen # https://github.com/SwiftGen/SwiftGen
   swiftlint # https://github.com/realm/SwiftLint
   tig # https://github.com/jonas/tig
@@ -85,6 +86,8 @@ cli=(
   tmux # http://tmux.github.io
   tree # http://mama.indstate.edu/users/ice/tree
   vapor # https://vapor.codes
+  xcbeautify # https://github.com/cpisciotta/xcbeautify
+  xcode-build-server # https://github.com/SolaWing/xcode-build-server
 )
 
 # Homebrew Apps
