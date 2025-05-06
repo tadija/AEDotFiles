@@ -20,7 +20,6 @@ git_user[my]="Marko Tadic;tadija@me.com"
 ## any file can be overriden by making a new file with the same name in "custom" dir
 dfplugins=(
   my
-  atuin
   bat
   brew
   colors
@@ -57,7 +56,6 @@ qlplugins=(
 # /usr/local/Cellar
 
 cli=(
-  atuin # https://atuin.sh
   bat # https://github.com/sharkdp/bat
   cloc # https://github.com/AlDanial/cloc
   fd # https://github.com/sharkdp/fd
