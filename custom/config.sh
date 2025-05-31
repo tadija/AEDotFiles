@@ -2,7 +2,7 @@
 # config.sh
 
 # Default Path
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Default Editor
 export EDITOR="nano"
