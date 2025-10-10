@@ -4,6 +4,10 @@
 if [ -n "$ZSH_VERSION" ]; then
   # case-insensitive globbing
   setopt NO_CASE_GLOB
+  # setup history file
+  HISTFILE=~/.zsh_history
+  HISTSIZE=10000
+  SAVEHIST=10000
   # show timestamp and elapsed time of the command
   setopt EXTENDED_HISTORY
   # share history across multiple zsh sessions

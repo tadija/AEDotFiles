@@ -68,6 +68,7 @@ cli=(
   heroku/brew/heroku # https://cli.heroku.com
   hub # https://hub.github.com
   jq # https://stedolan.github.io/jq
+  lazygit # https://github.com/jesseduffield/lazygit/
   mas # https://github.com/mas-cli/mas
   mysql # https://dev.mysql.com
   npm # https://www.npmjs.com
@@ -82,7 +83,7 @@ cli=(
   tig # https://github.com/jonas/tig
   tldr # https://tldr.sh
   tmux # http://tmux.github.io
-  tree # http://mama.indstate.edu/users/ice/tree
+  tree # http://oldmanprogrammer.net/source.php?dir=projects/tree
   vapor # https://vapor.codes
   xcbeautify # https://github.com/cpisciotta/xcbeautify
   xcode-build-server # https://github.com/SolaWing/xcode-build-server
