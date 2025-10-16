@@ -1,6 +1,21 @@
 # https://github.com/tadija/AEDotFiles
 # git.sh
 
+function git() {
+  # check if we're in WSL
+  if [ -f /proc/sys/kernel/osrelease ] && grep -qi "microsoft" /proc/sys/kernel/osrelease; then
+    # check if current directory is on a Windows-mounted drive (/mnt/*)
+    if [[ $(pwd -P) =~ ^/mnt/[a-zA-Z]/ ]]; then
+      git.exe "$@"
+    else
+      command git "$@"
+    fi
+  else
+    # not in WSL, use default git
+    command git "$@"
+  fi
+}
+
 alias gits="git status"
 alias gitstate="git remote update && git status -uno"
 alias gitgraph="git log --pretty=format:'%h %s' --graph"
