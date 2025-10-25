@@ -56,3 +56,5 @@ function gitlogbranch() {
 function gitParentBranch() {
   git reflog show --no-abbrev $(git branch --show-current) | grep "branch: Created from" | awk '{print $1;}'
 }
+
+alias lg="lazygit"

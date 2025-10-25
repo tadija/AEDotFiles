@@ -30,6 +30,7 @@ dfplugins=(
   git-user
   git
   hub
+  mise
   prompt
   random
   rbenv
@@ -56,9 +57,11 @@ qlplugins=(
 # /usr/local/Cellar
 
 cli=(
+  ast-grep # https://github.com/ast-grep/ast-grep
   bat # https://github.com/sharkdp/bat
   cloc # https://github.com/AlDanial/cloc
   fd # https://github.com/sharkdp/fd
+  font-roboto-mono-nerd-font # https://www.nerdfonts.com
   fzf # https://github.com/junegunn/fzf
   gh # https://cli.github.com
   git # https://git-scm.com
@@ -66,16 +69,19 @@ cli=(
   git-flow # https://github.com/nvie/gitflow
   graphicsmagick # http://www.graphicsmagick.org
   heroku/brew/heroku # https://cli.heroku.com
+  htop # https://htop.dev/
   hub # https://hub.github.com
   jq # https://stedolan.github.io/jq
-  lazygit # https://github.com/jesseduffield/lazygit/
+  lazygit # https://github.com/jesseduffield/lazygit
   mas # https://github.com/mas-cli/mas
+  mise # https://mise.jdx.dev
   mysql # https://dev.mysql.com
   npm # https://www.npmjs.com
+  nvim # https://neovim.io
   ranger # https://github.com/ranger/ranger
   rbenv # https://github.com/rbenv/rbenv
   ripgrep # https://github.com/BurntSushi/ripgrep
-  kylef/formulae/swiftenv # https://github.com/kylef/swiftenv
+  swiftly # https://github.com/swiftlang/swiftly
   speedtest-cli # https://github.com/sivel/speedtest-cli
   swiftformat # https://github.com/nicklockwood/SwiftFormat
   swiftgen # https://github.com/SwiftGen/SwiftGen
@@ -85,6 +91,7 @@ cli=(
   tmux # http://tmux.github.io
   tree # http://oldmanprogrammer.net/source.php?dir=projects/tree
   vapor # https://vapor.codes
+  wget # https://www.gnu.org/software/wget
   xcbeautify # https://github.com/cpisciotta/xcbeautify
   xcode-build-server # https://github.com/SolaWing/xcode-build-server
 )
@@ -97,7 +104,6 @@ apps_installation_path="/Applications"
 apps=(
   alfred
   appcleaner
-  arc
   db-browser-for-sqlite
   docker
   fork
@@ -112,7 +118,6 @@ apps=(
   sublime-text
   textmate
   visual-studio-code
-  wwdc
   xcodes
   xscope
   zoom
