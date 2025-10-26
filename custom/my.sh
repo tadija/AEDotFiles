@@ -63,6 +63,11 @@ function my-tmux() {
   # https://github.com/tmux-plugins/tmux-continuum
 }
 
+function my-nvim() {
+  mv ~/.config/nvim ~/.config/nvim-backup
+  ln -s ~/.dotfiles/plugins/nvim ~/.config/nvim
+}
+
 function my-plugins() {
   setup-defaults
   echo ""
