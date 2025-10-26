@@ -1,9 +1,24 @@
 # https://github.com/tadija/AEDotFiles
 # git.sh
 
+function git() {
+  # check if we're in WSL
+  if [ -f /proc/sys/kernel/osrelease ] && grep -qi "microsoft" /proc/sys/kernel/osrelease; then
+    # check if current directory is on a Windows-mounted drive (/mnt/*)
+    if [[ $(pwd -P) =~ ^/mnt/[a-zA-Z]/ ]]; then
+      git.exe "$@"
+    else
+      command git "$@"
+    fi
+  else
+    # not in WSL, use default git
+    command git "$@"
+  fi
+}
+
 alias gits="git status"
 alias gitstate="git remote update && git status -uno"
-alias gitlog="git log --pretty=format:'%h %s' --graph"
+alias gitgraph="git log --pretty=format:'%h %s' --graph"
 alias gitsmupdate="git submodule update --init --recursive"
 alias gitsmpull="git submodule foreach git pull origin master"
 alias gitcm="git add . && git commit --allow-empty-message -m ''"
@@ -25,7 +40,21 @@ alias gitpf="git push --force"
 alias gitsy="gitss && git pull && gitsa"
 alias gitsyf="gitss && gitundo && gitrh && git pull && gitsa"
 
-gitStashWithTimestamp() {
+function gitStashWithTimestamp() {
   ts=$(date "+%Y%m%d-%H%M%S")
   git stash save $ts
 }
+
+function gitlog() {
+  git log --oneline --reverse --no-decorate $(git branch --show-current) -n "${1-10}"
+}
+
+function gitlogbranch() {
+  git log --oneline --reverse --no-decorate $(gitParentBranch)..$(git branch --show-current)
+}
+
+function gitParentBranch() {
+  git reflog show --no-abbrev $(git branch --show-current) | grep "branch: Created from" | awk '{print $1;}'
+}
+
+alias lg="lazygit"

@@ -26,6 +26,8 @@ if [ -x "$(command -v fzf)" ]; then
   export FZF_ALT_C_COMMAND='fd --type d --max-depth 4 --hidden --follow --exclude ".git"'
   export FZF_ALT_C_OPTS="--preview-window=right:0%"
 
+  export FZF_CTRL_R_OPTS="--preview-window=right:0%"
+
   # Use fd (https://github.com/sharkdp/fd) instead of the default find command for listing path candidates.
   # - The first argument to the function ($1) is the base path to start traversal
   # - See the source code (completion.{bash,zsh}) for the details.
