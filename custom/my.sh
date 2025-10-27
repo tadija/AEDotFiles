@@ -6,6 +6,7 @@
 alias ssh-reload="cd ~/.ssh && fd -e pub -x ssh-add --apple-use-keychain {.} && cd -"
 
 alias bb="open -a bbedit"
+alias lv="nvim"
 
 function greenfield() {
   curl -L "tadija.net/swift-greenfield" | bash -s "$1"
