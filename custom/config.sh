@@ -2,7 +2,11 @@
 # config.sh
 
 # Default Path
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/opt/homebrew/bin
+export PATH=$PATH:/snap/bin
 
 # Default Editor
 export EDITOR="nano"
