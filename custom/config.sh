@@ -9,7 +9,8 @@ export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:/snap/bin
 
 # Default Editor
-export EDITOR="nano"
+export EDITOR="nvim"
+export PAGER="less"
 
 # Git User
 # plugins/git-user.sh
