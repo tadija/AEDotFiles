@@ -1,7 +1,9 @@
 # https://github.com/tadija/AEDotFiles
 # brew.sh
 
-export PATH=".:/opt/homebrew/bin:$PATH"
+if [ -x "$(command -v brew)" ]; then
+  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 alias bs="brew search"
 alias bci="brew cask install"
