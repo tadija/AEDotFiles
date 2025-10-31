@@ -7,7 +7,8 @@ export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:/snap/bin
 
-export LANG=en_US.UTF-8
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 
 export EDITOR='nvim'
 export LESS='-R --use-color --hilite-search --incsearch --ignore-case --no-init --LONG-PROMPT --quit-if-one-screen'
@@ -42,6 +43,7 @@ dfplugins=(
   git
   hub
   mise
+  nvm
   prompt
   random
   rbenv
