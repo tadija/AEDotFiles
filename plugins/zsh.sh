@@ -11,6 +11,9 @@ if [ -n "$ZSH_VERSION" ]; then
   bindkey -v
   bindkey jj vi-cmd-mode
 
+  # tab complete auto-suggestions
+  bindkey '\t' autosuggest-accept
+
   # case-insensitive globbing
   setopt NO_CASE_GLOB
 
