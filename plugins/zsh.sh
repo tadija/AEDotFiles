@@ -19,14 +19,14 @@ if [ -n "$ZSH_VERSION" ]; then
 
   # setup history file
   HISTFILE=~/.zsh_history
-  HISTSIZE=10000
-  SAVEHIST=10000
+  HISTSIZE=1000000
+  SAVEHIST=1000000
   # show timestamp and elapsed time of the command
   setopt EXTENDED_HISTORY
-  # share history across multiple zsh sessions
-  setopt SHARE_HISTORY
   # append to history
   setopt APPEND_HISTORY
+  # share history across multiple zsh sessions
+  setopt SHARE_HISTORY
   # adds commands as they are typed, not at shell exit
   setopt INC_APPEND_HISTORY
   # do not store duplications

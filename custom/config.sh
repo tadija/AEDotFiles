@@ -36,6 +36,7 @@ dfplugins=(
   brew
   colors
   defaults
+  dotnet
   fastlane
   fzf
   general
@@ -73,6 +74,7 @@ cli=(
   ast-grep # https://github.com/ast-grep/ast-grep
   bat # https://github.com/sharkdp/bat
   cloc # https://github.com/AlDanial/cloc
+  dotnet # https://aka.ms/dotnet/info
   fd # https://github.com/sharkdp/fd
   font-roboto-mono-nerd-font # https://www.nerdfonts.com
   fzf # https://github.com/junegunn/fzf
