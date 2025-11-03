@@ -2,7 +2,7 @@
 # dotnet.sh
 
 if [[ -d "$HOME/.dotnet" ]]; then
-  export PATH=$PATH:$HOME/.dotnet/tools
-  export DOTNET_CLI_HOME="$HOME/.dotnet"
+  export DOTNET_ROOT="$HOME/.dotnet"
+  export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 fi
 

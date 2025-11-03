@@ -110,6 +110,7 @@ cli=(
   xcbeautify # https://github.com/cpisciotta/xcbeautify
   xcode-build-server # https://github.com/SolaWing/xcode-build-server
   zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
+  zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
 )
 
 # Homebrew Apps
