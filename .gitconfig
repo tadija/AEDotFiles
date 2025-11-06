@@ -3,8 +3,13 @@
 	email = tadija@me.com
 [core]
 	excludesfile = ~/.dotfiles/.gitignore
+	pager = less -R
 [init]
 	defaultBranch = main
+[pager]
+	diff = less -R
+	log = less -R
+	show = less -R
 [push]
 	default = simple
 [pull]
@@ -15,6 +20,8 @@
 	tool = opendiff
 [diff "localizablestrings"]
 	textconv = "iconv -f utf-16 -t utf-8"
+[color]
+	ui = auto
 [tig "color"]
 	cursor = black cyan bold
 	title-blur = white black

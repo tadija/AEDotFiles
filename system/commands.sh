@@ -3,6 +3,7 @@
 
 function df-reload() {
   source ~/.zshrc
+  echo "platform: $OS"
 }
 
 function df-find() {

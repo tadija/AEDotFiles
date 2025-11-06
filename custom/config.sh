@@ -1,11 +1,23 @@
 # https://github.com/tadija/AEDotFiles
 # config.sh
 
-# Default Path
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/opt/homebrew/bin
+export PATH=$PATH:/snap/bin
 
-# Default Editor
-export EDITOR="nano"
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+
+export EDITOR='nvim'
+export LESS='-R --use-color --hilite-search --incsearch --ignore-case --no-init --LONG-PROMPT --quit-if-one-screen'
+export PAGER='less'
+
+export MANPAGER='less'
+export LESS_TERMCAP_md=$'\e[1;36m'      # bold -> cyan
+export LESS_TERMCAP_us=$'\e[1;32m'      # underline -> green
+export LESS_TERMCAP_so=$'\e[1;44;33m'   # standout -> yellow on blue
 
 # Git User
 # plugins/git-user.sh
@@ -24,6 +36,7 @@ dfplugins=(
   brew
   colors
   defaults
+  dotnet
   fastlane
   fzf
   general
@@ -31,6 +44,7 @@ dfplugins=(
   git
   hub
   mise
+  nvm
   prompt
   random
   rbenv
@@ -60,6 +74,7 @@ cli=(
   ast-grep # https://github.com/ast-grep/ast-grep
   bat # https://github.com/sharkdp/bat
   cloc # https://github.com/AlDanial/cloc
+  dotnet # https://aka.ms/dotnet/info
   fd # https://github.com/sharkdp/fd
   font-roboto-mono-nerd-font # https://www.nerdfonts.com
   fzf # https://github.com/junegunn/fzf
@@ -94,6 +109,8 @@ cli=(
   wget # https://www.gnu.org/software/wget
   xcbeautify # https://github.com/cpisciotta/xcbeautify
   xcode-build-server # https://github.com/SolaWing/xcode-build-server
+  zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
+  zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
 )
 
 # Homebrew Apps

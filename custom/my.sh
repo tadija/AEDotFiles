@@ -6,6 +6,7 @@
 alias ssh-reload="cd ~/.ssh && fd -e pub -x ssh-add --apple-use-keychain {.} && cd -"
 
 alias bb="open -a bbedit"
+alias lv="nvim"
 
 function greenfield() {
   curl -L "tadija.net/swift-greenfield" | bash -s "$1"
@@ -61,6 +62,11 @@ function my-tmux() {
   # prefix + I (load plugins)
   # https://github.com/tmux-plugins/tmux-resurrect
   # https://github.com/tmux-plugins/tmux-continuum
+}
+
+function my-nvim() {
+  mv ~/.config/nvim ~/.config/nvim-backup
+  ln -s ~/.dotfiles/plugins/nvim ~/.config/nvim
 }
 
 function my-plugins() {
