@@ -1,11 +1,15 @@
 # https://github.com/tadija/AEDotFiles
 # config.sh
 
-export PATH=$PATH:$HOME/bin
-export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/opt/homebrew/bin
-export PATH=$PATH:/snap/bin
+path=(
+  $HOME/bin
+  $HOME/.local/bin
+  /opt/homebrew/bin
+  /opt/homebrew/sbin
+  /usr/local/bin
+  /snap/bin
+  $path
+)
 
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
