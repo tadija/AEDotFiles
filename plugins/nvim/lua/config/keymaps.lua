@@ -7,9 +7,6 @@ vim.keymap.set("n", "<leader>a", "ggVG", { remap = true, desc = "Select all" })
 vim.keymap.set("n", "<leader>k", "gcc", { remap = true, desc = "Toggle Comment" })
 vim.keymap.set("v", "<leader>k", "gc", { remap = true, desc = "Toggle Comment" })
 
-vim.keymap.set("n", "<leader>i", "==", { remap = true, desc = "Re-indent" })
-vim.keymap.set("v", "<leader>i", "gq", { remap = true, desc = "Re-indent" })
-
 vim.keymap.set("n", "<leader>sk", function()
   require("snacks").picker.keymaps()
 end, { desc = "[S]earch [K]eymaps" })
