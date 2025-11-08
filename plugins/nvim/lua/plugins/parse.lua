@@ -1,0 +1,60 @@
+return {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    opts = {
+      ensure_installed = {
+        -- core / general
+        "astro",
+        "bash",
+        "c",
+        "cpp",
+        "css",
+        "go",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "markdown",
+        "objc",
+        "objcpp",
+        "php",
+        "python",
+        "ruby",
+        "rust",
+        "sql",
+        "swift",
+        "toml",
+        "tsx",
+        "typescript",
+        "vue",
+        "xml",
+        "yaml",
+
+        -- config / misc
+        "dockerfile",
+        "gitignore",
+        "graphql",
+        "ini",
+        "markdown_inline",
+        "query",
+        "regex",
+        "scss",
+        "vim",
+        "vimdoc",
+      },
+
+      highlight = { enable = true },
+      indent = { enable = true },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "gnn",
+          node_incremental = "grn",
+          scope_incremental = "grc",
+          node_decremental = "grm",
+        },
+      },
+    },
+  },
+}
