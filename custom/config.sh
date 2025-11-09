@@ -92,6 +92,7 @@ cli=(
   hub # https://hub.github.com
   jq # https://stedolan.github.io/jq
   lazygit # https://github.com/jesseduffield/lazygit
+  luarocks # https://luarocks.org
   mas # https://github.com/mas-cli/mas
   mise # https://mise.jdx.dev
   mysql # https://dev.mysql.com
