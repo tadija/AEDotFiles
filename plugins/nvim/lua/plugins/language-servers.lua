@@ -77,44 +77,41 @@ return {
           root_dir = util.root_pattern("Package.swift", "*.xcodeproj", ".git"),
         },
 
-        -- TypeScript / JavaScript
+        -- JavaScript / TypeScript / React / React Native / Next.js / Vue
         ts_ls = {
           filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue" },
-          root_dir = util.root_pattern("package.json", "tsconfig.json", ".git"),
+          root_dir = util.root_pattern("package.json", "tsconfig.json", "vue.config.*", ".git"),
+          settings = {
+            typescript = {
+              format = { semicolons = "remove" },
+            },
+            javascript = {
+              format = { semicolons = "remove" },
+            },
+            completions = {
+              completeFunctionCalls = true,
+            },
+          },
           init_options = {
             plugins = {
               {
                 name = "@vue/typescript-plugin",
-                location = vim.fn.stdpath("data") .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+                location = vim.fn.stdpath("data")
+                  .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
                 languages = { "vue" },
               },
             },
           },
         },
+        eslint = {},
+        tailwindcss = {},
+        jsonls = {},
 
         -- Astro framework
         astro = {
           cmd = { "astro-ls", "--stdio" },
           filetypes = { "astro" },
           root_dir = util.root_pattern("astro.config.*", "package.json", ".git"),
-        },
-
-        -- Vue (via Volar)
-        volar = {
-          filetypes = { "vue", "typescript", "javascript", "typescriptreact", "javascriptreact" },
-          init_options = {
-            typescript = {
-              tsdk = vim.fn.stdpath("data") .. "/mason/packages/typescript-language-server/node_modules/typescript/lib",
-            },
-            plugins = {
-              {
-                name = "@vue/typescript-plugin",
-                location = vim.fn.stdpath("data") .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
-                languages = { "vue" },
-              },
-            },
-          },
-          root_dir = util.root_pattern("package.json", "vue.config.*", ".git"),
         },
 
         -- XML
