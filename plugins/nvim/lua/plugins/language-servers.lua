@@ -79,19 +79,8 @@ return {
 
         -- JavaScript / TypeScript / React / React Native / Next.js / Vue
         ts_ls = {
-          filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue" },
-          root_dir = util.root_pattern("package.json", "tsconfig.json", "vue.config.*", ".git"),
-          settings = {
-            typescript = {
-              format = { semicolons = "remove" },
-            },
-            javascript = {
-              format = { semicolons = "remove" },
-            },
-            completions = {
-              completeFunctionCalls = true,
-            },
-          },
+          filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+          root_dir = util.root_pattern("package.json", "tsconfig.json", ".git"),
           init_options = {
             plugins = {
               {
@@ -105,14 +94,24 @@ return {
         },
         eslint = {},
         tailwindcss = {},
-        jsonls = {},
 
-        -- Astro framework
+        -- Astro
         astro = {
           cmd = { "astro-ls", "--stdio" },
           filetypes = { "astro" },
           root_dir = util.root_pattern("astro.config.*", "package.json", ".git"),
         },
+
+        -- Vue
+        volar = {
+          filetypes = { "vue" },
+          root_dir = util.root_pattern("package.json", "tsconfig.json", ".git"),
+          init_options = {
+            vue = { hybridMode = false },
+          },
+        },
+        
+        vue_ls = false,
 
         -- XML
         lemminx = {

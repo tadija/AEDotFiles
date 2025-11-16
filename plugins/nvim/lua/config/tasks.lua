@@ -103,6 +103,14 @@ function M.run(kind)
   local start = vim.loop.hrtime()
   local ok, err = pcall(function()
     local handlers = {
+      [Task.LINT] = function()
+        require("lint").try_lint()
+      end,
+
+      [Task.FORMAT] = function()
+        require("conform").format({ async = false, lsp_fallback = true })
+      end,
+
       [Task.BUILD] = function()
         local cmd = detect_command(Task.BUILD)
         if not cmd then error("no build command found") end
@@ -117,14 +125,6 @@ function M.run(kind)
         else 
           vim.cmd("make! " .. cmd) 
         end
-      end,
-
-      [Task.LINT] = function()
-        require("lint").try_lint()
-      end,
-
-      [Task.FORMAT] = function()
-        require("conform").format({ async = false, lsp_fallback = true })
       end,
     }
 

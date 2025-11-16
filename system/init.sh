@@ -10,3 +10,5 @@ for plugin in $dfplugins; do
     source $file
   fi
 done
+
+[ -f ~/.env.local ] && source ~/.env.local
