@@ -5,7 +5,7 @@ local Task = {
   BUILD = "build",
   TEST = "test",
   LINT = "lint",
-  FORMAT = "format"
+  FORMAT = "format",
 }
 
 -- helpers
@@ -28,7 +28,7 @@ local function detect_command(kind)
   local root = vim.lsp.buf.list_workspace_folders()[1] or vim.loop.cwd()
 
   -- helper for package-based JS projects
-  local function node_script(script)
+  local function js_helper(script)
     if vim.fn.filereadable(root .. "/package.json") == 1 then
       return "npm run " .. script
     elseif vim.fn.filereadable(root .. "/bun.lockb") == 1 then
@@ -39,61 +39,92 @@ local function detect_command(kind)
   end
 
   if kind == Task.BUILD then
-    if ft == "lua" then
+    if ft == "cs" or ft == "fsharp" then
+      return "dotnet build"
+    elseif ft == "elixir" then
+      return "mix compile"
+    elseif ft == "fortran" then
+      return "gfortran " .. fname .. " -o out"
+    elseif ft == "haskell" then
+      return "stack build"
+    elseif ft == "go" then
+      return "go build ./..."
+    elseif ft == "java" then
+      return "javac " .. fname
+    elseif ft == "javascript" or ft == "typescript" or ft == "astro" or ft == "vue" then
+      return js_helper("build")
+    elseif ft == "kotlin" then
+      return "kotlinc " .. fname .. " -d out.jar"
+    elseif ft == "lua" then
       return "luacheck " .. fname
+    elseif ft == "perl" then
+      return "perl -c " .. fname
+    elseif ft == "php" then
+      return "php -l " .. fname
+    elseif ft == "python" then
+      return "python3 -m py_compile " .. fname
+    elseif ft == "ruby" then
+      return "ruby -c " .. fname
+    elseif ft == "rust" then
+      return "cargo build"
+    elseif ft == "scala" then
+      return "sbt compile"
+    elseif ft == "sql" then
+      return "sqlfluff lint --dialect tsql ."
     elseif ft == "swift" then
       if vim.fn.filereadable(root .. "/Package.swift") == 1 then
         return "swift build"
       elseif vim.fn.glob(root .. "/*.xcodeproj") ~= "" then
         return "xcodebuild -quiet"
       end
-    elseif ft == "cs" then
-      return "dotnet build"
-    elseif ft == "go" then
-      return "go build ./..."
-    elseif ft == "python" then
-      return "python3 -m py_compile " .. fname
-    elseif ft == "php" then
-      return "php -l " .. fname
-    elseif ft == "ruby" then
-      return "ruby -c " .. fname
-    elseif ft == "javascript" or ft == "typescript" or ft == "astro" or ft == "vue" then
-      return node_script("build")
-    elseif ft == "rust" then
-      return "cargo build"
-    elseif ft == "sql" then
-      return "sqlfluff lint --dialect tsql ."
+    elseif ft == "zig" then
+      return "zig build"
     end
-
   elseif kind == Task.TEST then
-    if ft == "lua" then
-      return "busted --filter " .. vim.fn.fnamemodify(fname, ":t:r")
-    elseif ft == "swift" then
-      if vim.fn.filereadable(root .. "/Package.swift") == 1 then
-        return "swift test"
-      elseif vim.fn.glob(root .. "/*.xcodeproj") ~= "" then
-        return "xcodebuild test -quiet"
-      end
-    elseif ft == "cs" then
+    if ft == "cs" or ft == "fsharp" then
       return "dotnet test"
+    elseif ft == "elixir" then
+      return "mix test"
+    elseif ft == "fortran" then
+      return "echo 'No standard test runner'"
+    elseif ft == "haskell" then
+      return "stack test"
     elseif ft == "go" then
       return "go test ./..."
-    elseif ft == "python" then
-      return vim.fn.executable("pytest") == 1 and "pytest" or "python3 -m unittest"
+    elseif ft == "java" then
+      return "java " .. vim.fn.fnamemodify(fname, ":t:r")
+    elseif ft == "javascript" or ft == "typescript" or ft == "astro" or ft == "vue" then
+      return js_helper("test")
+    elseif ft == "kotlin" then
+      return "kotlinc -script " .. fname
+    elseif ft == "lua" then
+      return "busted --filter " .. vim.fn.fnamemodify(fname, ":t:r")
+    elseif ft == "perl" then
+      return "prove --verbose"
     elseif ft == "php" then
       return vim.fn.executable("phpunit") == 1 and "phpunit"
+    elseif ft == "python" then
+      return vim.fn.executable("pytest") == 1 and "pytest" or "python3 -m unittest"
     elseif ft == "ruby" then
       if vim.fn.filereadable(root .. "/Gemfile") == 1 then
         return "bundle exec rspec"
       elseif vim.fn.executable("rspec") == 1 then
         return "rspec"
       end
-    elseif ft == "javascript" or ft == "typescript" or ft == "astro" or ft == "vue" then
-      return node_script("test")
     elseif ft == "rust" then
       return "cargo test"
+    elseif ft == "scala" then
+      return "sbt test"
     elseif ft == "sql" then
       return "sqlfluff lint --dialect tsql ."
+    elseif ft == "swift" then
+      if vim.fn.filereadable(root .. "/Package.swift") == 1 then
+        return "swift test"
+      elseif vim.fn.glob(root .. "/*.xcodeproj") ~= "" then
+        return "xcodebuild test -quiet"
+      end
+    elseif ft == "zig" then
+      return "zig build test"
     end
   end
 end
@@ -113,17 +144,21 @@ function M.run(kind)
 
       [Task.BUILD] = function()
         local cmd = detect_command(Task.BUILD)
-        if not cmd then error("no build command found") end
+        if not cmd then
+          error("no build command found")
+        end
         vim.cmd("make! " .. cmd)
       end,
 
       [Task.TEST] = function()
         local cmd = detect_command(Task.TEST)
-        if not cmd then error("no test command found") end
-        if cmd:find("^busted") then 
+        if not cmd then
+          error("no test command found")
+        end
+        if cmd:find("^busted") then
           vim.fn.system(cmd)
-        else 
-          vim.cmd("make! " .. cmd) 
+        else
+          vim.cmd("make! " .. cmd)
         end
       end,
     }
@@ -136,13 +171,25 @@ function M.run(kind)
   end)
 
   local duration = elapsed(start)
-  if ok then notify_ok(kind, duration) else notify_fail(kind, err) end
+  if ok then
+    notify_ok(kind, duration)
+  else
+    notify_fail(kind, err)
+  end
 end
 
 -- commands
-vim.api.nvim_create_user_command("TaskLint",   function() M.run(Task.LINT) end, {})
-vim.api.nvim_create_user_command("TaskFormat", function() M.run(Task.FORMAT) end, {})
-vim.api.nvim_create_user_command("TaskBuild",  function() M.run(Task.BUILD) end, {})
-vim.api.nvim_create_user_command("TaskTest",   function() M.run(Task.TEST) end, {})
+vim.api.nvim_create_user_command("TaskLint", function()
+  M.run(Task.LINT)
+end, {})
+vim.api.nvim_create_user_command("TaskFormat", function()
+  M.run(Task.FORMAT)
+end, {})
+vim.api.nvim_create_user_command("TaskBuild", function()
+  M.run(Task.BUILD)
+end, {})
+vim.api.nvim_create_user_command("TaskTest", function()
+  M.run(Task.TEST)
+end, {})
 
 return M

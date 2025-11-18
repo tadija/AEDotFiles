@@ -35,8 +35,23 @@ return {
           },
         },
 
+        -- Elixir
+        elixirls = {},
+
+        -- Fortran
+        fortls = {},
+
+        -- F#
+        fsautocomplete = {},
+
         -- Go
         gopls = {},
+
+        -- Java
+        jdtls = {},
+
+        -- Kotlin
+        kotlin_language_server = {},
 
         -- Lua
         lua_ls = {
@@ -48,6 +63,9 @@ return {
             },
           },
         },
+
+        -- Perl
+        perlnavigator = {},
 
         -- PHP
         intelephense = {},
@@ -64,10 +82,13 @@ return {
           root_dir = util.root_pattern("Cargo.toml", "rust-project.json", ".git"),
         },
 
+        -- Scala
+        metals = {},
+
         -- SQL
         sqls = {
           filetypes = { "sql", "mysql", "pgsql" },
-          root_dir  = util.root_pattern("schema.sql", "migrations", ".git"),
+          root_dir = util.root_pattern("schema.sql", "migrations", ".git"),
         },
 
         -- Swift / Objective-C
@@ -76,6 +97,9 @@ return {
           filetypes = { "swift", "objective-c", "objective-cpp" },
           root_dir = util.root_pattern("Package.swift", "*.xcodeproj", ".git"),
         },
+
+        -- Zig
+        zls = {},
 
         -- JavaScript / TypeScript / React / React Native / Next.js / Vue
         ts_ls = {
@@ -110,13 +134,21 @@ return {
             vue = { hybridMode = false },
           },
         },
-        
+
         vue_ls = false,
+
+        -- HTML / CSS / JSON / Markdown / TOML / YAML
+        html = {},
+        cssls = {},
+        jsonls = {},
+        marksman = {},
+        taplo = {},
+        yamlls = {},
 
         -- XML
         lemminx = {
           filetypes = { "xml", "xsd", "xsl", "xslt", "svg" },
-          root_dir  = util.root_pattern("*.xml", "*.svg", ".git"),
+          root_dir = util.root_pattern("*.xml", "*.svg", ".git"),
           settings = {
             xml = {
               format = {
@@ -126,14 +158,6 @@ return {
             },
           },
         },
-
-        -- HTML / CSS / JSON / Markdown / TOML / YAML
-        html = {},
-        cssls = {},
-        jsonls = {},
-        marksman = {},
-        taplo = {},
-        yamlls = {},
       },
 
       setup = {
