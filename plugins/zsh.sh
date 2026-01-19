@@ -88,6 +88,9 @@ function zsh-setup-linux {
 
 function zsh-setup() {
   zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+  if (( $+functions[compdef] )) && autoload -Uz _eza 2>/dev/null; then
+    compdef _eza ll
+  fi
   case "$OS" in
     macos) zsh-setup-macos ;;
     linux|wsl) zsh-setup-linux ;;

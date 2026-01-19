@@ -15,7 +15,7 @@
 	cd && git clone https://github.com/tadija/.dotfiles.git
 	```
 
-- Run [the setup script](system/setup.sh) to make [the shell file](.shell) and setup `dot_files` defined in [the config file](custom/config.sh)
+- Run [the setup script](system/setup.sh) to make [the shell file](.shell) and setup `dot_files` defined in [the config file](config/main.sh)
 
 	``` sh
 	. ~/.dotfiles/system/setup.sh deploy
@@ -30,10 +30,10 @@
 
 ## Step 2 [set]
 
-- Configure and save [the config file](custom/config.sh)
+- Configure and save [the config file](config/main.sh)
 
 	``` sh
-	df-edit config
+	df-edit main
 	```
 
 - Reload shell
@@ -50,7 +50,7 @@
 
 ## Step 3 [go]
 
-- Configure and save [the install file](custom/install.sh)
+- Configure and save [the install file](config/install.sh)
 
 	``` sh
 	df-edit install

@@ -1,7 +1,7 @@
 # https://github.com/tadija/.dotfiles
 # setup.sh
 
-source $df/custom/config.sh
+source $df/config/main.sh
 
 ### - helpers
 
@@ -55,26 +55,25 @@ function run() {
   echo ""
   df-print "Hello $USER!"
 
-  shellFile=".zshrc"
-  backup-file "$HOME/$shellFile"
+  backup-file "$HOME/$shell_file"
 
   for file in "${dot_files[@]}"; do dot-file "$file" "$action"; done
 
   if [ "$action" = "deploy" ]; then
-    mv "$HOME/.shell" "$HOME/$shellFile"
+    mv "$HOME/.shell" "$HOME/$shell_file"
   fi
 
   if [ "$action" = "destroy" ]; then
-    cat <<'EOF' > "$HOME/$shellFile"
+cat <<'EOF' > "$HOME/$shell_file"
 autoload -Uz compinit && compinit
 PS1='%~ ❯ '
 bindkey -v
 EOF
   fi
 
-  df-print "Loading $shellFile"
-  source "$HOME/$shellFile"
-  df-print-file "$HOME/$shellFile"
+  df-print "Loading $shell_file"
+  source "$HOME/$shell_file"
+  df-print-file "$HOME/$shell_file"
 
   if [ "$action" = "deploy" ]; then
     df-print "dot files deployed!"

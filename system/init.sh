@@ -2,7 +2,7 @@
 # init.sh
 
 source $df/system/commands.sh
-source $df/custom/config.sh
+source $df/config/main.sh
 
 for plugin in $df_plugins; do
   local file=$(df-find $plugin)

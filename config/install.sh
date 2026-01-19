@@ -7,6 +7,7 @@ cli_tools=(
   cloc # https://github.com/AlDanial/cloc
   dotnet # https://aka.ms/dotnet/info
   eza # https://github.com/eza-community/eza
+  fastfetch # https://github.com/fastfetch-cli/fastfetch
   fd # https://github.com/sharkdp/fd
   font-roboto-mono-nerd-font # https://www.nerdfonts.com
   fzf # https://github.com/junegunn/fzf
@@ -35,6 +36,7 @@ cli_tools=(
   ripgrep # https://github.com/BurntSushi/ripgrep
   swiftly # https://github.com/swiftlang/swiftly
   speedtest-cli # https://github.com/sivel/speedtest-cli
+  kylef/formulae/swiftenv # https://github.com/kylef/swiftenv
   swiftformat # https://github.com/nicklockwood/SwiftFormat
   swiftgen # https://github.com/SwiftGen/SwiftGen
   swiftlint # https://github.com/realm/SwiftLint
@@ -42,7 +44,6 @@ cli_tools=(
   tlrc # https://tldr.sh/tlrc
   tmux # http://tmux.github.io
   tree # http://oldmanprogrammer.net/source.php?dir=projects/tree
-  vapor # https://vapor.codes
   wget # https://www.gnu.org/software/wget
   xcbeautify # https://github.com/cpisciotta/xcbeautify
   xcode-build-server # https://github.com/SolaWing/xcode-build-server
@@ -61,6 +62,7 @@ apps=(
   docker
   fork
   ghostty
+  google-drive
   linearmouse
   macdown
   notepadexe

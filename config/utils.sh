@@ -69,7 +69,7 @@ function my-tmux() {
 
 function my-nvim() {
   mv ~/.config/nvim ~/.config/nvim-backup
-  ln -s ~/.dotfiles/plugins/nvim ~/.config/nvim
+  ln -s ~/.dotfiles/config/nvim ~/.config/nvim
 }
 
 function my-nvim-reset() {
@@ -88,6 +88,20 @@ function my-nvim-restore() {
   mv ~/.local/share/nvim-backup ~/.local/share/nvim 2>/dev/null
   mv ~/.local/state/nvim-backup ~/.local/state/nvim 2>/dev/null
   mv ~/.cache/nvim-backup ~/.cache/nvim 2>/dev/null
+}
+
+function my-nvim-lockfile() {
+  cd "$df" || return 1
+  BRANCH_NAME="lockfile/$(date +%y%m%d)"
+  if git rev-parse --verify "$BRANCH_NAME" >/dev/null 2>&1; then
+    echo "Branch $BRANCH_NAME already exists, skipping checkout."
+  else
+    git checkout -b "$BRANCH_NAME" || return 1
+  fi
+  sed -i '' '/^lazy-lock.json$/d' config/nvim/.gitignore
+  git add -A
+  git commit -m "$(date +%H%M%S)"
+  cd - >/dev/null
 }
 
 function my-plugins() {

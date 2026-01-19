@@ -9,7 +9,8 @@ alias hme='htop -u "$USER"'
 alias ht="htop -t"
 alias icloudlog="brctl log --wait --shorten"
 alias la="ls -la"
-alias ll="eza -lah --group-directories-first --icons"
+unalias ll 2>/dev/null
+function ll { eza -lah --group-directories-first --icons "$@"; }
 alias lm="eza -l --sort=modified --reverse"
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 alias lsd="eza -D --group-directories-first --icons"

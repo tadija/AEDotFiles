@@ -1,24 +1,24 @@
 # https://github.com/tadija/.dotfiles
 # commands.sh
 
-source $df/custom/config.sh
-source $df/custom/install.sh
+source $df/config/main.sh
+source $df/config/install.sh
 
 function df-reload() {
-  source ~/.zshrc
+  source "$HOME/$shell_file"
   echo "platform: $OS"
   exec zsh
 }
 
 function df-find() {
   local system="$df/system/$1.sh"
-  local custom="$df/custom/$1.sh"
+  local config="$df/config/$1.sh"
   local plugin="$df/plugins/$1.sh"
 
   if [ -e "$system" ]; then
     echo "$system"
-  elif [ -e "$custom" ]; then
-    echo "$custom"
+  elif [ -e "$config" ]; then
+    echo "$config"
   elif [ -e "$plugin" ]; then
     echo "$plugin"
   fi
