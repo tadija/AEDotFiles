@@ -67,11 +67,6 @@ function my-tmux() {
   # https://github.com/tmux-plugins/tmux-continuum
 }
 
-function my-nvim() {
-  mv ~/.config/nvim ~/.config/nvim-backup
-  ln -s ~/.dotfiles/config/nvim ~/.config/nvim
-}
-
 function my-nvim-reset() {
   rm -rf ~/.local/share/nvim 2>/dev/null
   rm -rf ~/.local/state/nvim 2>/dev/null

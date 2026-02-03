@@ -79,21 +79,25 @@ return {
   {
     "folke/snacks.nvim",
     ---@type snacks.Config
-    opts = function(_, opts)
-      opts = opts or {}
-      opts.explorer = vim.tbl_deep_extend("force", opts.explorer or {}, {
+    opts = {
+      explorer = {
         replace_netrw = true,
         trash = true,
-      })
-      opts.picker = opts.picker or {}
-      opts.picker.sources = opts.picker.sources or {}
-      opts.picker.sources.explorer = vim.tbl_deep_extend("force", opts.picker.sources.explorer or {}, {
-        on_show = function()
-          require("plugins.utils.terms").close_left_terminal()
-        end,
-      })
-      return opts
-    end,
+      },
+      picker = {
+        sources = {
+          explorer = {
+            hidden = true,
+            on_show = function()
+              require("plugins.utils.terms").close_left_terminal()
+            end,
+          },
+          files = {
+            hidden = true,
+          },
+        },
+      },
+    },
   },
 
   -- which-key

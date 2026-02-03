@@ -1,6 +1,6 @@
 # .dotfiles
 
-**from vanilla system to infinity and beyond in no time**
+**from vanilla system to infinity and beyond**
 
 - macOS: install and run Xcode, then start Terminal app and follow instructions below
 - Linux / WSL: change shell to zsh -> `chsh -s $(which zsh)`, then follow instructions below
@@ -15,7 +15,7 @@
 	cd && git clone https://github.com/tadija/.dotfiles.git
 	```
 
-- Run [the setup script](system/setup.sh) to make [the shell file](.shell) and setup `dot_files` defined in [the config file](config/main.sh)
+- Run [the setup script](system/setup.sh) to link all `dot_files` defined in [the platform file](macos.sh)
 
 	``` sh
 	. ~/.dotfiles/system/setup.sh deploy
@@ -30,7 +30,7 @@
 
 ## Step 2 [set]
 
-- Configure and save [the config file](config/main.sh)
+- Configure and save [the main config file](config/main.sh)
 
 	``` sh
 	df-edit main
@@ -50,10 +50,10 @@
 
 ## Step 3 [go]
 
-- Configure and save [the install file](config/install.sh)
+- Configure and save [the platform file](macos.sh)
 
 	``` sh
-	df-edit install
+	df-edit macos
 	```
 
 - Install all the things

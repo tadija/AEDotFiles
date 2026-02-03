@@ -1,21 +1,46 @@
 # https://github.com/tadija/.dotfiles
 # commands.sh
 
-source $df/config/main.sh
-source $df/config/install.sh
+function df-platform() {
+  case "$(uname -s)" in
+    Darwin) df_platform="macos" ;;
+    Linux)
+      if grep -qiE "(microsoft|wsl)" /proc/sys/kernel/osrelease 2>/dev/null; then
+        df_platform="wsl"
+      else
+        dfdistro=""
+        if [ -f /etc/os-release ]; then
+          dfdistro=$(awk -F= '/^ID=/{gsub(/"/, "", $2); print $2}' /etc/os-release)
+        fi
+        case "$dfdistro" in
+          arch|archlinux) df_platform="arch" ;;
+          ubuntu) df_platform="ubuntu" ;;
+          *) df_platform="linux" ;;
+        esac
+      fi
+      ;;
+    CYGWIN*|MINGW*|MSYS*|Windows_NT) df_platform="windows" ;;
+    *) df_platform="unknown" ;;
+  esac
+
+  echo "$df_platform"
+}
 
 function df-reload() {
-  source "$HOME/$shell_file"
-  echo "platform: $OS"
+  [ -f "$HOME/$shell_file" ] && source "$HOME/$shell_file"
+  echo "platform: $df_platform"
   exec zsh
 }
 
 function df-find() {
+  local root="$df/$1.sh"
   local system="$df/system/$1.sh"
   local config="$df/config/$1.sh"
   local plugin="$df/plugins/$1.sh"
 
-  if [ -e "$system" ]; then
+  if [ -e "$root" ]; then
+    echo "$root"
+  elif [ -e "$system" ]; then
     echo "$system"
   elif [ -e "$config" ]; then
     echo "$config"
@@ -35,6 +60,58 @@ function df-edit() {
     fi
   else
     cd $df
+  fi
+}
+
+function df-link() {
+  local entry="$1"
+  local action="${2:-deploy}"
+  local source="$entry"
+  local target="$entry"
+
+  if [[ "$entry" == *:* ]]; then
+    source="${entry%%:*}"
+    target="${entry##*:}"
+  fi
+
+  local source_path="$df/$source"
+  local target_path="$HOME/$target"
+
+  if [ ! -e "$source_path" ]; then
+    echo "not found: $source"
+    return 1
+  fi
+
+  if [ "$action" = "deploy" ]; then
+    if [ -e "$target_path" ] || [ -L "$target_path" ]; then
+      local timestamp=$(date "+%Y%m%d-%H%M%S")
+      local backupFile="$target_path-$timestamp.dfb"
+      mv "$target_path" "$backupFile"
+      if type df-print >/dev/null 2>&1; then
+        df-print "Moved existing $target -> $backupFile"
+      else
+        echo "Moved existing $target -> $backupFile"
+      fi
+    fi
+
+    mkdir -p "$(dirname "$target_path")"
+    ln -s "$source_path" "$target_path"
+
+    if type df-print >/dev/null 2>&1; then
+      df-print "deployed $target"
+    else
+      echo "deployed $target"
+    fi
+  elif [ "$action" = "destroy" ]; then
+    rm -f "$target_path"
+    if type df-print >/dev/null 2>&1; then
+      df-print "destroyed $target"
+    else
+      echo "destroyed $target"
+    fi
+  else
+    echo "unknown action: $action"
+    return 1
   fi
 }
 
@@ -59,25 +136,34 @@ function df-update() {
 function df-destroy() {
   . $df/system/setup.sh destroy
 }
+
 function df-deploy() {
   . $df/system/setup.sh deploy
 }
 
-# usage: df-terminal AE
-# afterwards: `rm ~/.zcompdump` and restart Terminal
-function df-terminal() {
-  local theme="$1"
-  local file=$df/themes/$theme.terminal
+function df-git-who() {
+  echo "git user: $(git config user.name) | $(git config user.email)"
+}
 
-  if [ -e "$file" ]; then
-    echo "configuring theme for terminal..."
-    open $file
-    sleep 1
-    defaults write com.apple.Terminal "Default Window Settings" -string $theme
-    defaults write com.apple.Terminal "Startup Window Settings" -string $theme
-    exit 0
+function df-git() {
+  value=${df_git[$1]}
+  name=$(echo $value | cut -d ';' -f1)
+  email=$(echo $value | cut -d ';' -f2)
+
+  if [[ -z $name || -z $email ]]; then
+    echo "name or email not found in git_user[$1]"
   else
-    echo "not found: $1"
+    if [[ $2 == "--global" ]]; then
+      echo "configuring global git user..."
+      git config --global user.name $name
+      git config --global user.email $email
+    else
+      echo "configuring local git user..."
+      git config user.name $name
+      git config user.email $email
+    fi
+    # print current git user after change
+    df-git-who
   fi
 }
 
@@ -114,31 +200,5 @@ function df-install() {
   echo -e "[brew] cleanup...\n"
 
   brew cleanup
-}
-
-function df-git-usr() {
-  echo "git user: $(git config user.name) | $(git config user.email)"
-}
-
-function df-git() {
-  value=${df_git[$1]}
-  name=$(echo $value | cut -d ';' -f1)
-  email=$(echo $value | cut -d ';' -f2)
-
-  if [[ -z $name || -z $email ]]; then
-    echo "name or email not found in git_user[$1]"
-  else
-    if [[ $2 == "--global" ]]; then
-      echo "configuring global git user..."
-      git config --global user.name $name
-      git config --global user.email $email
-    else
-      echo "configuring local git user..."
-      git config user.name $name
-      git config user.email $email
-    fi
-    # print current git user after change
-    df-git-usr
-  fi
 }
 

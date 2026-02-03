@@ -1,50 +1,16 @@
 # https://github.com/tadija/.dotfiles
 # config.sh
 
-# shell
-shell_file=".zshrc"
-
 # git user(s)
 typeset -Ag df_git
 df_git[my]="Marko Tadic;tadija@me.com"
+# df_git[gmk]="Marko Tadic;marko@gemikro.rs"
+# df_git[yc]="Marko Tadic;mtadic@youngculture.com"
+# df_git[ac]="Marko Tadic;marko@appculture.com"
+# df_git[bux]="Marko Tadic;marko.tadic@getbux.com"
+# df_git[calendly]="Marko Tadic;marko.tadic@calendly.com"
 
-# dot files
-dot_files=(
-  .shell
-  .gitconfig
-  .lldbinit
-  .tmux.conf
-)
-
-# shell plugins
-# `system/init.sh` will source each file on this list from "plugins" dir.
-# any file can be overriden by a file with the same name in "config" dir.
-df_plugins=(
-  bat
-  brew
-  colors
-  dotnet
-  fastlane
-  fzf
-  general
-  git
-  hub
-  mise
-  nvm
-  orbstack
-  prompt
-  rbenv
-  subl
-  swift
-  swiftenv
-  utils
-  vscode
-  wsl
-  xcode
-  zsh
-)
-
-# path variable
+# path variable(s)
 path=(
   $HOME/bin
   $HOME/.local/bin
@@ -56,12 +22,11 @@ path=(
   $path
 )
 
-# defaults
+# setting(s)
+export COLORTERM=truecolor
+
 export LANG="en_US.F-8"
 export LC_ALL="en_US.UTF-8"
-
-export COLORTERM='truecolor'
-export TERM='xterm-256color'
 
 export EDITOR="$(command -v nvim >/dev/null 2>&1 && echo nvim || echo vim)"
 export VISUAL="$EDITOR"
@@ -73,4 +38,6 @@ export MANPAGER='less'
 export LESS_TERMCAP_md=$'\e[1;36m'
 export LESS_TERMCAP_us=$'\e[1;32m'
 export LESS_TERMCAP_so=$'\e[1;40;36m'
+
+export XDG_CONFIG_HOME="$HOME/.config"
 

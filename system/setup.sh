@@ -1,7 +1,7 @@
 # https://github.com/tadija/.dotfiles
 # setup.sh
 
-source $df/config/main.sh
+DF_SKIP_PLUGINS=1 source $df/system/init.sh
 
 ### - helpers
 
@@ -19,34 +19,6 @@ function df-print-file() {
   echo ""
 }
 
-function backup-file() {
-  if [ -e $1 ]; then
-    timestamp=$(date "+%Y%m%d-%H%M%S")
-    backupFile=$1-$timestamp.dfb
-    mv "$1" "$backupFile"
-    df-print "Moved existing $1 -> $backupFile"
-  fi
-}
-
-function dot-file() {
-  local file="$1"
-  local action="$2"
-
-  if [ -e "$HOME/.dotfiles/$file" ]; then
-    backup-file "$HOME/$file"
-
-    if [ "$action" = "deploy" ]; then
-      ln -s "$HOME/.dotfiles/$file" "$HOME/$file"
-      df-print "deployed $file"
-    fi
-
-    if [ "$action" = "destroy" ]; then
-      rm -f "$HOME/$file"
-      df-print "destroyed $file"
-    fi
-  fi
-}
-
 ### - main
 
 function run() {
@@ -55,15 +27,9 @@ function run() {
   echo ""
   df-print "Hello $USER!"
 
-  backup-file "$HOME/$shell_file"
+  for file in "${dot_files[@]}"; do df-link "$file" "$action"; done
 
-  for file in "${dot_files[@]}"; do dot-file "$file" "$action"; done
-
-  if [ "$action" = "deploy" ]; then
-    mv "$HOME/.shell" "$HOME/$shell_file"
-  fi
-
-  if [ "$action" = "destroy" ]; then
+  if [ "$action" = "destroy" ] && [ ! -f "$HOME/$shell_file" ]; then
 cat <<'EOF' > "$HOME/$shell_file"
 autoload -Uz compinit && compinit
 PS1='%~ ❯ '
@@ -71,9 +37,11 @@ bindkey -v
 EOF
   fi
 
-  df-print "Loading $shell_file"
-  source "$HOME/$shell_file"
-  df-print-file "$HOME/$shell_file"
+  if [ -f "$HOME/$shell_file" ]; then
+    df-print "Loading $shell_file"
+    source "$HOME/$shell_file"
+    df-print-file "$HOME/$shell_file"
+  fi
 
   if [ "$action" = "deploy" ]; then
     df-print "dot files deployed!"

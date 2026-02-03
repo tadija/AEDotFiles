@@ -2,7 +2,7 @@
 	name = Marko Tadic
 	email = tadija@me.com
 [core]
-	excludesfile = ~/.dotfiles/.gitignore
+	excludesfile = ~/.dotfiles/config/git/.gitignore
 	pager = less -R
 [init]
 	defaultBranch = main
