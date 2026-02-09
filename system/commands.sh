@@ -5,24 +5,19 @@ function df-platform() {
   case "$(uname -s)" in
     Darwin) df_platform="macos" ;;
     Linux)
-      if grep -qiE "(microsoft|wsl)" /proc/sys/kernel/osrelease 2>/dev/null; then
-        df_platform="wsl"
-      else
-        dfdistro=""
-        if [ -f /etc/os-release ]; then
-          dfdistro=$(awk -F= '/^ID=/{gsub(/"/, "", $2); print $2}' /etc/os-release)
-        fi
-        case "$dfdistro" in
-          arch|archlinux) df_platform="arch" ;;
-          ubuntu) df_platform="ubuntu" ;;
-          *) df_platform="linux" ;;
-        esac
+      dfdistro=""
+      if [ -f /etc/os-release ]; then
+        dfdistro=$(awk -F= '/^ID=/{gsub(/"/, "", $2); print $2}' /etc/os-release)
       fi
+      case "$dfdistro" in
+        arch|archlinux) df_platform="arch" ;;
+        ubuntu) df_platform="ubuntu" ;;
+        *) df_platform="linux" ;;
+      esac
       ;;
     CYGWIN*|MINGW*|MSYS*|Windows_NT) df_platform="windows" ;;
     *) df_platform="unknown" ;;
   esac
-
   echo "$df_platform"
 }
 
@@ -32,25 +27,28 @@ function df-reload() {
   exec zsh
 }
 
-function df-find() {
-  local root="$df/$1.sh"
-  local system="$df/system/$1.sh"
-  local config="$df/config/$1.sh"
-  local plugin="$df/plugins/$1.sh"
+function df-resolve() {
+  local name="$1"
 
-  if [ -e "$root" ]; then
-    echo "$root"
-  elif [ -e "$system" ]; then
-    echo "$system"
-  elif [ -e "$config" ]; then
-    echo "$config"
-  elif [ -e "$plugin" ]; then
-    echo "$plugin"
-  fi
+  local search_paths=(
+    "$df"
+    "$df/system"
+    "$df/config"
+    "$df/shell"
+    "$df/platform"
+  )
+
+  for path in "${search_paths[@]}"; do
+    local file="$path/$name.sh"
+    if [ -e "$file" ]; then
+      echo "$file"
+      return 0
+    fi
+  done
 }
 
 function df-edit() {
-  local file=$(df-find $1)
+  local file=$(df-resolve $1)
 
   if [ -e "$file" ]; then
     if [ -z "$EDITOR" ]; then
@@ -116,7 +114,7 @@ function df-link() {
 }
 
 function df-run() {
-  local file=$(df-find $1)
+  local file=$(df-resolve $1)
 
   if [ -e "$file" ]; then
     . "$file"
@@ -134,11 +132,11 @@ function df-update() {
 }
 
 function df-destroy() {
-  . $df/system/setup.sh destroy
+  . $df/system/setup.sh destroy "$@"
 }
 
 function df-deploy() {
-  . $df/system/setup.sh deploy
+  . $df/system/setup.sh deploy "$@"
 }
 
 function df-git-who() {

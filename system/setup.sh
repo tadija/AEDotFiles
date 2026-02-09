@@ -1,8 +1,6 @@
 # https://github.com/tadija/.dotfiles
 # setup.sh
 
-DF_SKIP_PLUGINS=1 source $df/system/init.sh
-
 ### - helpers
 
 function df-print() {
@@ -23,6 +21,13 @@ function df-print-file() {
 
 function run() {
   local action="$1"
+  local platform_override="${2:-}"
+
+  if [ -n "$platform_override" ]; then
+    DF_PLATFORM_OVERRIDE="$platform_override" DF_SKIP_PLUGINS=1 source $df/system/init.sh
+  else
+    DF_SKIP_PLUGINS=1 source $df/system/init.sh
+  fi
 
   echo ""
   df-print "Hello $USER!"
@@ -57,11 +62,11 @@ EOF
 }
 
 function deploy() {
-  run "deploy"
+  run "deploy" "$1"
 }
 
 function destroy() {
-  run "destroy"
+  run "destroy" "$1"
 }
 
 "$@"

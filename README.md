@@ -15,7 +15,7 @@
 	cd && git clone https://github.com/tadija/.dotfiles.git
 	```
 
-- Run [the setup script](system/setup.sh) to link all `dot_files` defined in [the platform file](macos.sh)
+- Run [the setup script](system/setup.sh) to link all the configured `dot_files` 
 
 	``` sh
 	. ~/.dotfiles/system/setup.sh deploy
@@ -30,10 +30,10 @@
 
 ## Step 2 [set]
 
-- Configure and save [the main config file](config/main.sh)
+- Configure and save [the custom file](custom.sh) (last‑mile override layer)
 
 	``` sh
-	df-edit main
+	df-edit custom
 	```
 
 - Reload shell
@@ -50,10 +50,10 @@
 
 ## Step 3 [go]
 
-- Configure and save [the platform file](macos.sh)
+- Configure and save [the base file](platform/base.sh) (and/or [the platform](platform/) which extends it)
 
 	``` sh
-	df-edit macos
+	df-edit base
 	```
 
 - Install all the things

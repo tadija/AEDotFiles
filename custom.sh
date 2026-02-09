@@ -1,5 +1,5 @@
 # https://github.com/tadija/.dotfiles
-# config.sh
+# custom.sh
 
 # git user(s)
 typeset -Ag df_git
