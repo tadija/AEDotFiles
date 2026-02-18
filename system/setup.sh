@@ -49,6 +49,7 @@ EOF
   fi
 
   if [ "$action" = "deploy" ]; then
+    rm $HOME/.zcompdump 2>/dev/null
     df-print "dot files deployed!"
   fi
 

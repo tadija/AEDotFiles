@@ -88,6 +88,9 @@ return {
         sources = {
           explorer = {
             hidden = true,
+            filters = {
+              ".DS_Store",
+            },
             on_show = function()
               require("plugins.utils.terms").close_left_terminal()
             end,

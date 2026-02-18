@@ -12,20 +12,27 @@ df_git[my]="Marko Tadic;tadija@me.com"
 
 # path variable(s)
 path=(
-  $HOME/bin
   $HOME/.local/bin
+  $HOME/bin
+  /bin
+  /opt/bin
   /opt/homebrew/bin
   /opt/homebrew/sbin
+  /opt/homebrew/opt/postgresql@18/bin
   /opt/mssql-tools18/bin
-  /usr/local/bin
+  /sbin
   /snap/bin
+  /usr/bin
+  /usr/local/bin
+  /usr/local/sbin
+  /usr/sbin
   $path
 )
 
 # setting(s)
 export COLORTERM=truecolor
 
-export LANG="en_US.F-8"
+export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 export EDITOR="$(command -v nvim >/dev/null 2>&1 && echo nvim || echo vim)"

@@ -6,88 +6,33 @@ source $df/platform/base.sh
 
 # dot files
 dot_files+=(
-  config/ghostty:.config/ghostty
   config/hammerspoon:.hammerspoon
   config/karabiner:.config/karabiner
   config/linearmouse:.config/linearmouse
-  config/lldb/.lldbinit:.lldbinit
 )
 
 # shell plugins
 shell_plugins+=(
-  bat # https://github.com/sharkdp/bat
-  brew # https://brew.sh
-  dotnet # https://aka.ms/dotnet/info
-  fastlane # https://fastlane.tools
-  fzf # https://github.com/junegunn/fzf
-  hub # https://hub.github.com
-  mise # https://mise.jdx.dev
-  my # https://github.com/tadija/.dotfiles
-  nvm # https://github.com/nvm-sh/nvm
   orbstack # https://orbstack.dev
-  rbenv # https://github.com/rbenv/rbenv
-  subl # https://www.sublimetext.com
-  swift # https://www.swift.org
-  swiftenv # https://github.com/kylef/swiftenv
-  vscode # https://code.visualstudio.com
-  wsl # https://learn.microsoft.com/windows/wsl
   xcode # https://developer.apple.com/xcode
 )
 
 # command line tools
 cli_tools+=(
-  ast-grep # https://github.com/ast-grep/ast-grep
-  codex # https://openai.com/codex
-  claude-code # https://code.claude.com
-  cloc # https://github.com/AlDanial/cloc
-  copilot-cli # https://github.com/features/copilot/cli
-  dotnet # https://aka.ms/dotnet/info
-  fastfetch # https://github.com/fastfetch-cli/fastfetch
-  font-roboto-mono-nerd-font # https://www.nerdfonts.com
-  gemini-cli # https://geminicli.com
-  gh # https://cli.github.com
-  git-lfs # https://git-lfs.github.com
-  golang # https://go.dev
-  graphicsmagick # http://www.graphicsmagick.org
-  heroku/brew/heroku # https://cli.heroku.com
-  htop # https://htop.dev/
-  hub # https://hub.github.com
-  jq # https://stedolan.github.io/jq
-  lazygit # https://github.com/jesseduffield/lazygit
-  luarocks # https://luarocks.org
   mas # https://github.com/mas-cli/mas
-  mise # https://mise.jdx.dev
-  mysql # https://dev.mysql.com
-  nodenv # https://github.com/nodenv/nodenv
-  npm # https://www.npmjs.com
-  pipx # https://pipx.pypa.io
-  pyenv # https://github.com/pyenv/pyenv
-  ranger # https://github.com/ranger/ranger
-  rbenv # https://github.com/rbenv/rbenv
-  swiftly # https://github.com/swiftlang/swiftly
-  speedtest-cli # https://github.com/sivel/speedtest-cli
-  kylef/formulae/swiftenv # https://github.com/kylef/swiftenv
-  swiftformat # https://github.com/nicklockwood/SwiftFormat
-  swiftgen # https://github.com/SwiftGen/SwiftGen
-  swiftlint # https://github.com/realm/SwiftLint
-  tig # https://github.com/jonas/tig
-  tlrc # https://tldr.sh/tlrc
-  tree # http://oldmanprogrammer.net/source.php?dir=projects/tree
-  wget # https://www.gnu.org/software/wget
   xcbeautify # https://github.com/cpisciotta/xcbeautify
   xcode-build-server # https://github.com/SolaWing/xcode-build-server
   xcp # https://github.com/wojciech-kulik/XcodeProjectCLI
-  zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
-  zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
 )
 
 # apps
 apps_path="/Applications"
-apps=(
+apps+=(
   alfred # https://www.alfredapp.com
   appcleaner # https://freemacsoft.net/appcleaner
   arc # https://arc.net
   claude # https://claude.ai
+  commander # https://commanderai.app
   db-browser-for-sqlite # https://sqlitebrowser.org
   docker # https://www.docker.com/products/docker-desktop
   fork # https://git-fork.com
@@ -114,4 +59,8 @@ apps=(
   zoom # https://zoom.us
   zed # https://zed.dev
 )
+# add only for Apple M-series (ARM) processors
+if [[ "$(uname -m)" == "arm64" ]]; then
+  apps+=(codex-app) # https://developers.openai.com/codex/app
+fi
 

@@ -15,14 +15,16 @@
 	cd && git clone https://github.com/tadija/.dotfiles.git
 	```
 
-- Run [the setup script](system/setup.sh) to link all the configured `dot_files` 
+- Run [the setup script](system/setup.sh) to link all configured `dot_files` 
 
 	``` sh
 	. ~/.dotfiles/system/setup.sh deploy
 	```
+	> override platform with explicit name argument (ie. `deploy macos`)
+
 	> replace `deploy` with `destroy` to uninstall
-	
-- Play some music while doing all of this? (optional)
+
+- Play some music while doing all of this? (macOS only)
 
 	``` sh
 	my-radio
@@ -42,11 +44,12 @@
 	df-reload
 	```
 
-- Configure global git user (optional)
+- Set configured global git user (optional)
 
 	``` sh
 	df-git my --global
 	```
+  > check current git user with `df-gitusr`
 
 ## Step 3 [go]
 

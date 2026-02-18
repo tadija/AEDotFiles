@@ -1,4 +1,5 @@
 # https://orbstack.dev
-# added by OrbStack: command-line tools and integration
+# orbstack.sh
+
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 

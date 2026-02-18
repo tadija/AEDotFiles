@@ -2,28 +2,48 @@
 # commands.sh
 
 function df-platform() {
+  df_platform="n/a"
+  df_distro="n/a"
+  df_is_wsl="0"
+
   case "$(uname -s)" in
-    Darwin) df_platform="macos" ;;
+    Darwin)
+      df_platform="macos"
+      df_distro="$(sw_vers -productVersion 2>/dev/null)"
+      df_distro="${df_distro:-macos}"
+      ;;
     Linux)
-      dfdistro=""
+      df_platform="linux"
       if [ -f /etc/os-release ]; then
-        dfdistro=$(awk -F= '/^ID=/{gsub(/"/, "", $2); print $2}' /etc/os-release)
+        df_distro=$(awk -F= '/^ID=/{gsub(/"/, "", $2); print $2}' /etc/os-release)
       fi
-      case "$dfdistro" in
-        arch|archlinux) df_platform="arch" ;;
-        ubuntu) df_platform="ubuntu" ;;
-        *) df_platform="linux" ;;
+      if [ -r /proc/version ] && grep -qi microsoft /proc/version; then
+        df_is_wsl="1"
+      fi
+      case "$df_distro" in
+        archlinux) df_distro="arch" ;;
+        ""|unknown) df_distro="linux" ;;
       esac
       ;;
-    CYGWIN*|MINGW*|MSYS*|Windows_NT) df_platform="windows" ;;
-    *) df_platform="unknown" ;;
+    CYGWIN*|MINGW*|MSYS*|Windows_NT)
+      df_platform="windows"
+      df_distro="windows"
+      ;;
+    *)
+      df_platform="unknown"
+      df_distro="unknown"
+      ;;
   esac
   echo "$df_platform"
 }
 
 function df-reload() {
   [ -f "$HOME/$shell_file" ] && source "$HOME/$shell_file"
-  echo "platform: $df_platform"
+  if [ -n "${df_distro:-}" ] && [ "$df_distro" != "$df_platform" ]; then
+    echo "platform: $df_platform ($df_distro)"
+  else
+    echo "platform: $df_platform"
+  fi
   exec zsh
 }
 
@@ -139,7 +159,7 @@ function df-deploy() {
   . $df/system/setup.sh deploy "$@"
 }
 
-function df-git-who() {
+function df-gitusr() {
   echo "git user: $(git config user.name) | $(git config user.email)"
 }
 
@@ -161,7 +181,7 @@ function df-git() {
       git config user.email $email
     fi
     # print current git user after change
-    df-git-who
+    df-gitusr
   fi
 }
 

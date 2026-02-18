@@ -39,16 +39,16 @@ loadShellPlugins() {
 
 # main
 source $df/system/commands.sh
-df_platform="$(df-platform)"
+df-platform >/dev/null
 if [ -n "${DF_PLATFORM_OVERRIDE:-}" ]; then
   df_platform="$DF_PLATFORM_OVERRIDE"
 fi
 export df_platform
+export df_distro
+export df_is_wsl
 shell_file=".zshrc"
 loadPlatformConfig
-if [ -f "$df/custom.sh" ]; then
-  source "$df/custom.sh"
-fi
+[ -f "$df/custom.sh" ] && source "$df/custom.sh"
 loadShellPlugins
 [ -f ~/.env.local ] && source ~/.env.local
 

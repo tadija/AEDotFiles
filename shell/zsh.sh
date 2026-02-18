@@ -1,16 +1,6 @@
 # https://github.com/tadija/.dotfiles
 # zsh.sh
 
-function detect-platform() {
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    OS="macos"
-  elif grep -qi microsoft /proc/version 2>/dev/null; then
-    OS="wsl"
-  else
-    OS="linux"
-  fi
-}
-
 function zsh-init() {
   autoload -Uz compinit && compinit -C
   autoload -U colors && colors
@@ -58,47 +48,22 @@ function source-if-present() {
   fi
 }
 
-function init-homebrew-prefix() {
-  if [ -z "$HOMEBREW_PREFIX" ]; then
-    if [ -x "$(command -v brew)" ]; then
-      HOMEBREW_PREFIX=$(brew --prefix)
-    else
-      case "$OS" in
-        macos) HOMEBREW_PREFIX="/opt/homebrew" ;;
-        *)     HOMEBREW_PREFIX="/usr/local" ;;
-      esac
-    fi
-  fi
-}
-
-function zsh-setup-macos {
-  if [ -x "$(command -v brew)" ]; then
-    init-homebrew-prefix
-    PLUGINS_PATH="$HOMEBREW_PREFIX/share"
-    source-if-present "$PLUGINS_PATH/zsh-autosuggestions/zsh-autosuggestions.zsh"
-    source-if-present "$PLUGINS_PATH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-  fi
-}
-
-function zsh-setup-linux {
-  PLUGINS_PATH="/usr/share"
-  source-if-present $PLUGINS_PATH/zsh-autosuggestions/zsh-autosuggestions.zsh
-  source-if-present $PLUGINS_PATH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-}
-
 function zsh-setup() {
   zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-  if (( $+functions[compdef] )) && autoload -Uz _eza 2>/dev/null; then
-    compdef _eza ll
-  fi
-  case "$OS" in
-    macos) zsh-setup-macos ;;
-    linux|wsl) zsh-setup-linux ;;
-  esac
+  local base_paths=(
+    "${HOMEBREW_PREFIX}/share"
+    "/opt/homebrew/share"
+    "/usr/local/share"
+    "/usr/share"
+  )
+  local base_path
+  for base_path in "${base_paths[@]}"; do
+    source-if-present "$base_path/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    source-if-present "$base_path/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  done
 }
 
 if [ -n "$ZSH_VERSION" ]; then
-  detect-platform
   zsh-init
   zsh-options
   zsh-history
