@@ -1,27 +1,74 @@
 # https://github.com/tadija/.dotfiles
 # commands.sh
 
-function df-reload() {
-  source ~/.zshrc
-  echo "platform: $OS"
+function df-platform() {
+  df_platform="n/a"
+  df_distro="n/a"
+  df_is_wsl="0"
+
+  case "$(uname -s)" in
+    Darwin)
+      df_platform="macos"
+      df_distro="$(sw_vers -productVersion 2>/dev/null)"
+      df_distro="${df_distro:-macos}"
+      ;;
+    Linux)
+      df_platform="linux"
+      if [ -f /etc/os-release ]; then
+        df_distro=$(awk -F= '/^ID=/{gsub(/"/, "", $2); print $2}' /etc/os-release)
+      fi
+      if [ -r /proc/version ] && grep -qi microsoft /proc/version; then
+        df_is_wsl="1"
+      fi
+      case "$df_distro" in
+        archlinux) df_distro="arch" ;;
+        ""|unknown) df_distro="linux" ;;
+      esac
+      ;;
+    CYGWIN*|MINGW*|MSYS*|Windows_NT)
+      df_platform="windows"
+      df_distro="windows"
+      ;;
+    *)
+      df_platform="unknown"
+      df_distro="unknown"
+      ;;
+  esac
+  echo "$df_platform"
 }
 
-function df-find() {
-  local system="$df/system/$1.sh"
-  local custom="$df/custom/$1.sh"
-  local plugin="$df/plugins/$1.sh"
-
-  if [ -e "$system" ]; then
-    echo "$system"
-  elif [ -e "$custom" ]; then
-    echo "$custom"
-  elif [ -e "$plugin" ]; then
-    echo "$plugin"
+function df-reload() {
+  [ -f "$HOME/$shell_file" ] && source "$HOME/$shell_file"
+  if [ -n "${df_distro:-}" ] && [ "$df_distro" != "$df_platform" ]; then
+    echo "platform: $df_platform ($df_distro)"
+  else
+    echo "platform: $df_platform"
   fi
+  exec zsh
+}
+
+function df-resolve() {
+  local name="$1"
+
+  local search_paths=(
+    "$df"
+    "$df/system"
+    "$df/config"
+    "$df/shell"
+    "$df/platform"
+  )
+
+  for path in "${search_paths[@]}"; do
+    local file="$path/$name.sh"
+    if [ -e "$file" ]; then
+      echo "$file"
+      return 0
+    fi
+  done
 }
 
 function df-edit() {
-  local file=$(df-find $1)
+  local file=$(df-resolve $1)
 
   if [ -e "$file" ]; then
     if [ -z "$EDITOR" ]; then
@@ -34,8 +81,60 @@ function df-edit() {
   fi
 }
 
+function df-link() {
+  local entry="$1"
+  local action="${2:-deploy}"
+  local source="$entry"
+  local target="$entry"
+
+  if [[ "$entry" == *:* ]]; then
+    source="${entry%%:*}"
+    target="${entry##*:}"
+  fi
+
+  local source_path="$df/$source"
+  local target_path="$HOME/$target"
+
+  if [ ! -e "$source_path" ]; then
+    echo "not found: $source"
+    return 1
+  fi
+
+  if [ "$action" = "deploy" ]; then
+    if [ -e "$target_path" ] || [ -L "$target_path" ]; then
+      local timestamp=$(date "+%Y%m%d-%H%M%S")
+      local backupFile="$target_path-$timestamp.dfb"
+      mv "$target_path" "$backupFile"
+      if type df-print >/dev/null 2>&1; then
+        df-print "Moved existing $target -> $backupFile"
+      else
+        echo "Moved existing $target -> $backupFile"
+      fi
+    fi
+
+    mkdir -p "$(dirname "$target_path")"
+    ln -s "$source_path" "$target_path"
+
+    if type df-print >/dev/null 2>&1; then
+      df-print "deployed $target"
+    else
+      echo "deployed $target"
+    fi
+  elif [ "$action" = "destroy" ]; then
+    rm -f "$target_path"
+    if type df-print >/dev/null 2>&1; then
+      df-print "destroyed $target"
+    else
+      echo "destroyed $target"
+    fi
+  else
+    echo "unknown action: $action"
+    return 1
+  fi
+}
+
 function df-run() {
-  local file=$(df-find $1)
+  local file=$(df-resolve $1)
 
   if [ -e "$file" ]; then
     . "$file"
@@ -52,19 +151,37 @@ function df-update() {
   df-reload
 }
 
-function df-terminal() {
-  local theme="$1"
-  local file=$df/themes/$theme.terminal
+function df-destroy() {
+  . $df/system/setup.sh destroy "$@"
+}
 
-  if [ -e "$file" ]; then
-    echo "configuring theme for terminal..."
-    open $file
-    sleep 1
-    defaults write com.apple.Terminal "Default Window Settings" -string $theme
-    defaults write com.apple.Terminal "Startup Window Settings" -string $theme
-    exit 0
+function df-deploy() {
+  . $df/system/setup.sh deploy "$@"
+}
+
+function df-gitusr() {
+  echo "git user: $(git config user.name) | $(git config user.email)"
+}
+
+function df-git() {
+  value=${df_git[$1]}
+  name=$(echo $value | cut -d ';' -f1)
+  email=$(echo $value | cut -d ';' -f2)
+
+  if [[ -z $name || -z $email ]]; then
+    echo "name or email not found in git_user[$1]"
   else
-    echo "not found: $1"
+    if [[ $2 == "--global" ]]; then
+      echo "configuring global git user..."
+      git config --global user.name $name
+      git config --global user.email $email
+    else
+      echo "configuring local git user..."
+      git config user.name $name
+      git config user.email $email
+    fi
+    # print current git user after change
+    df-gitusr
   fi
 }
 
@@ -90,21 +207,16 @@ function df-install() {
   df-homebrew
 
   echo ""
-  echo "[brew] installing quicklook plugins..."
-  brew install --cask ${qlplugins[@]}
-  # remove the quarantine attribute (see: https://github.com/sindresorhus/quick-look-plugins)
-  xattr -d -r com.apple.quarantine ~/Library/QuickLook
-
-  echo ""
   echo "[brew] installing command line tools..."
-  brew install ${cli[@]}
+  brew install ${cli_tools[@]} --force
 
   echo ""
   echo "[brew] installing apps..."
-  brew install --cask --appdir=$apps_installation_path ${apps[@]} --force
+  brew install --cask --appdir=$apps_path ${apps[@]} --force
 
   echo ""
   echo -e "[brew] cleanup...\n"
 
   brew cleanup
 }
+
