@@ -9,7 +9,13 @@ source $df/platform/base.sh
 shell_plugins+=(
   wsl # https://learn.microsoft.com/windows/wsl
 )
-# cli_tools+=(...)
+cli_tools+=(
+  caddy # https://caddyserver.com
+  certbot # https://certbot.eff.org
+  nginx # https://nginx.org
+  supervisor # https://supervisord.org
+  tailscale # https://tailscale.com
+)
 # apps=(...)
 
 # distro-specific additions

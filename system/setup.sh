@@ -1,6 +1,8 @@
 # https://github.com/tadija/.dotfiles
 # setup.sh
 
+export df="${df:-$HOME/.dotfiles}"
+
 ### - helpers
 
 function df-print() {
@@ -24,9 +26,9 @@ function run() {
   local platform_override="${2:-}"
 
   if [ -n "$platform_override" ]; then
-    DF_PLATFORM_OVERRIDE="$platform_override" DF_SKIP_PLUGINS=1 source $df/system/init.sh
+    DF_PLATFORM_OVERRIDE="$platform_override" DF_SKIP_PLUGINS=1 source "$df/system/init.sh"
   else
-    DF_SKIP_PLUGINS=1 source $df/system/init.sh
+    DF_SKIP_PLUGINS=1 source "$df/system/init.sh"
   fi
 
   echo ""
@@ -49,7 +51,7 @@ EOF
   fi
 
   if [ "$action" = "deploy" ]; then
-    rm $HOME/.zcompdump 2>/dev/null
+    rm "$HOME/.zcompdump" 2>/dev/null
     df-print "dot files deployed!"
   fi
 

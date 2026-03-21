@@ -3,7 +3,7 @@
 
 # git user(s)
 typeset -Ag df_git
-df_git[my]="Marko Tadic;tadija@me.com"
+df_git[me]="Marko Tadic;tadija@me.com"
 # df_git[gmk]="Marko Tadic;marko@gemikro.rs"
 # df_git[yc]="Marko Tadic;mtadic@youngculture.com"
 # df_git[ac]="Marko Tadic;marko@appculture.com"
@@ -15,6 +15,7 @@ path=(
   $HOME/.local/bin
   $HOME/bin
   /bin
+  /home/linuxbrew/.linuxbrew/bin
   /opt/bin
   /opt/homebrew/bin
   /opt/homebrew/sbin
@@ -30,6 +31,7 @@ path=(
 )
 
 # setting(s)
+export TERM=xterm-256color
 export COLORTERM=truecolor
 
 export LANG="en_US.UTF-8"

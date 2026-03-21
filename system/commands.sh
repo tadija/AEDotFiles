@@ -159,37 +159,43 @@ function df-deploy() {
   . $df/system/setup.sh deploy "$@"
 }
 
-function df-gitusr() {
-  echo "git user: $(git config user.name) | $(git config user.email)"
-}
+function df-gitid() {
+  if [[ -z "$1" ]]; then
+    echo "git user: $(git config user.name) | $(git config user.email)"
+    return 0
+  fi
 
-function df-git() {
   value=${df_git[$1]}
   name=$(echo $value | cut -d ';' -f1)
   email=$(echo $value | cut -d ';' -f2)
 
   if [[ -z $name || -z $email ]]; then
-    echo "name or email not found in git_user[$1]"
+    echo "name or email not found in df_git[$1]"
   else
     if [[ $2 == "--global" ]]; then
       echo "configuring global git user..."
       git config --global user.name $name
       git config --global user.email $email
     else
+      if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        echo "not in a git repository"
+        return 1
+      fi
+
       echo "configuring local git user..."
       git config user.name $name
       git config user.email $email
     fi
     # print current git user after change
-    df-gitusr
+    df-gitid
   fi
 }
 
-function df-homebrew() {
+function df-brew() {
   echo "[brew] checking..."
   if ! [ -x "$(command -v brew)" ]; then
     echo "[brew] installing..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
   echo "[brew] updating..."
@@ -198,21 +204,26 @@ function df-homebrew() {
 
   echo "[brew] cleanup..."
   brew cleanup
-
-  # see: https://github.com/zsh-users/zsh-completions/issues/680#issuecomment-612960481
-  compaudit | xargs chmod g-w
 }
 
 function df-install() {
-  df-homebrew
+  df-brew
 
   echo ""
   echo "[brew] installing command line tools..."
-  brew install ${cli_tools[@]} --force
+  if (( ${#cli_tools[@]} > 0 )); then
+    brew install ${cli_tools[@]} --force
+  else
+    echo "[brew] no command line tools configured, skipping."
+  fi
 
   echo ""
   echo "[brew] installing apps..."
-  brew install --cask --appdir=$apps_path ${apps[@]} --force
+  if (( ${#apps[@]} > 0 )); then
+    brew install --cask --appdir=$apps_path ${apps[@]} --force
+  else
+    echo "[brew] no apps configured, skipping."
+  fi
 
   echo ""
   echo -e "[brew] cleanup...\n"

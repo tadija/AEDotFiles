@@ -32,7 +32,7 @@
 
 ## Step 2 [set]
 
-- Configure and save [the custom file](custom.sh) (last‑mile override layer)
+- Configure and save [the custom file](custom.sh)
 
 	``` sh
 	df-edit custom
@@ -47,9 +47,9 @@
 - Set configured global git user (optional)
 
 	``` sh
-	df-git my --global
+	df-gitid me --global
 	```
-  > check current git user with `df-gitusr`
+	> check current git user with `df-gitid`
 
 ## Step 3 [go]
 

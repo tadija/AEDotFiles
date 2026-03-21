@@ -1,3 +1,9 @@
+local uname = vim.uv.os_uname()
+
+if uname.sysname ~= "Darwin" then
+  return {}
+end
+
 return {
   {
     "wojciech-kulik/xcodebuild.nvim",

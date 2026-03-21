@@ -26,14 +26,11 @@ shell_plugins=(
   mise # https://mise.jdx.dev
   my # https://github.com/tadija/.dotfiles
   nodenv # https://github.com/nodenv/nodenv
-  nvm # https://github.com/nvm-sh/nvm
   prompt # https://github.com/tadija/.dotfiles
   pyenv # https://github.com/pyenv/pyenv
   rbenv # https://github.com/rbenv/rbenv
   rustup # https://rustup.rs
-  subl # https://www.sublimetext.com
   swift # https://www.swift.org
-  swiftenv # https://github.com/kylef/swiftenv
   tmux # http://tmux.github.io
   vscode # https://code.visualstudio.com
   zsh # https://www.zsh.org
@@ -55,11 +52,9 @@ cli_tools=(
   git-lfs # https://git-lfs.github.com
   golang # https://go.dev
   graphicsmagick # http://www.graphicsmagick.org
-  heroku/brew/heroku # https://cli.heroku.com
   htop # https://htop.dev/
   hub # https://hub.github.com
   jq # https://stedolan.github.io/jq
-  kylef/formulae/swiftenv # https://github.com/kylef/swiftenv
   lazygit # https://github.com/jesseduffield/lazygit
   luarocks # https://luarocks.org
   mise # https://mise.jdx.dev
@@ -73,10 +68,10 @@ cli_tools=(
   ranger # https://github.com/ranger/ranger
   rbenv # https://github.com/rbenv/rbenv
   ripgrep # https://github.com/BurntSushi/ripgrep
+  rust # https://www.rust-lang.org
   rustup # https://rustup.rs
-  speedtest-cli # https://github.com/sivel/speedtest-cli
+  sqlite # https://www.sqlite.org
   swiftformat # https://github.com/nicklockwood/SwiftFormat
-  swiftgen # https://github.com/SwiftGen/SwiftGen
   swiftlint # https://github.com/realm/SwiftLint
   swiftly # https://github.com/swiftlang/swiftly
   tig # https://github.com/jonas/tig
@@ -84,6 +79,7 @@ cli_tools=(
   tmux # http://tmux.github.io
   tree # http://oldmanprogrammer.net/source.php?dir=projects/tree
   wget # https://www.gnu.org/software/wget
+  zig # https://ziglang.org
   zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
   zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
 )
@@ -95,7 +91,9 @@ ai_agents=(
   copilot-cli # https://github.com/features/copilot/cli
   gemini-cli # https://geminicli.com
   openclaw-cli # https://github.com/openclaw/openclaw
+  picoclaw # https://github.com/sipeed/picoclaw
   zeroclaw # https://github.com/zeroclaw-labs/zeroclaw
+  nullclaw # https://github.com/nullclaw/nullclaw
 )
 cli_tools+=("${ai_agents[@]}")
 

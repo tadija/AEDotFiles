@@ -20,6 +20,7 @@ shell_plugins+=(
 # command line tools
 cli_tools+=(
   mas # https://github.com/mas-cli/mas
+  swiftgen # https://github.com/SwiftGen/SwiftGen
   xcbeautify # https://github.com/cpisciotta/xcbeautify
   xcode-build-server # https://github.com/SolaWing/xcode-build-server
   xcp # https://github.com/wojciech-kulik/XcodeProjectCLI
@@ -52,6 +53,7 @@ apps+=(
   simsim # https://github.com/dsmelov/simsim
   sketch # https://www.sketch.com
   sublime-text # https://www.sublimetext.com
+  tailscale-app # https://tailscale.com
   textmate # https://macromates.com
   visual-studio-code # https://code.visualstudio.com
   xcodes # https://github.com/RobotsAndPencils/XcodesApp

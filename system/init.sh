@@ -38,7 +38,7 @@ loadShellPlugins() {
 }
 
 # main
-source $df/system/commands.sh
+source "$df/system/commands.sh"
 df-platform >/dev/null
 if [ -n "${DF_PLATFORM_OVERRIDE:-}" ]; then
   df_platform="$DF_PLATFORM_OVERRIDE"
