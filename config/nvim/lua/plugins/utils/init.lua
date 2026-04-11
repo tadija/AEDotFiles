@@ -87,8 +87,9 @@ return {
       picker = {
         sources = {
           explorer = {
+            ignored = true,
             hidden = true,
-            filters = {
+            exclude = {
               ".DS_Store",
             },
             on_show = function()
@@ -96,6 +97,7 @@ return {
             end,
           },
           files = {
+            ignored = true,
             hidden = true,
           },
         },

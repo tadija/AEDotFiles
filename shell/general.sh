@@ -25,7 +25,7 @@ alias rmd="rm -rf"
 alias show="defaults write com.apple.finder AppleShowAllFiles true && killall Finder"
 alias sketchdebug="tail -f /var/log/system.log|grep Sketch"
 alias ssh-reload="cd ~/.ssh && fd -e pub -x ssh-add --apple-use-keychain {.} && cd -"
-alias update="brew update && brew upgrade && brew cleanup && mas upgrade"
+alias update="brew update && brew upgrade && echo '==> Homebrew Cleanup...' && brew cleanup && echo '==> Updating AppStore...' && mas upgrade"
 
 ql() {
   local input_path="${1:-.}"

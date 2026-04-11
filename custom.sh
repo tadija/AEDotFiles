@@ -9,6 +9,10 @@ df_git[me]="Marko Tadic;tadija@me.com"
 # df_git[ac]="Marko Tadic;marko@appculture.com"
 # df_git[bux]="Marko Tadic;marko.tadic@getbux.com"
 # df_git[calendly]="Marko Tadic;marko.tadic@calendly.com"
+# df_git[gmi]="Marko Tadic;markot@gmi.si"
+df_git[ai]="Agent Local;agent.local@localhost"
+df_git[codex]="Agent Codex;agent.codex@localhost"
+df_git[claude]="Agent Claude;agent.claude@localhost"
 
 # path variable(s)
 path=(

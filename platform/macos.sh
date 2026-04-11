@@ -47,7 +47,6 @@ apps+=(
   openvpn-connect # https://openvpn.net/client
   rapidapi # https://rapidapi.com
   raycast # https://www.raycast.com
-  red-eye # https://www.hexedbits.com/redeye
   sequel-ace # https://sequel-ace.com
   sf-symbols # https://developer.apple.com/sf-symbols
   simsim # https://github.com/dsmelov/simsim
@@ -64,5 +63,6 @@ apps+=(
 # add only for Apple M-series (ARM) processors
 if [[ "$(uname -m)" == "arm64" ]]; then
   apps+=(codex-app) # https://developers.openai.com/codex/app
+  apps+=(vibetunnel) # https://vibetunnel.sh
 fi
 
