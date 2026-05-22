@@ -2,7 +2,7 @@
 # linux.sh
 
 # base
-source $df/platform/base.sh
+source $df/profiles/base.sh
 
 # linux-specific additions
 # dot_files+=(...)
@@ -20,9 +20,8 @@ cli_tools+=(
 
 # distro-specific additions
 if [ -n "${df_distro:-}" ]; then
-  distro_file="$df/platform/$df_distro.sh"
+  distro_file="$df/profiles/$df_distro.sh"
   if [ -f "$distro_file" ]; then
     source "$distro_file"
   fi
 fi
-

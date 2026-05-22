@@ -23,10 +23,10 @@ function df-print-file() {
 
 function run() {
   local action="$1"
-  local platform_override="${2:-}"
+  local profile_override="${2:-}"
 
-  if [ -n "$platform_override" ]; then
-    DF_PLATFORM_OVERRIDE="$platform_override" DF_SKIP_PLUGINS=1 source "$df/system/init.sh"
+  if [ -n "$profile_override" ]; then
+    DF_PROFILE_OVERRIDE="$profile_override" DF_SKIP_PLUGINS=1 source "$df/system/init.sh"
   else
     DF_SKIP_PLUGINS=1 source "$df/system/init.sh"
   fi

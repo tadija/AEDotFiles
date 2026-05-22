@@ -20,7 +20,7 @@
 	``` sh
 	. ~/.dotfiles/system/setup.sh deploy
 	```
-	> override platform with explicit name argument (ie. `deploy macos`)
+	> override profile with explicit name argument (ie. `deploy macos`)
 
 	> replace `deploy` with `destroy` to uninstall
 
@@ -53,7 +53,7 @@
 
 ## Step 3 [go]
 
-- Configure and save [the base file](platform/base.sh) (and/or [the platform](platform/) which extends it)
+- Configure and save [the base profile](profiles/base.sh) (and/or [another profile](profiles/) which extends it)
 
 	``` sh
 	df-edit base
@@ -64,6 +64,8 @@
 	``` sh
 	df-install
 	```
+	> install with explicit profile (ie. `df-install vps`)
+	> configure VPS role additions with env (ie. `DF_VPS_ROLE=app df-install vps`)
 	
 - Reload shell
 

@@ -1,30 +1,30 @@
 # https://github.com/tadija/.dotfiles
 # init.sh
 
-loadPlatformConfig() {
+loadProfileConfig() {
   dot_files=()
   shell_plugins=()
   cli_tools=()
   apps=()
   apps_path=""
 
-  local platform_file="$df/platform/$df_platform.sh"
-  if [ -f "$platform_file" ]; then
-    source "$platform_file"
+  local profile_file="$df/profiles/$df_profile.sh"
+  if [ -f "$profile_file" ]; then
+    source "$profile_file"
     return 0
   fi
 
-  local base_file="$df/platform/base.sh"
+  local base_file="$df/profiles/base.sh"
   if [ -f "$base_file" ]; then
-    echo "platform '$df_platform' not found, using platform/base.sh." >&2
+    echo "profile '$df_profile' not found, using profiles/base.sh." >&2
     source "$base_file"
     return 0
   fi
 
-  echo "platform '$df_platform' not found, no platform config loaded." >&2
+  echo "profile '$df_profile' not found, no profile config loaded." >&2
 }
 
-# `system/init.sh` will source each item in `shell_plugins` from "shell" dir.
+# `system/init.sh` will source each item in `shell_plugins` from "plugins" dir.
 # any file can be overriden by a file with the same name in "config" dir.
 loadShellPlugins() {
   if [ -z "${DF_SKIP_PLUGINS:-}" ]; then
@@ -40,14 +40,16 @@ loadShellPlugins() {
 # main
 source "$df/system/commands.sh"
 df-platform >/dev/null
-if [ -n "${DF_PLATFORM_OVERRIDE:-}" ]; then
-  df_platform="$DF_PLATFORM_OVERRIDE"
+df_profile="$df_platform"
+if [ -n "${DF_PROFILE_OVERRIDE:-}" ]; then
+  df_profile="$DF_PROFILE_OVERRIDE"
 fi
+export df_profile
 export df_platform
 export df_distro
 export df_is_wsl
 shell_file=".zshrc"
-loadPlatformConfig
+loadProfileConfig
 [ -f "$df/custom.sh" ] && source "$df/custom.sh"
 loadShellPlugins
 [ -f ~/.env.local ] && source ~/.env.local

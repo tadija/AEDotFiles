@@ -2,7 +2,7 @@
 # macos.sh
 
 # base
-source $df/platform/base.sh
+source $df/profiles/base.sh
 
 # dot files
 dot_files+=(
@@ -65,4 +65,3 @@ if [[ "$(uname -m)" == "arm64" ]]; then
   apps+=(codex-app) # https://developers.openai.com/codex/app
   apps+=(vibetunnel) # https://vibetunnel.sh
 fi
-

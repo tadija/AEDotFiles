@@ -54,8 +54,8 @@ function df-resolve() {
     "$df"
     "$df/system"
     "$df/config"
-    "$df/shell"
-    "$df/platform"
+    "$df/plugins"
+    "$df/profiles"
   )
 
   for path in "${search_paths[@]}"; do
@@ -207,6 +207,33 @@ function df-brew() {
 }
 
 function df-install() {
+  local profile_override="${1:-}"
+
+  if [ -n "$profile_override" ]; then
+    if [ ! -f "$df/profiles/$profile_override.sh" ]; then
+      echo "[install] profile '$profile_override' not found: $df/profiles/$profile_override.sh" >&2
+      return 1
+    fi
+    DF_PROFILE_OVERRIDE="$profile_override" DF_SKIP_PLUGINS=1 source "$df/system/init.sh"
+  else
+    echo "[install] profile: $df_profile (implicit)"
+    if [ -n "${df_distro:-}" ] && [ "$df_distro" != "$df_profile" ]; then
+      echo "[install] detected: $df_platform ($df_distro)"
+    else
+      echo "[install] detected: $df_platform"
+    fi
+    echo "[install] pass an explicit profile to avoid this prompt, for example: df-install vps"
+    printf "[install] continue with profile '%s'? [y/N] " "$df_profile"
+    read -r reply
+    case "$reply" in
+      [yY]|[yY][eE][sS]) ;;
+      *)
+        echo "[install] cancelled."
+        return 1
+        ;;
+    esac
+  fi
+
   df-brew
 
   echo ""
