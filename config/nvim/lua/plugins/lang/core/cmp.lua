@@ -3,11 +3,29 @@ vim.api.nvim_set_hl(0, 'CmpItemIndex', { fg = '#ff8800', bg = '#222222', bold = 
 return {
   'saghen/blink.cmp',
   version = false,
-  dependencies = { 'rafamadriz/friendly-snippets' },
+  dependencies = {
+    'saghen/blink.lib',
+    'rafamadriz/friendly-snippets',
+  },
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = function()
-    local cmp = require('blink.cmp')
+    local default_sources = { 'lsp', 'snippets', 'path', 'buffer' }
+    local providers = {}
+
+    local function add_provider(id, provider)
+      local ok = pcall(require, provider.module)
+      if ok then
+        table.insert(default_sources, id)
+        providers[id] = provider
+      end
+    end
+
+    add_provider('lazydev', {
+      name = 'LazyDev',
+      module = 'lazydev.integrations.blink',
+      enabled = true,
+    })
 
     return {
       appearance = {
@@ -43,30 +61,19 @@ return {
       },
       keymap = {
         preset = 'super-tab',
-        ['1'] = { function() cmp.accept({ index = 1 }) end, 'fallback' },
-        ['2'] = { function() cmp.accept({ index = 2 }) end, 'fallback' },
-        ['3'] = { function() cmp.accept({ index = 3 }) end, 'fallback' },
-        ['4'] = { function() cmp.accept({ index = 4 }) end, 'fallback' },
-        ['5'] = { function() cmp.accept({ index = 5 }) end, 'fallback' },
-        ['6'] = { function() cmp.accept({ index = 6 }) end, 'fallback' },
-        ['7'] = { function() cmp.accept({ index = 7 }) end, 'fallback' },
-        ['8'] = { function() cmp.accept({ index = 8 }) end, 'fallback' },
-        ['9'] = { function() cmp.accept({ index = 9 }) end, 'fallback' },
+        ['1'] = { function(cmp) cmp.accept({ index = 1 }) end, 'fallback' },
+        ['2'] = { function(cmp) cmp.accept({ index = 2 }) end, 'fallback' },
+        ['3'] = { function(cmp) cmp.accept({ index = 3 }) end, 'fallback' },
+        ['4'] = { function(cmp) cmp.accept({ index = 4 }) end, 'fallback' },
+        ['5'] = { function(cmp) cmp.accept({ index = 5 }) end, 'fallback' },
+        ['6'] = { function(cmp) cmp.accept({ index = 6 }) end, 'fallback' },
+        ['7'] = { function(cmp) cmp.accept({ index = 7 }) end, 'fallback' },
+        ['8'] = { function(cmp) cmp.accept({ index = 8 }) end, 'fallback' },
+        ['9'] = { function(cmp) cmp.accept({ index = 9 }) end, 'fallback' },
       },
       sources = {
-        default = { 'lsp', 'snippets', 'lazydev', 'codecompanion', 'path', 'buffer' },
-        providers = {
-          codecompanion = {
-            name = 'CodeCompanion',
-            module = 'codecompanion.providers.completion.blink',
-            enabled = true,
-          },
-          lazydev = {
-            name = 'LazyDev',
-            module = 'lazydev.integrations.blink',
-            enabled = true,
-          },
-        }
+        default = default_sources,
+        providers = providers,
       },
     }
   end,

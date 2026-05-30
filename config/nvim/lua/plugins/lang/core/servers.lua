@@ -12,44 +12,15 @@ local M = {
     root_dir = util.root_pattern(".git"),
   },
 
-  -- C / C++
+  -- C / C++ / Objective-C
   clangd = {
     cmd = { "clangd" },
     filetypes = { "c", "cpp", "objc", "objcpp" },
     root_dir = util.root_pattern("compile_commands.json", ".git"),
   },
 
-  -- C# / .NET
-  omnisharp = {
-    cmd = { "OmniSharp" },
-    root_dir = util.root_pattern("*.sln", "*.csproj", ".git"),
-    enable_roslyn_analyzers = true,
-    enable_import_completion = true,
-    settings = {
-      FormattingOptions = {
-        EnableEditorConfigSupport = true,
-        OrganizeImports = true,
-      },
-    },
-  },
-
-  -- Elixir
-  elixirls = {},
-
-  -- Fortran
-  fortls = {},
-
-  -- F#
-  fsautocomplete = {},
-
   -- Go
   gopls = {},
-
-  -- Java
-  jdtls = {},
-
-  -- Kotlin
-  kotlin_language_server = {},
 
   -- Lua
   lua_ls = {
@@ -61,12 +32,6 @@ local M = {
       },
     },
   },
-
-  -- Perl
-  perlnavigator = {},
-
-  -- PHP
-  intelephense = {},
 
   -- Python
   pyright = {},
@@ -87,9 +52,6 @@ local M = {
     root_dir = util.root_pattern("Cargo.toml", "rust-project.json", ".git"),
   },
 
-  -- Scala
-  metals = {},
-
   -- SQL
   sqls = {
     filetypes = { "sql", "mysql", "pgsql" },
@@ -102,9 +64,6 @@ local M = {
     filetypes = { "swift", "objective-c", "objective-cpp" },
     root_dir = util.root_pattern("Package.swift", "*.xcodeproj", ".git"),
   },
-
-  -- Zig
-  zls = {},
 
   -- JavaScript / TypeScript / React / React Native / Next.js / Vue
   ts_ls = {
@@ -122,13 +81,6 @@ local M = {
   },
   eslint = {},
   tailwindcss = {},
-
-  -- Astro
-  astro = {
-    cmd = { "astro-ls", "--stdio" },
-    filetypes = { "astro" },
-    root_dir = util.root_pattern("astro.config.*", "package.json", ".git"),
-  },
 
   -- Vue
   volar = {
